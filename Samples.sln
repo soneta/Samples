@@ -3,9 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.489
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples", "src\Samples\Samples.csproj", "{D939A54E-F862-4B24-8CCF-1504134C12A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "src\Samples\Samples.csproj", "{D939A54E-F862-4B24-8CCF-1504134C12A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Samples.Tests", "tests\Samples.Tests\Samples.Tests.csproj", "{49A48ABE-D1FC-418B-A5EC-EEA05697A610}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.Tests", "tests\Samples.Tests\Samples.Tests.csproj", "{49A48ABE-D1FC-418B-A5EC-EEA05697A610}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D48F2BCD-EE52-4313-A89C-315D7FF878CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{2F98833B-3F8B-41E1-BCA6-06DF03806103}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +32,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{49A48ABE-D1FC-418B-A5EC-EEA05697A610} = {D48F2BCD-EE52-4313-A89C-315D7FF878CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAFA3D20-F417-4EDD-88F6-F850D5CF3A51}
