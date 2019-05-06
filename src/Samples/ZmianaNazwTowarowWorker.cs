@@ -34,7 +34,7 @@ namespace Samples
         }
 
         // Akcja jaka zostanie wykonana na danych w oparciu o ustawione parametry
-        [Action("Soneta Examples/Zmiana postfiksu", Mode = ActionMode.SingleSession | ActionMode.ConfirmSave | ActionMode.Progress)]
+        [Action("Samples/Zmiana postfiksu", Mode = ActionMode.SingleSession | ActionMode.ConfirmSave | ActionMode.Progress)]
         public void ZmianaNazw()
         {
             using (var t = Params.Session.Logout(true))
