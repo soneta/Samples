@@ -1,0 +1,37 @@
+﻿<?xml version="1.0"?>
+<!--
+ Klasa zawiera opis zakłdaki formularza, na której znajduje się lista punktacji podpięta do
+ dokumentu handlowego. Zakładka ta zostanie umieszczona na formularzu dokumentu handlowego.
+ Do budowy formularza wykorzystano listę (grid) punktów, która została podłączona do pola dokumentu handlowego:
+    Workers.PunktyDokumentu.Punkty
+ Oraz pole tekstowe zawierające informację o sumie punktów danego dokumentu:
+    Workers.PunktyDokumentu.SumaPunktów
+ Obydwie kontrolki podłączone są do property dostarczonych przez worker PunktyDokumentuWorker, który
+ rozszerza funkcjonalność dokumentu handlowego o obsługę punktacji.
+ 
+Rejestracja zakładki odbywa się poprzez nadanie odpowiedniego prefiksu w nazwie pliku. Prefiksem tym jest nazwa typu, na który
+zakładka ma być zarejestrowana. W związku z tym, że zakładka ta zarejestrowana jest na typ Soneta.Handel.DokumentHandlowy
+należy zadbać o ustawienie atrybutu DataType, gdyż system nie odnajdzie typu DokumentHandlowy w aktualnym zestawie (Assembly).
+
+Plik należy dodać do projektu jako Embedded Resource.
+ -->
+
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          RightName="Page:DokumentPunktyPage" xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.Handel.DokumentHandlowy,Soneta.Handel">
+  <Page Name="DokumentPunktyPage" CaptionHtml="Punkty" DataContext="{DataSource}">
+    <Group CaptionHtml="Punkty dokumentu" LabelWidth="26">
+      <Grid Width="*" Height="*" EditValue="{Workers.PunktyDokumentu.Punkty}" IsToolbarVisible="true" EditInPlace="true" NewInPlace="true" OrderBy="ID">
+        <Field CaptionHtml="Definicja" Width="23" EditValue="{Definicja}" Footer="None" />
+        <Field CaptionHtml="Liczba" Width="9" EditValue="{Liczba}" Footer="None" />
+        <Field CaptionHtml="Liczba należna" Width="12" EditValue="{LiczbaNależna}" Footer="None" />
+        <Field CaptionHtml="Liczba należna 1" Width="12" EditValue="{LiczbaNalezna1}" Footer="None" />
+        <Field CaptionHtml="Liczba należna 2" Width="12" EditValue="{LiczbaNalezna2}" Footer="None" />
+      </Grid>
+      <Row>
+        <Field CaptionHtml="Suma punktów na dokumencie" Width="10" EditValue="{Workers.PunktyDokumentu.SumaPunktów}" />
+        <Field CaptionHtml="Data" Width="15" LabelWidth="4" IsReadOnly="true" EditValue="{Data}" />
+      </Row>
+    </Group>
+  </Page>
+</DataForm>
