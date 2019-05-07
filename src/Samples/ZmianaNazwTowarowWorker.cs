@@ -41,7 +41,7 @@ namespace Samples
             {
                 foreach (var towar in Towary.Where(towar => Params.TypTowaru == towar.Typ))
                 {
-                    if (!Params.DodajPostfiks.IsNullOrEmpty() && !towar.Nazwa.StartsWith(Params.DodajPostfiks))
+                    if (!Params.DodajPostfiks.IsNullOrEmpty() && !towar.Nazwa.EndsWith(Params.DodajPostfiks))
                     {
                         towar.Nazwa = towar.Nazwa + Params.DodajPostfiks;
                     }

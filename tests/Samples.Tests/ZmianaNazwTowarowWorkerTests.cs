@@ -49,20 +49,18 @@ namespace Samples.Tests
             Assert.AreEqual("Buty do nart Extreme 45xxx", Buty45.Nazwa);
         }
 
-        // Houston, we have a problem
-        // There is a bug in existing sample code
-        //[Test]
-        //public void ZmianaNazw_AddPostfixWhenPostfixAlreadyExists_PostfixShouldNotBeAdded()
-        //{
-        //    // Arrange
-        //    var worker = CreateWorker(new[] { Bikini }, TypTowaru.Towar, "damski");
+        [Test]
+        public void ZmianaNazw_AddPostfixWhenPostfixAlreadyExists_PostfixShouldNotBeAdded()
+        {
+            // Arrange
+            var worker = CreateWorker(new[] { Bikini }, TypTowaru.Towar, "damski");
 
-        //    // Act
-        //    worker.ZmianaNazw();
+            // Act
+            worker.ZmianaNazw();
 
-        //    // Assert
-        //    Assert.AreEqual("Bikini - Strój kąpielowy damski", Bikini.Nazwa);
-        //}
+            // Assert
+            Assert.AreEqual("Bikini - Strój kąpielowy damski", Bikini.Nazwa);
+        }
 
         [Test]
         public void ZmianaNazw_RemoveSpecifiedPostfixFromOneArticle_PostfixIsRemoved()
