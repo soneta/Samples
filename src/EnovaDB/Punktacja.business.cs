@@ -15,12 +15,12 @@ using System.Globalization;
 using Soneta.Types;
 using Soneta.Business;
 using Soneta.Handel;
-using Soneta.Examples.EnovaDB.Punktacja;
+using EnovaDB.Punktacja;
 
-[assembly: ModuleType("Punktacja", typeof(Soneta.Examples.EnovaDB.Punktacja.PunktacjaModule), 4, "Punktacja", 2, VersionNumber=4)]
+[assembly: ModuleType("Punktacja", typeof(EnovaDB.Punktacja.PunktacjaModule), 4, "Punktacja", 2, VersionNumber=4)]
 [assembly: SimpleRight(typeof(DefinicjaPunktu), "Edycja pola Nazwa", Description="Zezwala na edycję pola Nazwa zapisu.")]
 
-namespace Soneta.Examples.EnovaDB.Punktacja {
+namespace EnovaDB.Punktacja {
 
 	/// <summary>
 	/// Moduł Punktacja.

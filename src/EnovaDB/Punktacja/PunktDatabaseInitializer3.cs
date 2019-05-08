@@ -1,12 +1,11 @@
-﻿using Soneta.Business.App;
-using Soneta.Examples.EnovaDB.Punktacja;
-
+﻿using EnovaDB.Punktacja;
+using Soneta.Business.App;
 
 [assembly: DatabaseInit(
     PunktDatabaseInitializer3.InitializerName,
     typeof(PunktDatabaseInitializer3), "Punktacja")]
 
-namespace Soneta.Examples.EnovaDB.Punktacja
+namespace EnovaDB.Punktacja
 {
     class PunktDatabaseInitializer3 : IDatabaseInitializer
     {

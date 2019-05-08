@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Globalization;
+using EnovaDB.Punktacja;
 using Soneta.Business;
-using Soneta.Examples.EnovaDB.Punktacja;
 using Soneta.Handel;
 
 //
@@ -23,9 +23,8 @@ using Soneta.Handel;
 // Wszystkie obiekty biznesowe zostały umieszczone w jednym namespace, którego nazwa została również 
 // umieszczona w pliku *.business.xml (module/@namespace).
 //
-namespace Soneta.Examples.EnovaDB.Punktacja
+namespace EnovaDB.Punktacja
 {
-
     //
     // Nazwa klasy obiektu biznesowego brana jest z nazwy elementu table znajdującego się w 
     // *.business.xml (atrybut table/@name).
@@ -35,7 +34,6 @@ namespace Soneta.Examples.EnovaDB.Punktacja
     //
     public class Punkt : PunktacjaModule.PunktRow
     {
-
         //
         // Ponieważ pole dokument określono jako readonly i jest ono inicjowane tylko podczas tworzenia nowego
         // obiektu biznesowego, wartość inicjującą należy przekazać jako parametry konstruktora. Dlatego 

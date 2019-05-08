@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Linq;
+using EnovaDB.Punktacja;
 using Soneta.Business;
-using Soneta.Examples.EnovaDB.Punktacja;
 using Soneta.Handel;
 
 //
@@ -33,7 +33,7 @@ using Soneta.Handel;
     //
     typeof(DokumentHandlowy))]
 
-namespace Soneta.Examples.EnovaDB.Punktacja
+namespace EnovaDB.Punktacja
 {
     // 
     // Klasa implementująca metodę wywoływaną przez dany worker.

@@ -1,4 +1,6 @@
-﻿// Plik zawiera logikę biznesową kolekcji obiektów punktów.
+﻿using Soneta.Handel;
+
+// Plik zawiera logikę biznesową kolekcji obiektów punktów.
 // Taki plik należy przygotować dla każdego obiektu biznesowego zdefiniowanego w pliku *.business.xml.
 // Kolekcja ta zarządza obiektami biznesowymi pewnego typu, tutaj punktami. Znajdują się
 // w niej metody, które nie są specyficzne dla poszczególnych obiektów biznesowych,
@@ -13,11 +15,8 @@
 // umieszczona w pliku *.business.xml (module/@namespace).
 //
 
-using Soneta.Handel;
-
-namespace Soneta.Examples.EnovaDB.Punktacja
+namespace EnovaDB.Punktacja
 {
-
     //
     // Nazwa klasy kolekcji obiektów biznesowych brana jest z nazwy elementu table znajdującego się w 
     // *.business.xml (atrybut table/@tablename).

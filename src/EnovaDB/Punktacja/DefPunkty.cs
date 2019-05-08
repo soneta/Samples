@@ -1,4 +1,5 @@
-﻿
+﻿using System;
+
 //
 // Plik zawiera logikę biznesową kolekcji obiektów definicji punktacji.
 // Taki plik należy przygotować dla każdego obiektu biznesowego zdefiniowanego w pliku *.business.xml.
@@ -11,9 +12,7 @@
 // umieszczona w pliku *.business.xml (module/@namespace).
 //
 
-using System;
-
-namespace Soneta.Examples.EnovaDB.Punktacja
+namespace EnovaDB.Punktacja
 {
     //
     // Nazwa klasy kolekcji obiektów biznesowych brana jest z nazwy elementu table znajdującego się w 

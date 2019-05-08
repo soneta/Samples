@@ -2,7 +2,7 @@
 using Soneta.Handel;
 using Soneta.Tools;
 
-namespace Soneta.Examples.EnovaDB.Punktacja
+namespace EnovaDB.Punktacja
 {
     static class PrzeliczaniePunktowHelper
     {
