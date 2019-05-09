@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using Samples.Workers;
 using Soneta.Test;
 using Soneta.Towary;
 

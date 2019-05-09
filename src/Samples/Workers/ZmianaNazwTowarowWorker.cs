@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Samples;
+using Samples.Workers;
 using Soneta.Business;
 using Soneta.Tools;
 using Soneta.Towary;
@@ -7,7 +7,7 @@ using Soneta.Types;
 
 [assembly: Worker(typeof(ZmianaNazwTowarowWorker), typeof(Towary))]
 
-namespace Samples
+namespace Samples.Workers
 {
     /// <summary>
     /// Wokrer oparty na przykładzie pochodzącym z repozytorium Soneta.Examples - https://github.com/soneta/Examples (Example 5)
