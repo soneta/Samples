@@ -8,9 +8,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.Tests", "tests\Samples.Tests\Samples.Tests.csproj", "{49A48ABE-D1FC-418B-A5EC-EEA05697A610}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D48F2BCD-EE52-4313-A89C-315D7FF878CB}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{2F98833B-3F8B-41E1-BCA6-06DF03806103}"
 	ProjectSection(SolutionItems) = preProject
