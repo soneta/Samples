@@ -8,6 +8,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.Tests", "tests\Samples.Tests\Samples.Tests.csproj", "{49A48ABE-D1FC-418B-A5EC-EEA05697A610}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D48F2BCD-EE52-4313-A89C-315D7FF878CB}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".build", ".build", "{2F98833B-3F8B-41E1-BCA6-06DF03806103}"
 	ProjectSection(SolutionItems) = preProject
@@ -18,6 +21,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnovaDB", "src\EnovaDB\EnovaDB.csproj", "{4FC4954B-C8AF-4159-8B6E-24F11C605690}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.Integration.Tests", "tests\Samples.Integration.Tests\Samples.Integration.Tests.csproj", "{A165F379-C215-49B4-99E1-2F1F3BDEDDB4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnovaDB.Integration.Tests", "tests\EnovaDB.Tests\EnovaDB.Integration.Tests.csproj", "{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +46,10 @@ Global
 		{A165F379-C215-49B4-99E1-2F1F3BDEDDB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A165F379-C215-49B4-99E1-2F1F3BDEDDB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A165F379-C215-49B4-99E1-2F1F3BDEDDB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +57,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{49A48ABE-D1FC-418B-A5EC-EEA05697A610} = {D48F2BCD-EE52-4313-A89C-315D7FF878CB}
 		{A165F379-C215-49B4-99E1-2F1F3BDEDDB4} = {D48F2BCD-EE52-4313-A89C-315D7FF878CB}
+		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C} = {D48F2BCD-EE52-4313-A89C-315D7FF878CB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAFA3D20-F417-4EDD-88F6-F850D5CF3A51}
