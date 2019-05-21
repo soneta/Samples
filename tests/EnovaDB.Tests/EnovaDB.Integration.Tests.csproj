@@ -9,7 +9,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\EnovaDB\EnovaDB.csproj" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
 </Project>
