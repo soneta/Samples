@@ -9,57 +9,78 @@ using Soneta.Types;
 
 namespace Samples
 {
-    class ZmianaDokumentuHandlowego : IZmianaDokumentuHandlowego
+  public class ZmianaDokumentuHandlowego : IZmianaDokumentuHandlowego
+  {
+    public ILogika Logika { get; set; } = new Domyslna();
+
+    public void ZmianaStanu( ZmianaStanuDokumentuHandlowegoArgs args )
     {
-        public void ZmianaStanu(ZmianaStanuDokumentuHandlowegoArgs args)
-        {
-            if (args.PrzedZmianą && args.NowyStan == StanDokumentuHandlowego.Zatwierdzony)
-            {
-                DodajTransport(args.Dokument, KalkulatorRabatu.PoliczRabat(WartoscDokumentu, Lojalny));
-            }
-
-            bool Lojalny() => KalkulatorRabatu.LojalnyKontrahent(() => PobierzDokumenty(args.Dokument).Select(x => x.Data));
-            decimal WartoscDokumentu() => args.Dokument.Suma.Netto;
-        }
-
-        public IEnumerable<DokumentHandlowy> PobierzDokumenty(DokumentHandlowy dh)
-        {
-            return dh.Session.GetHandel().DokHandlowe.WgKontrahent[dh.Kontrahent];
-        }
-
-        public void DodajTransport(DokumentHandlowy dokument, decimal rabat)
-        {
-            var pos = new PozycjaDokHandlowego(dokument);
-            dokument.Session.GetHandel().PozycjeDokHan.AddRow(pos);
-           
-            pos.Towar =  dokument.Session.GetTowary().Towary.WgKodu["TRANSPORT"];
-            pos.Rabat = new Percent(rabat);
-        }
-
-#region Niezaimplementowane metody
-        public void ZmianaWartości(ZmianaDokumentuHandlowegoArgs args)
-        {
-        }
-
-        public void ZmianaPozycji(ZmianaPozycjiDokumentuArgs args)
-        {
-        }
-
-        public void WyliczenieCenyPozycji(WyliczenieCenyPozycjiDokumentuArgs args)
-        {
-        }
-
-        public void ZmianaPłatności(ZmianaDokumentuHandlowegoArgs args)
-        {
-        }
-
-        public void Zatwierdzanie(ZmianaDokumentuHandlowegoArgs args)
-        {
-        }
-
-        public void Zatwierdzony(ZmianaDokumentuHandlowegoArgs args)
-        {
-        }
-#endregion
+      if (args.PrzedZmianą &&
+          args.NowyStan == StanDokumentuHandlowego.Zatwierdzony)
+      {
+        Logika.DodajTransport( args, Logika.PoliczRabat( args ) );
+      }
     }
+
+    #region Niezaimplementowane metody
+
+    public void ZmianaWartości( ZmianaDokumentuHandlowegoArgs args )
+    {
+    }
+
+    public void ZmianaPozycji( ZmianaPozycjiDokumentuArgs args )
+    {
+    }
+
+    public void WyliczenieCenyPozycji( WyliczenieCenyPozycjiDokumentuArgs args )
+    {
+    }
+
+    public void ZmianaPłatności( ZmianaDokumentuHandlowegoArgs args )
+    {
+    }
+
+    public void Zatwierdzanie( ZmianaDokumentuHandlowegoArgs args )
+    {
+    }
+
+    public void Zatwierdzony( ZmianaDokumentuHandlowegoArgs args )
+    {
+    }
+
+    #endregion
+
+    class Domyslna : ILogika
+    {
+      decimal ILogika.PoliczRabat( ZmianaStanuDokumentuHandlowegoArgs args ) =>
+        KalkulatorRabatu.PoliczRabat(
+          () => args.Dokument.Suma.Netto,
+          () => KalkulatorRabatu.LojalnyKontrahent(
+            () => PobierzDokumenty( args.Dokument ).Select( x => x.Data ) ) );
+
+      void ILogika.DodajTransport(
+        ZmianaStanuDokumentuHandlowegoArgs args,
+        decimal rabat )
+      {
+        var pos = new PozycjaDokHandlowego( args.Dokument );
+        args.Dokument.Session.GetHandel().PozycjeDokHan.AddRow( pos );
+
+        pos.Towar = args.Dokument.Session.GetTowary().Towary
+          .WgKodu[ "TRANSPORT" ];
+        pos.Rabat = new Percent( rabat );
+      }
+
+      IEnumerable<DokumentHandlowy> PobierzDokumenty( DokumentHandlowy dokument ) =>
+        dokument.Table.WgKontrahent[ dokument.Kontrahent ];
+    }
+
+    public interface ILogika
+    {
+      void DodajTransport(
+        ZmianaStanuDokumentuHandlowegoArgs args,
+        decimal rabat );
+
+      decimal PoliczRabat( ZmianaStanuDokumentuHandlowegoArgs args );
+    }
+  }
 }
