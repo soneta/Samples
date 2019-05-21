@@ -4,7 +4,4 @@
     <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
     <IsAddonProject>true</IsAddonProject>
   </PropertyGroup>
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
 </Project>
