@@ -31,6 +31,32 @@ namespace EnovaDB.Integration.Tests
             return new PunktyDokumentuWorker { Dokument = dokument }.SumaPunktów;
         }
 
+        [TestCase(1, ExpectedResult = 0)]
+        [TestCase(6, ExpectedResult = 5)]
+        public int SumaPunktow_Usuwanie_PunktyPrzeliczaneWedlugStandardowegoMnoznika(int iloscPozycji)
+        {
+            var dokument = DodajDokumentZPozycjami(iloscPozycji);
+            UsunPierwszaPozycje(dokument);
+            return new PunktyDokumentuWorker { Dokument = dokument }.SumaPunktów;
+        }
+
+        [TestCase(1, ExpectedResult = 0)]
+        [TestCase(6, ExpectedResult = 10)]
+        public int SumaPunktow_Usuwanie_PunktyPrzeliczaneWedlugZmodyfikowanegoMnoznika(int iloscPozycji)
+        {
+            InConfigTransaction(() =>
+                ConfigEditSession.GetPunktacja().DefPunkty.Standardowa.Mnoznik = 2);
+            SaveDisposeConfig();
+            var dokument = DodajDokumentZPozycjami(iloscPozycji);
+            UsunPierwszaPozycje(dokument);
+            return new PunktyDokumentuWorker { Dokument = dokument }.SumaPunktów;
+        }
+
+        private void UsunPierwszaPozycje(DokumentHandlowy dokument)
+        {
+            InUITransaction(()=> dokument.PozycjaWgIdent(1).Delete());
+        }
+
         private DokumentHandlowy DodajDokumentZPozycjami(int iloscPozycji)
         {
             var dokument = DodajDokument();
