@@ -64,14 +64,16 @@ namespace Samples.Tests
       StanDokumentuHandlowego stan,
       [Values( true )] bool przed )
     {
+      const decimal rabat = 20m;
       var args =
         new ZmianaStanuDokumentuHandlowegoArgs( default, stan, przed );
+      _zmianaDokumentu.Logika.PoliczRabat( args ).Returns( rabat );
       _zmianaDokumentu.ZmianaStanu( args );
 
       _zmianaDokumentu.Logika.Received( 1 )
         .PoliczRabat( args );
       _zmianaDokumentu.Logika.Received( 1 )
-        .DodajTransport( args, Arg.Any<decimal>() );
+        .DodajTransport( args, rabat );
     }
 
     [OneTimeSetUp]
