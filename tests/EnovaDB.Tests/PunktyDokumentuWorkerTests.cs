@@ -80,7 +80,6 @@ namespace EnovaDB.Integration.Tests
         private DokumentHandlowy DodajDokument()
         {
             DokumentHandlowy doc = null;
-
             InUITransaction(() =>
             {
                 doc = new DokumentHandlowy
