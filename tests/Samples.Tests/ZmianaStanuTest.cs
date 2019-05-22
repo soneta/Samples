@@ -44,7 +44,7 @@ namespace Samples.Tests
         StanDokumentuHandlowego.Bufor,
         StanDokumentuHandlowego.Zablokowany )]
       StanDokumentuHandlowego stan,
-      [Values( false )] bool przed )
+      [Values( true )] bool przed )
     {
       var args =
         new ZmianaStanuDokumentuHandlowegoArgs( default, stan, przed );
