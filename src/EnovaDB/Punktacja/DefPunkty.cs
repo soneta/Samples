@@ -33,15 +33,9 @@ namespace EnovaDB.Punktacja
         // Property zwracające standardową definicję przypisywaną dla każdego punktu.
         // Zapis odczytywany jest na podstawie identyfikatora GUID, który został użyty w pliku Punktu.dbinit.xml
         //
-        public DefinicjaPunktu Standardowa
-        {
-            get
-            {
-                //
-                // Każda tabela guided="Root" posiada indekser pozwalający odczytać 
-                // obiekt biznesowy na podstawie podanego guid.
-                return this[StandardowaGuid];
-            }
-        }
+        // Każda tabela guided="Root" posiada indekser pozwalający odczytać 
+        // obiekt biznesowy na podstawie podanego guid.
+        //
+        public DefinicjaPunktu Standardowa => this[StandardowaGuid];
     }
 }

@@ -20,11 +20,11 @@ namespace EnovaDB.Punktacja
             if (punktyWgDokumentu.Count > 1) return;
 
             // Sumujemy ilości na wszystkich pozycja dokumentu handlowego zaokrąglając w dół
-            var sumaIlosciPozycji = dokument.Pozycje.Cast<PozycjaDokHandlowego>()
+            var sumaIlosciPozycji = dokument.Pozycje
                 .Sum(pozycja => (int)Math.Floor(pozycja.Ilosc.Value));
 
             // Pobieramy pierwszy punkt z kolekcji
-            var punkt = punktyWgDokumentu.GetNext() as Punkt;
+            var punkt = punktyWgDokumentu.GetNext();
 
             // Jeżeli suma punktów z pozycji jest zerowa usuwamy punkt lub przerywamy przeliczenie gdy pusty
             if (sumaIlosciPozycji == 0)
