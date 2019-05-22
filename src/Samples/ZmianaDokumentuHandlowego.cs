@@ -1,4 +1,3 @@
-﻿using System.Collections.Generic;
 using System.Linq;
 using Samples;
 using Soneta.Handel;
@@ -54,9 +53,10 @@ namespace Samples
     {
       decimal ILogika.PoliczRabat( ZmianaStanuDokumentuHandlowegoArgs args ) =>
         KalkulatorRabatu.PoliczRabat(
-          () => args.Dokument.Suma.Netto,
-          () => KalkulatorRabatu.LojalnyKontrahent(
-            () => PobierzDokumenty( args.Dokument ).Select( x => x.Data ) ) );
+          args.Dokument.Suma.Netto,
+          KalkulatorRabatu.LojalnyKontrahent(
+            args.Dokument.Table.WgKontrahent[ args.Dokument.Kontrahent ]
+              .Select( x => x.Data ) ) );
 
       void ILogika.DodajTransport(
         ZmianaStanuDokumentuHandlowegoArgs args,
@@ -69,9 +69,6 @@ namespace Samples
           .WgKodu[ "TRANSPORT" ];
         pos.Rabat = new Percent( rabat );
       }
-
-      IEnumerable<DokumentHandlowy> PobierzDokumenty( DokumentHandlowy dokument ) =>
-        dokument.Table.WgKontrahent[ dokument.Kontrahent ];
     }
 
     public interface ILogika
