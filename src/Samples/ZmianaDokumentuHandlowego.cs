@@ -18,7 +18,8 @@ namespace Samples
                 DodajTransport(args.Dokument, KalkulatorRabatu.PoliczRabat(WartoscDokumentu, Lojalny));
             }
 
-            bool Lojalny() => KalkulatorRabatu.LojalnyKontrahent(() => PobierzDokumenty(args.Dokument).Select(x => x.Data));
+            bool Lojalny() => KalkulatorRabatu.LojalnyKontrahent(() => 
+                PobierzDokumenty(args.Dokument).Select(x => x.Data));
             decimal WartoscDokumentu() => args.Dokument.Suma.Netto;
         }
 
