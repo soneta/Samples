@@ -22,12 +22,12 @@ namespace Samples.Tests
         [TestCase(500, true, ExpectedResult = 1)]
         [TestCase(999, true, ExpectedResult = 1)]
         [TestCase(1000, true, ExpectedResult = 1)]
-        public decimal Policz(decimal wartosc, bool lojalny) => KalkulatorRabatu.PoliczRabat( () => wartosc, () => lojalny);
+        public decimal Policz(decimal wartosc, bool lojalny) => KalkulatorRabatu.PoliczRabat( wartosc, lojalny);
 
         [Test]
         public void LojalnyKontrahent_5DokumentowZOstatniegoPolrocza_True()
         {
-            var result = KalkulatorRabatu.LojalnyKontrahent(() => new[]
+            var result = KalkulatorRabatu.LojalnyKontrahent(new[]
             {
                 Date.Today,
                 Date.Today.AddMonths(-1),
@@ -41,7 +41,7 @@ namespace Samples.Tests
         [Test]
         public void LojalnyKontrahent_4DokumentyZOstatniegoPolrocza_False()
         {
-            var result = KalkulatorRabatu.LojalnyKontrahent(() => new[]
+            var result = KalkulatorRabatu.LojalnyKontrahent(new[]
             {
                 Date.Today,
                 Date.Today.AddMonths(-1),
@@ -54,7 +54,7 @@ namespace Samples.Tests
         [Test]
         public void LojalnyKontrahent_Powyzej4DokumentowAleTylkoTrzyZOstatniegoPolrocza_False()
         {
-            var result = KalkulatorRabatu.LojalnyKontrahent(() => new[]
+            var result = KalkulatorRabatu.LojalnyKontrahent(new[]
             {
                 Date.Today,
                 Date.Today.AddMonths(-4),
