@@ -4,7 +4,7 @@ using Samples.Workers;
 using Soneta.Test;
 using Soneta.Towary;
 
-namespace Samples.Tests
+namespace Samples.Integration.Tests
 {
     [TestFixture]
     public class ZmianaNazwTowarowWorkerTests : DbTransactionTestBase
