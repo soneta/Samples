@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Priority="3"
+          RightName="Page:RezerwacjaNewOgolnePage" xmlns="http://www.enova.pl/schema/form.xsd">
+
+    <Page Name="RezerwacjaNewOgolnePage" CaptionHtml="Zarządzanie rezerwacją" DataContext="{DataSource}">
+        <Row>
+            <Field CaptionHtml="Numer rezerwacji" LabelWidth="15" Width="30" EditValue="{NrRezerwacji}" />
+            <Field CaptionHtml="Lot" LabelWidth="10" Width="35" EditValue="{Lot}"/>
+        </Row>
+        <Row>
+            <Field CaptionHtml="Maszyna" LabelWidth="15" Width="30" EditValue="{Maszyna}" />
+          <Field CaptionHtml="Klient" LabelWidth="15" Width="30" EditValue="{Klient}" />
+            <Field CaptionHtml="Opłacona?" LabelWidth="20" Width ="25" EditValue="{CzyOplacona}"/>
+        </Row>
+    </Page>
+</DataForm>

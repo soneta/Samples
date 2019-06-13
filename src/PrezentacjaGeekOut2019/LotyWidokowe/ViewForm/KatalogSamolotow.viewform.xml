@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DataForm Contexts="License.All" xmlns="http://www.enova.pl/schema/form.xsd">
+  <Flow Name="FilterPanel">
+  </Flow>
+
+  <Grid Name="List" RemoveButton="Visible" EditButton="Visible" IsToolbarVisible="true">
+      <Field CaptionHtml="Numer boczny" EditValue="{NrBoczny}" Width="15"/>
+      <Field CaptionHtml="Producent" EditValue="{Producent}" Width="30"/>
+      <Field CaptionHtml="Model" EditValue="{Model}" Width="30"/>
+      <Field CaptionHtml="Rok produkcji" EditValue="{RokProd}" Width="30"/>
+  </Grid>
+</DataForm>

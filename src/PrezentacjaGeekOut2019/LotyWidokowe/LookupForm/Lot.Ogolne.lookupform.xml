@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.enova.pl/schema/form.xsd">
+    <Grid Name="List" IsToolbarVisible="true">
+        <Field CaptionHtml="Nazwa" Width="38" EditValue="{Nazwa}" Footer="None" />
+        <Field CaptionHtml="Kod Lotu" Width="12" EditValue="{KodUslugi}" Footer="None" />
+        <Field CaptionHtml="Cena" Width="25" EditValue="{Cena}" Footer="None" />
+        <Field CaptionHtml="LokalizacjaMiejscowosc powiazania" Width="16" EditValue="{LokalizacjaMiejscowosc}" Footer="None" />
+        <Field CaptionHtml="LokalizacjaICAO" Width="12" EditValue="{LokalizacjaICAO}" Footer="None" />
+        <Field CaptionHtml="Opis" Width="12" EditValue="{Opis}" Footer="None" />
+    </Grid>
+</DataForm>

@@ -1,0 +1,11 @@
+﻿Instrukcja dlaszego postępowania podczas tworzenia kolejnych elementów dodatku.
+
+1. Przed rozpoczęciem dalszej pracy należy dodać ścieżkę do bibliotek enova365.
+   Ścieżkę należy podać w ustawieniach projektu na zakładce ReferencePaths, która
+   powinna odwoływać się do folderu instalacyjnego najnowszej wersji enova.
+
+2. Jeśli podczas kompilacji pojawia się komunikat:
+		Unable to copy file "obj\Debug\PrezentacjaGeekOut2018.dll" to "C:\Program Files (x86)\Common Files\Soneta\Assemblies\PrezentacjaGeekOut2018.dll". 
+		Access to the path 'C:\Program Files (x86)\Common Files\Soneta\Assemblies\PrezentacjaGeekOut2018.dll' is denied.	
+   należy uruchomić Visual Studio z uprawnieniami administracyjnymi.
+	

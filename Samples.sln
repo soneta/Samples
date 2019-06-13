@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples", "src\Samples\Samples.csproj", "{D939A54E-F862-4B24-8CCF-1504134C12A8}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Samples.Integration.Tests", "tests\Samples.Integration.Tests\Samples.Integration.Tests.csproj", "{A165F379-C215-49B4-99E1-2F1F3BDEDDB4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EnovaDB.Integration.Tests", "tests\EnovaDB.Tests\EnovaDB.Integration.Tests.csproj", "{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrezentacjaGeekOut2019", "src\PrezentacjaGeekOut2019\PrezentacjaGeekOut2019.csproj", "{BED6D50D-9928-430E-82D3-29746DAAEAB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F8DAAEB-FC29-42E8-AC6D-26F7DCC8D05C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED6D50D-9928-430E-82D3-29746DAAEAB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED6D50D-9928-430E-82D3-29746DAAEAB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED6D50D-9928-430E-82D3-29746DAAEAB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED6D50D-9928-430E-82D3-29746DAAEAB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
