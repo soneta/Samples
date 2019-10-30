@@ -1,14 +1,8 @@
 ﻿using Soneta.Business;
-using Soneta.CRM;
 using Soneta.Types;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-[assembly:NewRow(typeof(Soneta.Szkolenie.Rezerwacja))]
+[assembly: NewRow(typeof(Soneta.Szkolenie.Rezerwacja))]
 
 namespace Soneta.Szkolenie
 {

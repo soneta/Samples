@@ -1,12 +1,7 @@
 ﻿using Soneta.Business;
 using Soneta.Types;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-[assembly:NewRow(typeof(Soneta.Szkolenie.Maszyna))]
+[assembly: NewRow(typeof(Soneta.Szkolenie.Maszyna))]
 
 namespace Soneta.Szkolenie
 {

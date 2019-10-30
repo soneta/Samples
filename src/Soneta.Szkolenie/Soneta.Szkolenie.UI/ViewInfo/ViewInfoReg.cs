@@ -8,7 +8,7 @@
     Description = "Szkolenie techniczne - przykład dodatku", // opcjonalne: opis poniżej tytułu kafla
     BrickColor = FolderViewAttribute.BlueBrick, // opcjonalne: Kolor kafla
     Icon = "TableFolder.ico" // opcjonalne: Ikona wyświetlana na kaflu
-    // Więcej nie ma potrzeby definiować bo jest to kafel "organizacyjny" - przechodzący do widoku innych kafli
+                             // Więcej nie ma potrzeby definiować bo jest to kafel "organizacyjny" - przechodzący do widoku innych kafli
 )]
 
 // Poszczególne foldery widoków wewnątrz głównego "kafla"

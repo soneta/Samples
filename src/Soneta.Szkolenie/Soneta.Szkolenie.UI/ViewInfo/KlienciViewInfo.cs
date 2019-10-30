@@ -1,12 +1,6 @@
-﻿using System;
-using System.Linq;
-
+﻿
 using Soneta.Business;
-using Soneta.Business.UI;
-using Soneta.Core;
 using Soneta.CRM;
-using Soneta.Szkolenie.UI;
-using Soneta.Zadania;
 
 namespace Soneta.Szkolenie.UI
 {

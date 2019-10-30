@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using Soneta.Business;
+﻿using Soneta.Business;
 using Soneta.Business.UI;
 using Soneta.CRM;
 using Soneta.Tools;
 using Soneta.Types;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 [assembly: Worker(typeof(Soneta.Szkolenie.UI.UstawRabatWorker), typeof(Kontrahenci))]
 

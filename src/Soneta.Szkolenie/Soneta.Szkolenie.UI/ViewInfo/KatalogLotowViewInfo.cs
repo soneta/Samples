@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using Soneta.Business;
-using Soneta.Business.UI;
-using Soneta.Szkolenie.UI;
+﻿using Soneta.Business;
 
 namespace Soneta.Szkolenie.UI
 {

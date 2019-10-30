@@ -3,12 +3,6 @@
 
 // W odróżnieniu od business.cs - ten plik możemy bezpiecznie edytować i rozbudowywać
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Soneta.Szkolenie
 
 // W tym pliku definiujemy klasę pośrednią dla wiersza tabeli
