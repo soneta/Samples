@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Soneta.Sdk">
+  <PropertyGroup>
+    <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\dodatki\Soneta.Szkolenie\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Szkolenie.business.cs">
+      <DependentUpon>Szkolenie.business.xml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Szkolenie.business.xml">
+      <Generator>BusinessGenerator</Generator>
+    </None>
+  </ItemGroup>
+</Project>
