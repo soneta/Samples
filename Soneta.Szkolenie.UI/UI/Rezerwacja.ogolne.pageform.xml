@@ -1,0 +1,21 @@
+﻿<?xml version="1.0"?>
+
+<DataForm xmlns="http://www.enova.pl/schema/form.xsd"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          RightName="Page:OgólnePage"
+          Priority="3"
+          DataType="Soneta.Szkolenie.Rezerwacja,Soneta.Szkolenie">
+  <Page Name="OgólnePage" CaptionHtml="Rejestracja" DataContext="{DataSource}">
+    <Group>
+      <Field EditValue="{NrRezerwacji}" Width="16" />
+      <Field EditValue="{Klient}" Width="40" />
+      <Field EditValue="{Lot}" Width="*" />
+      <Field EditValue="{CenaLotu}" Width="*" />
+      <Field EditValue="{Maszyna}" Width="*" />
+      <Field EditValue="{CzyOplacona}" CaptionHtml="Czy zapłacona" Width="*" />
+    </Group>
+  </Page>
+</DataForm>
+

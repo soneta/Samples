@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Soneta.Sdk">
+  <PropertyGroup>
+    <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Szkolenie.business.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Szkolenie.business.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Szkolenie.business.cs">
+      <DependentUpon>Szkolenie.business.xml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
