@@ -1,9 +1,0 @@
-﻿<?xml version="1.0"?>
-<DataForm Contexts="License.All" xmlns="http://www.enova.pl/schema/form.xsd">
-  <Grid Name="List" IsToolbarVisible="false">
-    <Field EditValue="{KodUslugi}" CaptionHtml="Kod usługi" />
-    <Field EditValue="{Nazwa}" />
-    <Field EditValue="{LokalizacjaMiejscowosc}" CaptionHtml="Miejscowość" />
-    <Field EditValue="{Cena}" />
-  </Grid>
-</DataForm>

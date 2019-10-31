@@ -1,8 +1,0 @@
-﻿<?xml version="1.0"?>
-<DataForm Contexts="License.All" xmlns="http://www.enova.pl/schema/form.xsd">
- <Grid Name="List" IsToolbarVisible="false">
-    <Field EditValue="{Producent}" />
-    <Field EditValue="{Model}" />
-    <Field EditValue="{NrBoczny}" />
-  </Grid>
-</DataForm>

@@ -5,6 +5,6 @@
     <AssemblyName>EnovaDB.Integration.Tests</AssemblyName>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\EnovaDB\EnovaDB.csproj" />
+    <ProjectReference Include="..\..\EnovaDB\EnovaDB.csproj" />
   </ItemGroup>
 </Project>
