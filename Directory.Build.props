@@ -4,6 +4,5 @@
     <SonetaPackageVersion>1910.1.1</SonetaPackageVersion>
     <SonetaTargetFramework>net46</SonetaTargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath>C:\Dodatki\Szkolenie.Techniczne</OutputPath>
   </PropertyGroup>
 </Project>

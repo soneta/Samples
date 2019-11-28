@@ -4,6 +4,6 @@
     <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Samples\Samples.csproj" />
+    <ProjectReference Include="..\..\Punktacja\Punktacja\Punktacja.csproj" />
   </ItemGroup>
 </Project>

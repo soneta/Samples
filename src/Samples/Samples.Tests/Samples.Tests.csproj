@@ -4,6 +4,6 @@
     <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Samples\Samples.csproj" />
+    <ProjectReference Include="..\..\Samples\Samples\Samples.csproj" />
   </ItemGroup>
 </Project>
