@@ -12,7 +12,8 @@ namespace Soneta.Szkolenie
             return Producent + " " + Model + " " + NrBoczny;
         }
 /*
-        Ponieważ w business.xml został dla pola zdefiniowany weryfikator (dyrektywą <verifier>Maszyna.WymaganaNazwa</verifier>,
+        Ponieważ w business.xml został dla pola zdefiniowany weryfikator 
+        (dyrektywą <verifier>Maszyna.WymaganaNazwa</verifier>,
         definiujemy go jako klasę zagnieżdzoną klasy Maszyna 
 */
         internal class NrBocznyPoprawny : RowVerifier
@@ -23,9 +24,11 @@ namespace Soneta.Szkolenie
                 maszyna = row;
             }
 
-            public override VerifierType Type => VerifierType.Error; // To jest weryfiikator typu Error
+            // To jest weryfiikator typu Error
+            public override VerifierType Type => VerifierType.Error;
 
-            protected override bool IsValid() // Funkcja sprawdzająca poprawność
+            // Funkcja sprawdzająca poprawność
+            protected override bool IsValid() 
             {
                 return maszyna.NrBoczny.Contains("-");
             }

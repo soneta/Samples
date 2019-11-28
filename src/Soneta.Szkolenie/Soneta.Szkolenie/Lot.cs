@@ -9,8 +9,9 @@ namespace Soneta.Szkolenie
 {
     public class Lot : SzkolenieModule.LotRow
     {
-        public override string ToString()   // przeciążenie metody ToString spowoduje przyjazne wyświetlanie zawartości kontrolki,
-                                            // w której wybieramy obiekt, a nie typ posty
+        // przeciążenie metody ToString spowoduje przyjazne wyświetlanie zawartości kontrolki,
+        // w której wybieramy obiekt, a nie typ posty
+        public override string ToString()   
         {
             return Nazwa + " z " + LokalizacjaMiejscowosc;
         }

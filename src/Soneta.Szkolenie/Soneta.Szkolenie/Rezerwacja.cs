@@ -8,14 +8,16 @@ namespace Soneta.Szkolenie
 {
     public class Rezerwacja : SzkolenieModule.RezerwacjaRow
     {
-        public object GetListCzyOplacona()  // Funkcja definiująca zawartość dropdowna lub lookupa wyswietlanego dla pola.
-                                            // Jej nazwa musi zaczynać się od "GetList", a następnie zawierać nazwę edytowanego property
+        // Funkcja definiująca zawartość dropdowna lub lookupa wyswietlanego dla pola.
+        // Jej nazwa musi zaczynać się od "GetList", a następnie zawierać nazwę edytowanego property
+        public object GetListCzyOplacona()  
         {
+            // z enuma wydzielamy do wyświetlenia tylko to, co nas interesuje
+            // dzięki temu "Razem" nie pojawi się w dropdownie
             return new[] { 
                 CzyOplacone.Nieoplacone, 
                 CzyOplacone.Oplacone 
-            };  // z enuma wydzielamy do wyświetlenia tylko to, co nas interesuje
-                // dzięki temu "Razem" nie pojawi się w dropdownie
+            };  
         }
 
         protected override void OnAdded() 

@@ -4,9 +4,11 @@ using Soneta.Types;
 
 namespace Soneta.Szkolenie
 {
-    public enum CzyOplacone // ten enum będzie używany zarówno na formatce edycji rezerwacji jak i w filtrach
+    // ten enum będzie używany zarówno na formatce edycji rezerwacji jak i w filtrach
+    public enum CzyOplacone
     {
-        [Caption("Opłacone")] // Caption można dodawać też w enumach: decyduje ono o tekście wyświetlanym np. w dropdownach
+        // Caption można dodawać też w enumach: decyduje ono o tekście wyświetlanym np. w dropdownach
+        [Caption("Opłacone")]
         Oplacone = 0,
         [Caption("Nieopłacone")]
         Nieoplacone = 1,
