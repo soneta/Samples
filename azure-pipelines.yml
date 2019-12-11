@@ -1,0 +1,12 @@
+# azure-pipeline.yml (w Twoim dodatku)
+resources:
+  repositories:
+    - repository: self
+      clean: true
+    - repository: addons-pipelines
+      type: git
+      name: soneta/addons-pipelines
+      ref: poolName
+
+stages:
+- template: templates/stages.yml@addons-pipelines
