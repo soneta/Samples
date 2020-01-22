@@ -5,7 +5,7 @@
           xmlns:xsd="http://www.w3.org/2001/XMLSchema"
           Priority="0"
           DataType="Soneta.Szkolenie.UI.UstawRabatWorkerParams,Soneta.Szkolenie.UI">
-  <Page Name="UstawRabatWorkerParamsPage" CaptionHtml="Dane do czynności przypisania" DataContext="{DataSource}">
+  <Page Name="UstawRabatWorkerParamsPage" CaptionHtml="Ustaw rabat kontrahenta" DataContext="{DataSource}">
     <Field EditValue="{Rabat}" Width="30"/>
     <Field EditValue="{DodawacRabaty}" Width="7" CaptionHtml="Czy dodawać rabaty" />
     <Field EditValue="{ObnizacRabaty}" Width="7" CaptionHtml="Czy obniżać rabat"  />

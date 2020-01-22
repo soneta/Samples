@@ -5,11 +5,11 @@
   1. Generowanie solution z szablonu "Soneta Addon (Soneta.SDK)".
   1. Warstwa biznesowa i warstwa UI - czemu oddzielnie?
   1. Warstwa "Tests" - porzucamy bo nie będziemy się nim zajmowac na tym szkoleniu.
-  1. Ustawiamy wersję enova365 i atrybut AppendTargetFrameworkToOutputPath w Directory.build.props.
-  1. Dodajemy odniesienie do business w UI i Output path w UI - ułatwia to pracę nad dodatkiem.
+  1. Ustawiamy wersję enova365 i atrybuty AppendTargetFrameworkToOutputPath, AggregateOutput, AggregatePath w Directory.build.props.
+  1. Dodajemy odniesienie do business w UI - ułatwia to pracę nad dodatkiem.
   1. Uruchomienie dodatku: executable SonetaExplorer.exe z parametrem **/extpath="_katalog_"**.
  
-## Zad.1. Dodawanie własnego widoku z danych enova365 - szablon ViewInfo
+## Zad.1. Dodawanie własnego widoku (Klienci) z danych enova365 - szablon ViewInfo
   1. Wygenerowanie klasy ViewInfo i pliku viewinfo.xml z szablonu "Soneta - ViewInfo".
   1. Rejestracja kafelka widoku i podwidoku.
   1. Uzupełnienie kodu wewnątrz ViewInfo: CreateView.
@@ -39,8 +39,8 @@
   1. Dodanie pozostałych ViewForms: KatalogSamolotów i Rezerwacje.
   1. Filtry listy - klasy parametrów filtrów widoków.
   1. Definicje wyglądu list: viewform.xml.
-  1. Przyciski "Dodaj", "Edytuj" - assembly NewRowAttribute.
   1. Atrybuty RemoveButton, EditButton, NewButton.
+  1. Przyciski "Dodaj", "Edytuj" - assembly NewRowAttribute.
 
 ## Zad.5. Okna edycji wierszy na podstawie szablonów PageForm
   1. pageform.xml dla własnych obiektów - korzystamy w szablonu "Soneta - PageForm".
