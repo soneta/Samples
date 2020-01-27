@@ -44,6 +44,10 @@ namespace Soneta.Szkolenie
 
         [AttributeInheritance]
         [Description("Cena za lot po uwzględnieniu rabatu")]
-        public new Currency CenaLotu { get; set; }
+        public new Currency CenaLotu 
+        { 
+            get { return base.CenaLotu; }
+            set {base.CenaLotu = value;}
+        }
     }
 }
