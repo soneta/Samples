@@ -1,0 +1,13 @@
+﻿<?xml version="1.0"?>
+<DataForm xmlns="http://www.enova.pl/schema/form.xsd"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          Priority="0"
+          DataType="Soneta.Szkolenie.UI.UstawRabatWorkerParams,Soneta.Szkolenie.UI">
+  <Page Name="UstawRabatWorkerParamsPage" CaptionHtml="Ustaw rabat kontrahenta" DataContext="{DataSource}">
+    <Field EditValue="{Rabat}" Width="30"/>
+    <Field EditValue="{DodawacRabaty}" Width="7" CaptionHtml="Czy dodawać rabaty" />
+    <Field EditValue="{ObnizacRabaty}" Width="7" CaptionHtml="Czy obniżać rabat"  />
+  </Page>
+</DataForm>

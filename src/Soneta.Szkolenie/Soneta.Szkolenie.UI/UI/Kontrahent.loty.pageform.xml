@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+
+<DataForm xmlns="http://www.enova.pl/schema/form.xsd"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          RightName="Page:KontrahentLotyPage"
+          Priority="10"
+          DataType="Soneta.CRM.Kontrahent,Soneta.CRM">
+  <Page Name="KontrahentLotyPage" CaptionHtml="Loty widokowe/Rezerwacje lotów" DataContext="{new KontrahentExtender}">
+    <Group CaptionHtml="Rezerwacje lotów kontrahenta" Width="*" Height="*">
+      <Grid Name="Loty" EditValue="{RezerwacjeLotow}" Width="*" Height="*" 
+            EditButton="Auto" IsToolbarVisible="true">
+        <Field EditValue="{NrRezerwacji}" Width="14"/>
+        <Field EditValue="{Lot}" Width="*" />
+        <Field EditValue="{Lot.Cena}" Width="13"/>
+        <Field EditValue="{CzyOplacona}" Width="12"/>
+      </Grid>
+    </Group>
+  </Page>
+</DataForm>
+

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0"?>
+<DataForm Contexts="License.All" xmlns="http://www.enova.pl/schema/form.xsd"
+        xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Flow Name="FilterPanel">
+  </Flow>
+
+  <Grid Name="List" RemoveButton="None" EditButton="Auto" NewButton="Auto" IsToolbarVisible="true">
+    <Field CaptionHtml="Kod" EditValue="{KodUslugi}" />
+    <Field EditValue="{Nazwa}" CaptionHtml="Nazwa usługi" />
+    <Field EditValue="{LokalizacjaMiejscowosc}" CaptionHtml="Miejscowość" />
+    <Field EditValue="{Cena}" />
+  </Grid>
+</DataForm>

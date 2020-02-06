@@ -263,3 +263,6 @@ paket-files/
 Thumbs.db
 /AutomaticMergeScript_bis
 *.jfm
+
+# VSCode
+.vscode/
