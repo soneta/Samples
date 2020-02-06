@@ -4,9 +4,14 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Flow Name="FilterPanel">
+    <!-- 
+    Dostęp po parametrów filtra w przypadku klasy wewnętrzej dla ViewInfo realizujemy podając w EditValue
+    nazwę klasy ViewInfo, znak "plus", nazwę klasy parametrów i standardowo po kropce nazwę property.
+    -->
+    <Field CaptionHtml="Maszyna" EditValue="{RezerwacjeViewInfo+RezerwacjeParams.Maszyna}" />
+    <Field CaptionHtml="Klient" EditValue="{RezerwacjeViewInfo+RezerwacjeParams.Klient}" />
   </Flow>
-
-  <Grid Name="List" >
+  <Grid Name="List" OrderBy="NrRezerwacji">
     <Field EditValue="{NrRezerwacji}" CaptionHtml="Nr" Width="8"/>
     <Field EditValue="{Klient}" Width="40"/>
     <Field EditValue="{Maszyna}" Width="30" />
