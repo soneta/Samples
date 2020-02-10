@@ -1,12 +1,76 @@
-# azure-pipeline.yml (w Twoim dodatku)
 resources:
-  repositories:
-    - repository: self
-      clean: true
-    - repository: addons-pipelines
-      type: git
-      name: soneta/addons-pipelines
-      ref: poolName
-
+- repo: self
+  clean: true
 stages:
-- template: templates/stages.yml@addons-pipelines
+- stage: Build&Test
+  jobs:
+  - job: Build
+    pool:
+      name: Default
+      demands: msbuild
+    steps:
+    - task: MSBuild@1
+      displayName: Restore & build
+      inputs:
+        solution: '**/*.csproj'
+        configuration: Debug
+        msbuildArguments: /r /p:GeneratePackageOnBuild=true
+  - job: Tests
+    displayName: ' '
+    dependsOn: Build
+    timeoutInMinutes: 300
+    pool:
+      name: Default
+      demands: vstest
+    steps:
+    - powershell: echo "##vso[task.setVariable variable=RunUnitTests]$(if (Get-ChildItem -Recurse -Filter *.UnitTest.csproj -File) { $true } else { $false })"
+      displayName: Discover unit tests
+    - task: DotNetCoreCLI@2
+      condition: and(succeeded(), eq(variables['RunUnitTests'], 'True'))
+      displayName: Run unit tests
+      inputs:
+        command: test
+        projects: '**/*.UnitTest.csproj'
+        arguments: --no-build --configuration Debug
+    - powershell: Start-SonetaTestInfrastructure
+      displayName: Starts integration tests' infrastructure      
+    - task: VisualStudioTestPlatformInstaller@1
+      displayName: 'Visual Studio Test Platform Installer'
+      inputs:
+        packageFeedSelector: 'nugetOrg'
+        versionSelector: latestStable
+    - task: VSTest@2
+      displayName: 'VsTest - testAssemblies'
+      continueOnError: true
+      inputs:
+        testSelector: 'testAssemblies'
+        testAssemblyVer2: |
+          **\*test*.dll
+          !**\*TestAdapter.dll
+          !**\obj\**     
+        searchFolder: $(System.DefaultWorkingDirectory)
+        vsTestVersion: toolsInstaller
+    - powershell: Stop-SonetaTestInfrastructure
+      displayName: Stops integration tests' infrastructure
+      condition: always()
+    - publish: $(System.DefaultWorkingDirectory)\bin
+      displayName: Publish artifacts
+      artifact: SamplesArtifacts
+
+- stage: Deploy
+  dependsOn: Build&Test
+  jobs:
+  - job:
+    pool:
+      name: Default
+    steps:
+    - checkout: none
+    - download: current
+      artifact: SamplesArtifacts
+    - task: NuGetToolInstaller@1
+    - task: NuGetCommand@2
+      inputs:
+        command: 'push'
+        nuGetFeedType: 'external'
+        publishFeedCredentials: NuGet.org
+        packagesToPush: '$(Agent.BuildDirectory)/SamplesArtifacts/**/*.nupkg'
