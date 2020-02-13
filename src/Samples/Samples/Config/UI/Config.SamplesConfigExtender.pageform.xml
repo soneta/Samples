@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<DataForm xmlns="http://www.enova.pl/schema/form.xsd" Priority="100">
+  <Page CaptionHtml="Samples/Ustawienia Samples" DataContext="{new SamplesConfigExtender}">
+    <Group CaptionHtml="Konfiguracja">
+      <Field CaptionHtml="Zakładka Samples włączona" LabelWidth="30" Width="8" EditValue="{AktywneZakladkaSamples}"/>
+    </Group>
+  </Page>
+</DataForm>
