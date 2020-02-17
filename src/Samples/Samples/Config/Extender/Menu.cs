@@ -15,6 +15,6 @@ using Samples.Lists.Extender;
 [assembly: FolderView("Samples/Towary własne",
     Priority = 11,
     Description = "Towary ulubione osoby kontaktowej",
-    TableName = "Towary",
+    TableName = "TowaryUlubione",
     ViewType = typeof(TowaryUlubioneKontaktuViewInfo)
 )]

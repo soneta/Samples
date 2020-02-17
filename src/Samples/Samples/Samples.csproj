@@ -12,4 +12,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Ultis\examples.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Soneta.Business">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Soneta\enova365\Soneta.Business.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

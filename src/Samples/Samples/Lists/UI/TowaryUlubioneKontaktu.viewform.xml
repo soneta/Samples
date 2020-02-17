@@ -5,7 +5,8 @@
   </Flow>
 
   <Grid Name="List" RemoveButton="None" EditButton="None" NewButton="None" IsToolbarVisible="false">
-    <Field EditValue="{Kod}" CaptionHtml="Kod" Width="20" />
-    <Field EditValue="{Nazwa}" CaptionHtml="Nazwa" Width="40" />
+    <Field EditValue="{Towar.Kod}" CaptionHtml="Kod" Width="20" />
+    <Field EditValue="{Towar.Nazwa}" CaptionHtml="Nazwa" Width="40" />
+    <Field EditValue="{Zapis}" CaptionHtml="Imię i Nazwisko" Width="40" />
   </Grid>
 </DataForm>

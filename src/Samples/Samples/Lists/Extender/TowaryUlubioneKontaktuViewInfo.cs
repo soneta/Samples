@@ -36,18 +36,13 @@ namespace Samples.Lists.Extender
         protected View ViewCreate(WParams pars)
         {
 
-            var condUlubione = RowCondition.Empty;
             var rc = RowCondition.Empty;
             var tm = TowaryModule.GetInstance(pars.Context.Session);
-            var view = tm.Towary.CreateView();
+            var view = tm.TowaryUlubione.CreateView();
 
-            if (pars.KontaktOsoba == null)
-                condUlubione &= new FieldCondition.Null("Zapis", true);
-            else
-                condUlubione &= new FieldCondition.Equal("Zapis", pars.KontaktOsoba);
+            if (pars.KontaktOsoba != null)
+                rc &= new FieldCondition.Equal("Zapis", pars.KontaktOsoba);
 
-            rc &= new FieldCondition.Equal("Blokada", false);
-            rc &= new FieldCondition.Exists("TowaryUlubione", "Towar", condUlubione);
             view.Condition &= rc;
 
             return view;
