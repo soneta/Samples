@@ -7,11 +7,11 @@ using Soneta.Business;
 using Soneta.Commands;
 using Soneta.Towary;
 using Soneta.Types;
-using Samples.Lists.Extender;
+using Samples.Example1.Extender;
 
 [assembly: Worker(typeof(TowaryUlubionePokazKontaktWorker), typeof(TowarUlubiony))]
 
-namespace Samples.Lists.Extender
+namespace Samples.Example1.Extender
 {
     class TowaryUlubionePokazKontaktWorker
     {

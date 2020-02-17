@@ -1,16 +1,16 @@
 ﻿using System;
 using Soneta.Business;
 using Soneta.Config;
-using Samples.Config.Extender;
+using Samples.Example1.Extender;
 
-[assembly: Worker(typeof(SamplesConfigExtender))]
+[assembly: Worker(typeof(TowaryUlubioneConfigExtender))]
 
-namespace Samples.Config.Extender
+namespace Samples.Example1.Extender
 {
 	/// <summary>
 	/// Klasa wspiera zapis i odczyt parametrów konfiguracyjnych dodatku Samples
 	/// </summary>
-	public class SamplesConfigExtender
+	public class TowaryUlubioneConfigExtender
 	{
 		[Context]
 		public Session Session { get; set; }

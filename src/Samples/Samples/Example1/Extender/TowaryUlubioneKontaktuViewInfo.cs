@@ -1,9 +1,8 @@
 ﻿using Soneta.Business;
 using Soneta.CRM;
-using Samples.Config.Extender;
 using Soneta.Towary;
 
-namespace Samples.Lists.Extender
+namespace Samples.Example1.Extender
 {
     /// <summary>
     /// Lista oparta na przykładzie pochodzącym z repozytorium Soneta.Examples - https://github.com/soneta/Examples (Example 1)
@@ -63,7 +62,7 @@ namespace Samples.Lists.Extender
             bool result;
             using (var session = context.Login.CreateSession(true, true))
             {
-                result = SamplesConfigExtender.IsAktywneZakladkaSamples(session);
+                result = TowaryUlubioneConfigExtender.IsAktywneZakladkaSamples(session);
             }
             return result;
         }

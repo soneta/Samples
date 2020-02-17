@@ -1,14 +1,12 @@
 ﻿
 using Soneta.Business.Licence;
 using Soneta.Business.UI;
-using Samples.Lists.Extender;
-
+using Samples.Example1.Extender;
 
 [assembly: FolderView("Samples",
     Priority = 10,
     Description = "Przykłady implementacji enova365",
     BrickColor = FolderViewAttribute.BlueBrick,
-    Icon = "Samples.Utils.examples.ico;Samples",
     Contexts = new object[] { LicencjeModułu.All }
 )]
 
