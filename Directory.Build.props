@@ -4,7 +4,5 @@
     <SonetaPackageVersion>2001.0.0</SonetaPackageVersion>
     <SonetaTargetFramework>net46</SonetaTargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <AggregateOutput>true</AggregateOutput>
-    <AggregatePath></AggregatePath>
   </PropertyGroup>
 </Project>
