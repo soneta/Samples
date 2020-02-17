@@ -2,7 +2,7 @@
 <DataForm xmlns="http://www.enova.pl/schema/form.xsd" Priority="100">
   <Page CaptionHtml="Samples/Ustawienia Towary Ulubione" DataContext="{new TowaryUlubioneConfigExtender}">
     <Group CaptionHtml="Konfiguracja">
-      <Field CaptionHtml="Zakładka Samples włączona" LabelWidth="30" Width="8" EditValue="{AktywneZakladkaSamples}"/>
+      <Field CaptionHtml="Zakładka Samples/Towary Ulubione włączona" LabelWidth="30" Width="8" EditValue="{AktywneZakladkaSamples}"/>
     </Group>
   </Page>
 </DataForm>
