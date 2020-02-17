@@ -1,6 +1,6 @@
 # Dodatek FilesOperations
 
-**Przyk≈Çad dodatku budowanego od podstaw przy u≈ºyciu Soneta.MSBuid.SDK**
+**Przyk≥ad dodatku budowanego od podstaw przy uøyciu Soneta.MSBuid.SDK**
 
 Dodatek zawiera trzy przyk≥ady:
 - ReadFileFromList - odczytuje dane z pliku i tworzy z nich obiekt dokumentu handlowego (z wykorzystaniem IFileSystemService)
