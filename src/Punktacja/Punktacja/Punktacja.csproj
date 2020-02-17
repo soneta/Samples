@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Soneta.Sdk">
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>C:\Program Files (x86)\Common Files\Soneta\Assemblies\</OutputPath>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Update="Soneta.Products.Modules" Version="2002.0.0" />
+  </ItemGroup>
 </Project>

@@ -6,4 +6,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Soneta.Szkolenie\Soneta.Szkolenie.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Soneta.Products.Modules" Version="2002.0.0" />
+  </ItemGroup>
  </Project>

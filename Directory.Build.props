@@ -5,6 +5,6 @@
     <SonetaTargetFramework>net46</SonetaTargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AggregateOutput>true</AggregateOutput>
-    <AggregatePath>D:\Dodatki\</AggregatePath>
+    <AggregatePath></AggregatePath>
   </PropertyGroup>
 </Project>
