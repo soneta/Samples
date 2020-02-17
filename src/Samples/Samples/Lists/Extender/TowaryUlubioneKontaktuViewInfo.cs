@@ -30,7 +30,7 @@ namespace Samples.Lists.Extender
             if (!args.Context.Get(out parameters))
                 return;
             args.View = ViewCreate(parameters);
-            args.View.AllowNew = false;
+            //args.View.AllowNew = false;
         }
 
         protected View ViewCreate(WParams pars)
@@ -73,7 +73,7 @@ namespace Samples.Lists.Extender
 
     public class WParams : ContextBase
     {
-        private const string Key = "Soneta.Examples.TowaryUlubione";
+        private const string Key = "Samples.TowaryWlasne";
 
         public WParams(Context context) : base(context)
         {

@@ -4,9 +4,9 @@
     <Field EditValue="{WParams.KontaktOsoba}" CaptionHtml="Osoba kontaktowa" Width="30"/>
   </Flow>
 
-  <Grid Name="List" RemoveButton="None" EditButton="None" NewButton="None" IsToolbarVisible="false">
-    <Field EditValue="{Towar.Kod}" CaptionHtml="Kod" Width="20" />
-    <Field EditValue="{Towar.Nazwa}" CaptionHtml="Nazwa" Width="40" />
+  <Grid Name="List">
+    <Field EditValue="{Towar.Kod}" CaptionHtml="Kod Towaru" Width="20" />
+    <Field EditValue="{Towar.Nazwa}" CaptionHtml="Nazwa Towaru" Width="40" />
     <Field EditValue="{Zapis}" CaptionHtml="Imię i Nazwisko" Width="40" />
   </Grid>
 </DataForm>
