@@ -3,7 +3,7 @@
   <Page CaptionHtml="Samples/Ustawienia - Towary Lista" DataContext="{new ZakladkaTowaryConfigExtender}">
     <Group CaptionHtml="Konfiguracja">
       <Row>
-        <Field CaptionHtml="Zakładka Samples/Zakładka Towary włączona" LabelWidth="30" Width="8" EditValue="{AktywneZakladkaTowary}"/>
+        <Field CaptionHtml="Zakładka Towary włączona" LabelWidth="30" Width="8" EditValue="{AktywneZakladkaTowary}"/>
       </Row>
     </Group>
   </Page>

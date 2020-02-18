@@ -12,7 +12,7 @@ using Samples.Example3.Extender;
 )]
 */
 
-[assembly: FolderView("Samples/Zakladka Towary",
+[assembly: FolderView("Samples/Zakladka towary",
     Priority = 11,
     Description = "Towary - zakladka",
     TableName = "Towary",
