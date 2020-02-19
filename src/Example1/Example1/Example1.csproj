@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Soneta.Sdk">
+  <PropertyGroup>
+    <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Example1.UI\Example1.UI.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Soneta.Products.Modules" Version="2002.0.0" />
+  </ItemGroup>
+</Project>

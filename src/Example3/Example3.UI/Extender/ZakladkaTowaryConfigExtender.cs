@@ -1,14 +1,14 @@
 ﻿using System;
 using Soneta.Business;
 using Soneta.Config;
-using Samples.Example3.Extender;
+using Samples.Example3.UI.Extender;
 
 [assembly: Worker(typeof(ZakladkaTowaryConfigExtender))]
 
-namespace Samples.Example3.Extender
+namespace Samples.Example3.UI.Extender
 {
 	/// <summary>
-	/// Klasa wspiera zapis i odczyt parametrów konfiguracyjnych dodatku Samples
+	/// Klasa wspiera zapis i odczyt parametrów konfiguracyjnych dodatku Samples Example3
 	/// </summary>
 	public class ZakladkaTowaryConfigExtender
 	{

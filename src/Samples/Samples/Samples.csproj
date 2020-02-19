@@ -7,12 +7,14 @@
     <OutputPath></OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Ultis\examples.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Ultis\examples.ico" />
+    <Compile Remove="Example1\**" />
+    <EmbeddedResource Remove="Example1\**" />
+    <None Remove="Example1\**" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Update="Soneta.Products.Modules" Version="2002.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Example3\Extender\" />
   </ItemGroup>
 </Project>

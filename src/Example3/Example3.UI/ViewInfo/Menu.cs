@@ -1,7 +1,8 @@
 ﻿
 using Soneta.Business.Licence;
 using Soneta.Business.UI;
-using Samples.Example1.Extender;
+using Samples.Example3.UI.Extender;
+
 
 [assembly: FolderView("Samples",
     Priority = 10,
@@ -10,9 +11,10 @@ using Samples.Example1.Extender;
     Contexts = new object[] { LicencjeModułu.All }
 )]
 
-[assembly: FolderView("Samples/Towary własne",
+
+[assembly: FolderView("Samples/Zakladka towary",
     Priority = 11,
-    Description = "Towary ulubione osoby kontaktowej",
-    TableName = "TowaryUlubione",
-    ViewType = typeof(TowaryUlubioneKontaktuViewInfo)
+    Description = "Towary - zakladka",
+    TableName = "Towary",
+    ViewType = typeof(TowaryZakladkaViewInfo)
 )]

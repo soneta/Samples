@@ -2,7 +2,7 @@
 using Soneta.CRM;
 using Soneta.Towary;
 
-namespace Samples.Example1.Extender
+namespace Samples.Example1.UI.Extender
 {
     /// <summary>
     /// Lista oparta na przykładzie pochodzącym z repozytorium Soneta.Examples - https://github.com/soneta/Examples (Example 1)

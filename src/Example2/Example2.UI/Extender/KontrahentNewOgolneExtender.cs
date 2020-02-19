@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 using Soneta.Business;
 using Soneta.Business.Db;
 using Soneta.CRM;
-using Samples.Example2.Extender;
+using Samples.Example2.UI.Extender;
 
 [assembly: Worker(typeof(KontrahentNewOgolneExtender))]
 
-namespace Samples.Example2.Extender
+namespace Samples.Example2.UI.Extender
 {
     class KontrahentNewOgolneExtender
     {

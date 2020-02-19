@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Samples.Example3.Extender
+namespace Samples.Example3.UI.Extender
 {
     public class TowaryZakladkaViewInfo : ViewInfo
     {
