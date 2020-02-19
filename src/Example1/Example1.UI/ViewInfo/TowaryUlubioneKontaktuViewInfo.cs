@@ -28,13 +28,13 @@ namespace Samples.Example1.UI.Extender
             WParams parameters;
             if (!args.Context.Get(out parameters))
                 return;
+
             args.View = ViewCreate(parameters);
-            //args.View.AllowNew = false;
+            args.View.AllowNew = false;
         }
 
         protected View ViewCreate(WParams pars)
         {
-
             var rc = RowCondition.Empty;
             var tm = TowaryModule.GetInstance(pars.Context.Session);
             var view = tm.TowaryUlubione.CreateView();
@@ -47,27 +47,6 @@ namespace Samples.Example1.UI.Extender
             return view;
         }
 
-        #region Widoczność zakładki
-
-        /// <summary>
-        /// Metoda pozwalająca na sterowanie widocznościa zakładki.
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns>
-        ///     true - widoczność zakładki, 
-        ///     false - zakładka niewidoczna
-        /// </returns>
-        public static bool IsVisible(Context context)
-        {
-            bool result;
-            using (var session = context.Login.CreateSession(true, true))
-            {
-                result = TowaryUlubioneConfigExtender.IsAktywneZakladkaSamples(session);
-            }
-            return result;
-        }
-
-        #endregion Widoczność zakładki
     }
 
     public class WParams : ContextBase
