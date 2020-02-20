@@ -91,13 +91,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example5", "Example5", "{41
 		src\Example5\Readme.md = src\Example5\Readme.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example5.Config", "src\Example5\Example5.Config\Example5.Config.csproj", "{98856534-6E7D-4A81-BDEF-5F9493CFC2FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example5.Config", "src\Example5\Example5.Config\Example5.Config.csproj", "{98856534-6E7D-4A81-BDEF-5F9493CFC2FF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example5", "src\Example5\Example5\Example5.csproj", "{D079568A-C4A5-4F6B-A80C-8FA45D4FA0E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example5", "src\Example5\Example5\Example5.csproj", "{D079568A-C4A5-4F6B-A80C-8FA45D4FA0E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example5.UI", "src\Example5\Example5.UI\Example5.UI.csproj", "{26C693A4-2DFE-4BB9-9484-1F88F037F994}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example5.UI", "src\Example5\Example5.UI\Example5.UI.csproj", "{26C693A4-2DFE-4BB9-9484-1F88F037F994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example5.Tests", "src\Example5\Example5.Tests\Example5.Tests.csproj", "{35BFCDB3-E35A-4619-9F9F-454CC430A403}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example5.Tests", "src\Example5\Example5.Tests\Example5.Tests.csproj", "{35BFCDB3-E35A-4619-9F9F-454CC430A403}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example6", "Example6", "{DF9DC272-8E6D-4CD6-BE55-0FD8AFBA1543}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
