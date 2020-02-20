@@ -1,13 +1,10 @@
-﻿#define EXAMPLE3
-
+﻿
 using Soneta.Business;
 using Soneta.Config;
 using Samples.Example4.Extender;
 
 // Rejestracja extender'a użytego na interfejsie
-#if EXAMPLE3
 [assembly: Worker(typeof(CfgWalutyNbpExtender))]
-#endif
 
 namespace Samples.Example4.Extender {
     public class CfgWalutyNbpExtender
