@@ -63,15 +63,15 @@ namespace Samples.Example3.UI.Extender
 			using (var t = session.Logout(true))
 			{
 				var cfgManager = new CfgManager(session);
-				var node1 = cfgManager.Root.FindSubNode("Samples", false) ??
+				var node = cfgManager.Root.FindSubNode("Samples", false) ??
 					cfgManager.Root.AddNode("Samples", CfgNodeType.Node);
 
-				var node2 = node1.FindSubNode("Konfiguracja", false) ??
-					node1.AddNode("Konfiguracja", CfgNodeType.Leaf);
+				var nodeLeaf = node.FindSubNode("Konfiguracja", false) ??
+					node.AddNode("Konfiguracja", CfgNodeType.Leaf);
 
-				var attr = node2.FindAttribute(name, false);
+				var attr = nodeLeaf.FindAttribute(name, false);
 				if (attr == null)
-					node2.AddAttribute(name, type, value);
+					nodeLeaf.AddAttribute(name, type, value);
 				else
 					attr.Value = value;
 
