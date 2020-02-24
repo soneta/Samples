@@ -1,6 +1,6 @@
 ﻿using Soneta.Business;
 
-namespace Sample8.Extender {
+namespace Samples.Example8.Extender {
     public class Akcja {
         public string Nazwa { get; set; }
         public double Kurs { get; set; }

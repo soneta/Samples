@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Sample8.Extender {
+namespace Samples.Example8.Extender {
 
     public class Notowania {
         #region Property dla formularza

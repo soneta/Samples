@@ -1,4 +1,4 @@
-###Example 8
+### Example 8
 -----------------------------------------------------------------------------------------------------
 
 Przykład pokazuje programistyczne możliwości kolorowania wierszy na liście. 
@@ -9,6 +9,26 @@ do metody GetAppearance dodać sufiks zawierający nazwę property np. GetAppear
 
 Obiekt DataAppearance zwracany przez metodę GetAppearance() pozwala ustawić takie właściwości jak kolor tła oraz kolor i styl czcionki.
 
-* Extender\Akcja.cs
+W skład przykładu wchodzą trzy projekty:
+
+* `Example8` - zawierający elementy logiki biznesowej
+* `Example8.UI` - interfejsu użytkownika
+* `Example8.Tests` - testy
+
+
+#### Zawartość przykładu:
+
+* `Example8`\Extender\Akcja.cs
 
     Przykładowa klasa implementująca metody odpowiedzialne za kolorowanie wiersza.
+* `Example8`\Extender\Notowania.cs
+
+    Przykładowe dane.
+
+* `Example8.UI`\UI\Notowania.Ogolne.pageform.xml
+   
+   Definicja page'a dla Notowań
+
+* `Example8.UI`\ViewInfo\Menu.cs
+   
+   Rejestracja View

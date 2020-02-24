@@ -1,7 +1,7 @@
 ﻿
 
 using Soneta.Business.UI;
-using Sample8.Extender;
+using Samples.Example8.Extender;
 using Soneta.Business.Licence;
 
 [assembly: FolderView("Samples",
