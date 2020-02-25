@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DataForm xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Pnwb.Geekout.NaliczaniePrzelewowResult, Pnwb.Geekout">
+  <Page CaptionHtml="Ogólne" DataContext="{DataSource}">
+    <Row>
+      <Grid Width="*" Height="*" EditValue="{ViewInfo}" IsToolbarVisible="true" EditButton="Visible">
+        <Field CaptionHtml="Baza danych" Width="20" EditValue="{Name}" Footer="None" />
+        <Field CaptionHtml="Numer" Width="20" EditValue="{Numer}" Footer="None" />
+        <Field CaptionHtml="Zatwierdzony" Width="4" EditValue="{Zatwierdzony}" Footer="None" />
+        <Field CaptionHtml="Data" Width="11" EditValue="{Data}" Footer="None" />
+        <Field CaptionHtml="Podmiot" Width="20" EditValue="{Podmiot}" Footer="None" />
+        <Field CaptionHtml="Błędy" Width="30" EditValue="{Exception.Message}" Footer="None" />
+      </Grid>
+    </Row>
+  </Page>
+</DataForm>

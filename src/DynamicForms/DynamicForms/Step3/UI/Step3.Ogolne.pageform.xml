@@ -1,0 +1,6 @@
+﻿<?xml version="1.0"?>
+<DataForm Contexts="License.All" xmlns="http://www.enova.pl/schema/form.xsd" Priority="10000">
+  <Page CaptionHtml="Generowana lista" DataContext="{New Step3Extender}">
+    <Include Source="{GetStackElement()}" />
+  </Page>
+</DataForm>
