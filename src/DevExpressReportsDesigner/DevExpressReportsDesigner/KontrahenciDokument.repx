@@ -1,0 +1,325 @@
+/// <XRTypeInfo>
+///   <AssemblyFullName>DevExpress.XtraReports.v16.2, Version=16.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</AssemblyFullName>
+///   <TypeName>DevExpress.XtraReports.UI.XtraReport</TypeName>
+///   <Localization>pl-PL</Localization>
+///   <Version>16.2</Version>
+/// </XRTypeInfo>
+namespace XtraReportSerialization {
+    
+    public class KontrahentDokument : DevExpress.XtraReports.UI.XtraReport {
+        private DevExpress.XtraReports.UI.XRTableRow tableRow3;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell5;
+        private DevExpress.XtraReports.UI.XRTableCell Adres;
+        private Soneta.Business.UI.DxReports.Controls.Footer Stopka;
+        private Soneta.Business.UI.DxReports.Components.BusinessContext BusinessContext;
+        private DevExpress.XtraReports.UI.DetailBand Raport;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell1;
+        private DevExpress.XtraReports.UI.XRLabel AdrKoresp;
+        private DevExpress.XtraReports.UI.XRTableCell Nazwa;
+        private DevExpress.XtraReports.UI.XRTableCell Miejscowosc;
+        private DevExpress.XtraReports.UI.XRTableRow tableRow1;
+        private DevExpress.XtraReports.UI.DetailBand DokumentTreść;
+        private DevExpress.XtraReports.UI.XRRichText KorespAdres;
+        private DevExpress.XtraReports.UI.XRTable table1;
+        private DevExpress.XtraReports.UI.XRTableRow tableRow4;
+        private DevExpress.XtraReports.UI.XRTableCell tableCell7;
+        private DevExpress.XtraReports.UI.XRTableCell KodPocztowy;
+        private DevExpress.XtraReports.UI.GroupFooterBand StopkaDokumentu;
+        private DevExpress.XtraReports.UI.GroupHeaderBand NagłówekDokumentu;
+        private Soneta.Business.UI.DxReports.Controls.Header Nagłówek;
+        private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
+        private DevExpress.XtraReports.UI.DetailReportBand Dokument;
+        private Soneta.Business.UI.DxReports.BusinessDataSource BusinessSource;
+        private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
+        private System.Resources.ResourceManager _resources;
+        private string _resourceString;
+        public KontrahentDokument() {
+            this._resourceString = "zsrvvgEAAACRAAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNTeXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAACAAAAAAAAAFBBRFBBRFBIXnLBVud4yQAAAAArAAAANgEAACYkAHQAaABpAHMALgBTAGMAcgBpAHAAdABzAFMAbwB1AHIAYwBlAAAAAABCSwBvAHIAZQBzAHAAQQBkAHIAZQBzAC4AUwBlAHIAaQBhAGwAaQB6AGEAYgBsAGUAUgB0AGYAUwB0AHIAaQBuAGcA+AMAAAH1B3VzaW5nIFNvbmV0YS5DUk07DQoNCnByaXZhdGUgdm9pZCBEb2t1bWVudFRyZcWbxIdfQmVmb3JlUHJpbnQob2JqZWN0IHNlbmRlciwgU3lzdGVtLkRyYXdpbmcuUHJpbnRpbmcuUHJpbnRFdmVudEFyZ3MgZSkgDQp7DQoJdmFyIHJvdyA9IERva3VtZW50LkdldEN1cnJlbnRSb3coKSBhcyBLb250cmFoZW50Ow0KDQoJQWRyZXMuVGV4dCA9IHJvdy5BZHJlcy5VbGljYSArDQoJCSgoIXN0cmluZy5Jc051bGxPcldoaXRlU3BhY2Uocm93LkFkcmVzLk5yRG9tdSkpDQoJCQk/ICgiICIgKyByb3cuQWRyZXMuTnJEb211ICsNCgkJCQkoIXN0cmluZy5Jc051bGxPcldoaXRlU3BhY2Uocm93LkFkcmVzLk5yTG9rYWx1KQ0KCQkJCQk/ICgiLyIgKyByb3cuQWRyZXMuTnJMb2thbHUpDQoJCQkJCTogIiIgKSkNCgkJCTogIiIgKTsNCg0KCUtvcmVzcEFkcmVzLlRleHQgPSByb3cuQWRyZXNEb0tvcmVzcG9uZGVuY2ppLlVsaWNhICsNCgkJKCFzdHJpbmcuSXNOdWxsT3JXaGl0ZVNwYWNlKHJvdy5BZHJlc0RvS29yZXNwb25kZW5jamkuTnJEb211KQ0KCQkJPyAoICIgIiArIHJvdy5BZHJlc0RvS29yZXNwb25kZW5jamkuTnJEb211ICsgDQoJCQkJKCFzdHJpbmcuSXNOdWxsT3JXaGl0ZVNwYWNlKHJvdy5BZHJlcy5Ockxva2FsdSkNCgkJCQkJPyggIi8iICsgcm93LkFkcmVzLk5yTG9rYWx1ICkNCgkJCQkJOiIiICkpDQoJCQk6ICIiICk7DQoNCglLb3Jlc3BBZHJlcy5UZXh0ICs9ICJcbiIgKyByb3cuQWRyZXNEb0tvcmVzcG9uZGVuY2ppLktvZFBvY3p0b3d5UyArICIgIiArIA0KCQlyb3cuQWRyZXNEb0tvcmVzcG9uZGVuY2ppLk1pZWpzY293b3NjOw0KCQ0KCWlmIChzdHJpbmcuSXNOdWxsT3JXaGl0ZVNwYWNlKEtvcmVzcEFkcmVzLlRleHQpKSB7DQoJCUFkcktvcmVzcC5WaXNpYmxlID0gZmFsc2U7DQoJCUtvcmVzcEFkcmVzLlZpc2libGUgPSBmYWxzZTsNCgl9DQoJZWxzZSB7DQoJCUFkcktvcmVzcC5WaXNpYmxlID0gdHJ1ZTsNCgkJS29yZXNwQWRyZXMuVmlzaWJsZSA9IHRydWU7DQoJfQ0KfQ0KAeAEZXdCY0FISUFkQUJtQURFQVhBQmhBRzRBY3dCcEFHTUFjQUJuQURFQU1nQTFBREFBRFFBS0FIc0FEUUFLQUZ3QVpnQnZBRzRBZEFCMEFHSUFiQUFOQUFvQWV3QmNBR1lBTUFBZ0FGUUFhUUJ0QUdVQWN3QWdBRTRBWlFCM0FDQUFVZ0J2QUcwQVlRQnVBRHNBZlFBTkFBb0Fld0JjQUdZQU1RQWdBRU1BWVFCc0FHa0FZZ0J5QUdrQU93QjlBQTBBQ2dCOUFBMEFDZ0I3QUEwQUNnQmNBR01BYndCc0FHOEFjZ0IwQUdJQWJBQU5BQW9BT3dBTkFBb0FYQUJ5QUdVQVpBQXdBRndBWndCeUFHVUFaUUJ1QURBQVhBQmlBR3dBZFFCbEFESUFOUUExQURzQURRQUtBRndBY2dCbEFHUUFNQUJjQUdjQWNnQmxBR1VBYmdBd0FGd0FZZ0JzQUhVQVpRQXdBRHNBRFFBS0FIMEFEUUFLQUZ3QWJnQnZBSFVBYVFCakFHOEFiUUJ3QUdFQWRBQmNBSE1BY0FCc0FIa0FkQUIzQUc0QWFRQnVBR1VBWEFCb0FIUUFiUUJoQUhVQWRBQnpBSEFBZXdCY0FIQUFZUUJ5QUdRQVhBQndBR3dBWVFCcEFHNEFYQUJ4QUd3QWV3QmNBR1lBTVFCY0FHWUFjd0F4QURnQVhBQmpBR1lBTWdBZ0FFc0Fid0J5QUdVQWN3QndBRUVBWkFCeUFHVUFjd0I5QUZ3QVpnQnpBRElBTkFCY0FIQUFZUUJ5QUgwQURRQUtBSDBBRFFBS0FBPT0=";
+            this.InitializeComponent();
+        }
+        private System.Resources.ResourceManager resources {
+            get {
+                if (_resources == null) {
+                    this._resources = new DevExpress.XtraReports.Serialization.XRResourceManager(this._resourceString);
+                }
+                return this._resources;
+            }
+        }
+        private void InitializeComponent() {
+            this.tableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.Stopka = new Soneta.Business.UI.DxReports.Controls.Footer();
+            this.BusinessContext = new Soneta.Business.UI.DxReports.Components.BusinessContext();
+            this.Raport = new DevExpress.XtraReports.UI.DetailBand();
+            this.tableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.AdrKoresp = new DevExpress.XtraReports.UI.XRLabel();
+            this.Nazwa = new DevExpress.XtraReports.UI.XRTableCell();
+            this.Miejscowosc = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.DokumentTreść = new DevExpress.XtraReports.UI.DetailBand();
+            this.StopkaDokumentu = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.KorespAdres = new DevExpress.XtraReports.UI.XRRichText();
+            this.NagłówekDokumentu = new DevExpress.XtraReports.UI.GroupHeaderBand();
+            this.KodPocztowy = new DevExpress.XtraReports.UI.XRTableCell();
+            this.Adres = new DevExpress.XtraReports.UI.XRTableCell();
+            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.Dokument = new DevExpress.XtraReports.UI.DetailReportBand();
+            this.table1 = new DevExpress.XtraReports.UI.XRTable();
+            this.tableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.tableRow4 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.tableCell5 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.Nagłówek = new Soneta.Business.UI.DxReports.Controls.Header();
+            this.BusinessSource = new Soneta.Business.UI.DxReports.BusinessDataSource();
+            ((System.ComponentModel.ISupportInitialize)(this.KorespAdres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
+            // 
+            // tableRow3
+            // 
+            this.tableRow3.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+                        this.tableCell5,
+                        this.Adres});
+            this.tableRow3.Dpi = 254F;
+            this.tableRow3.Name = "tableRow3";
+            this.tableRow3.Weight = 1D;
+            // 
+            // Stopka
+            // 
+            this.Stopka.CompanyStamp = null;
+            this.Stopka.Context = null;
+            this.Stopka.Dpi = 254F;
+            this.Stopka.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.Stopka.Name = "Stopka";
+            this.Stopka.ReportSourceName = "stopka";
+            this.Stopka.RunningBand = "Dokument";
+            this.Stopka.SizeF = new System.Drawing.SizeF(1592F, 50F);
+            // 
+            // BusinessContext
+            // 
+            this.BusinessContext.Name = "BusinessContext";
+            this.BusinessContext.StylesSource = "standardowy";
+            // 
+            // Raport
+            // 
+            this.Raport.Dpi = 254F;
+            this.Raport.HeightF = 0F;
+            this.Raport.KeepTogether = true;
+            this.Raport.KeepTogetherWithDetailReports = true;
+            this.Raport.Name = "Raport";
+            // 
+            // tableCell1
+            // 
+            this.tableCell1.Dpi = 254F;
+            this.tableCell1.Name = "tableCell1";
+            this.tableCell1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 4, 0, 0, 254F);
+            this.tableCell1.StyleName = "TekstPomocniczyWyroznienieStyl";
+            this.tableCell1.StylePriority.UsePadding = false;
+            this.tableCell1.StylePriority.UseTextAlignment = false;
+            this.tableCell1.Text = "Nazwa:";
+            this.tableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomRight;
+            this.tableCell1.Weight = 0.51783466221901975D;
+            // 
+            // AdrKoresp
+            // 
+            this.AdrKoresp.Dpi = 254F;
+            this.AdrKoresp.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold);
+            this.AdrKoresp.LocationFloat = new DevExpress.Utils.PointFloat(800F, 0F);
+            this.AdrKoresp.Name = "AdrKoresp";
+            this.AdrKoresp.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.AdrKoresp.SizeF = new System.Drawing.SizeF(775F, 50F);
+            this.AdrKoresp.StylePriority.UseFont = false;
+            this.AdrKoresp.Text = "Adres do korespondencji:";
+            // 
+            // Nazwa
+            // 
+            this.Nazwa.Dpi = 254F;
+            this.Nazwa.Name = "Nazwa";
+            this.Nazwa.StyleName = "TekstPodstawowyWyroznienieStyl";
+            this.Nazwa.StylePriority.UseTextAlignment = false;
+            this.Nazwa.Text = "[Nazwa]";
+            this.Nazwa.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            this.Nazwa.Weight = 2.96433067556196D;
+            // 
+            // Miejscowosc
+            // 
+            this.Miejscowosc.Dpi = 254F;
+            this.Miejscowosc.Name = "Miejscowosc";
+            this.Miejscowosc.Text = "[Adres.Miejscowosc]";
+            this.Miejscowosc.Weight = 2.3527469978334077D;
+            // 
+            // tableRow1
+            // 
+            this.tableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+                        this.tableCell1,
+                        this.Nazwa});
+            this.tableRow1.Dpi = 254F;
+            this.tableRow1.Name = "tableRow1";
+            this.tableRow1.Weight = 1D;
+            // 
+            // DokumentTreść
+            // 
+            this.DokumentTreść.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.KorespAdres,
+                        this.AdrKoresp,
+                        this.table1});
+            this.DokumentTreść.Dpi = 254F;
+            this.DokumentTreść.HeightF = 171.0972F;
+            this.DokumentTreść.Name = "DokumentTreść";
+            this.DokumentTreść.Scripts.OnBeforePrint = "DokumentTreść_BeforePrint";
+            // 
+            // StopkaDokumentu
+            // 
+            this.StopkaDokumentu.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.Stopka});
+            this.StopkaDokumentu.Dpi = 254F;
+            this.StopkaDokumentu.HeightF = 50F;
+            this.StopkaDokumentu.Name = "StopkaDokumentu";
+            this.StopkaDokumentu.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBand;
+            this.StopkaDokumentu.RepeatEveryPage = true;
+            // 
+            // KorespAdres
+            // 
+            this.KorespAdres.Dpi = 254F;
+            this.KorespAdres.Font = new System.Drawing.Font("Calibri", 9F);
+            this.KorespAdres.LocationFloat = new DevExpress.Utils.PointFloat(799.9999F, 50.00002F);
+            this.KorespAdres.Name = "KorespAdres";
+            this.KorespAdres.SerializableRtfString = resources.GetString("KorespAdres.SerializableRtfString");
+            this.KorespAdres.SizeF = new System.Drawing.SizeF(775.0002F, 99.99998F);
+            // 
+            // NagłówekDokumentu
+            // 
+            this.NagłówekDokumentu.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+                        this.Nagłówek});
+            this.NagłówekDokumentu.Dpi = 254F;
+            this.NagłówekDokumentu.HeightF = 50F;
+            this.NagłówekDokumentu.Name = "NagłówekDokumentu";
+            this.NagłówekDokumentu.RepeatEveryPage = true;
+            // 
+            // KodPocztowy
+            // 
+            this.KodPocztowy.Dpi = 254F;
+            this.KodPocztowy.Name = "KodPocztowy";
+            this.KodPocztowy.Text = "[Adres.KodPocztowyS]";
+            this.KodPocztowy.Weight = 0.61158367772855216D;
+            // 
+            // Adres
+            // 
+            this.Adres.Dpi = 254F;
+            this.Adres.Name = "Adres";
+            this.Adres.Text = "Ulica numer";
+            this.Adres.Weight = 2.96433067556196D;
+            // 
+            // topMarginBand1
+            // 
+            this.topMarginBand1.Dpi = 254F;
+            this.topMarginBand1.HeightF = 157F;
+            this.topMarginBand1.Name = "topMarginBand1";
+            // 
+            // Dokument
+            // 
+            this.Dokument.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.DokumentTreść,
+                        this.NagłówekDokumentu,
+                        this.StopkaDokumentu});
+            this.Dokument.DataMember = "This";
+            this.Dokument.DataSource = this.BusinessSource;
+            this.Dokument.Dpi = 254F;
+            this.Dokument.Level = 0;
+            this.Dokument.Name = "Dokument";
+            // 
+            // table1
+            // 
+            this.table1.Dpi = 254F;
+            this.table1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.table1.Name = "table1";
+            this.table1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+                        this.tableRow1,
+                        this.tableRow3,
+                        this.tableRow4});
+            this.table1.SizeF = new System.Drawing.SizeF(775F, 150F);
+            // 
+            // tableCell7
+            // 
+            this.tableCell7.Dpi = 254F;
+            this.tableCell7.Name = "tableCell7";
+            this.tableCell7.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 4, 0, 0, 254F);
+            this.tableCell7.StylePriority.UsePadding = false;
+            this.tableCell7.Weight = 0.51783466221901975D;
+            // 
+            // tableRow4
+            // 
+            this.tableRow4.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+                        this.tableCell7,
+                        this.KodPocztowy,
+                        this.Miejscowosc});
+            this.tableRow4.Dpi = 254F;
+            this.tableRow4.Name = "tableRow4";
+            this.tableRow4.Weight = 1D;
+            // 
+            // tableCell5
+            // 
+            this.tableCell5.Dpi = 254F;
+            this.tableCell5.Name = "tableCell5";
+            this.tableCell5.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 4, 0, 0, 254F);
+            this.tableCell5.StylePriority.UsePadding = false;
+            this.tableCell5.StylePriority.UseTextAlignment = false;
+            this.tableCell5.Text = "Adres:";
+            this.tableCell5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            this.tableCell5.Weight = 0.51783466221901975D;
+            // 
+            // bottomMarginBand1
+            // 
+            this.bottomMarginBand1.Dpi = 254F;
+            this.bottomMarginBand1.HeightF = 254F;
+            this.bottomMarginBand1.Name = "bottomMarginBand1";
+            // 
+            // Nagłówek
+            // 
+            this.Nagłówek.CompanyStamp = null;
+            this.Nagłówek.Context = null;
+            this.Nagłówek.Department = null;
+            this.Nagłówek.Dpi = 254F;
+            this.Nagłówek.FiltersDescription = null;
+            this.Nagłówek.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.Nagłówek.Name = "Nagłówek";
+            this.Nagłówek.ParametersDescription = null;
+            this.Nagłówek.ReportSourceName = "nagłówek - lista";
+            this.Nagłówek.SizeF = new System.Drawing.SizeF(1592F, 50F);
+            this.Nagłówek.Title = null;
+            // 
+            // BusinessSource
+            // 
+            this.BusinessSource.DataKind = Soneta.Business.UI.DxReports.BusinessDataKind.CurrentList;
+            this.BusinessSource.Name = "BusinessSource";
+            // 
+            // KontrahentDokument
+            // 
+            this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
+                        this.topMarginBand1,
+                        this.Raport,
+                        this.bottomMarginBand1,
+                        this.Dokument});
+            this.Bookmark = "Lista kontrahentów - dokument";
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+                        this.BusinessSource,
+                        this.BusinessContext});
+            this.DataSource = this.BusinessSource;
+            this.DisplayName = "Lista kontrahentów - dokument";
+            this.Dpi = 254F;
+            this.Font = new System.Drawing.Font("Calibri", 9F);
+            this.Margins = new System.Drawing.Printing.Margins(254, 254, 157, 254);
+            this.Name = "KontrahentDokument";
+            this.PageHeight = 2970;
+            this.PageWidth = 2100;
+            this.PaperKind = System.Drawing.Printing.PaperKind.A4;
+            this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+            this.ScriptsSource = resources.GetString("$this.ScriptsSource");
+            this.SnapGridSize = 25F;
+            this.Version = "16.2";
+            this.Watermark.ShowBehind = false;
+            ((System.ComponentModel.ISupportInitialize)(this.KorespAdres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
+        }
+    }
+}
