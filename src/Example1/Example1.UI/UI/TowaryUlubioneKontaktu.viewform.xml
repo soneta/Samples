@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<DataForm Contexts="License.CRM" xmlns="http://www.enova.pl/schema/form.xsd">
+  <Flow Name="FilterPanel">
+    <Field EditValue="{WParams.KontaktOsoba}" CaptionHtml="Osoba kontaktowa" Width="30"/>
+  </Flow>
+
+  <Grid Name="List">
+    <Field EditValue="{Towar.Kod}" CaptionHtml="Kod Towaru" Width="20" />
+    <Field EditValue="{Towar.Nazwa}" CaptionHtml="Nazwa Towaru" Width="40" />
+    <Field EditValue="{Zapis}" CaptionHtml="Imię i Nazwisko" Width="40" />
+  </Grid>
+</DataForm>

@@ -14,4 +14,7 @@
       <DependentUpon>Szkolenie.business.xml</DependentUpon>
     </Compile>
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Update="Soneta.Products.Modules" Version="2002.0.0" />
+  </ItemGroup>
 </Project>

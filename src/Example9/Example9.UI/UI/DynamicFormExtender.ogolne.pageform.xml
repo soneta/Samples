@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+          RightName="Page:DynamicFormExtenderPage"
+          Priority="100"
+          DataType="Samples.Example9.UI.Extender.DynamicFormExtender">
+  <Page Name="DynamicFormExtenderPage" CaptionHtml="Zestawienie czasu pracy" DataContext="{DataSource}">
+    <Group>
+      <Include Source="{GetSource()}"/>
+    </Group>
+  </Page>
+</DataForm>
+
