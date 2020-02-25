@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          RightName="Page:KontrahentStandardExtenderPage" xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.CRM.Kontrahent,Soneta.CRM" Priority="900000">
+  <Page Name="KontrahentStandardExtenderPage" CaptionHtml="Standard Extender" DataContext="{DataSource}">
+    <Group CaptionHtml="Standard Extender" DataContext="{new StandardExtender}">
+      <Field CaptionHtml="Wartość" EditValue="{Value}" />
+    </Group>
+  </Page>
+</DataForm>

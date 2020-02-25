@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          RightName="Page:KontrahentConcurrentAsyncExtenderPage" xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.CRM.Kontrahent,Soneta.CRM" Priority="900003">
+  <Page Name="KontrahentConcurrentAsyncExtenderPage" CaptionHtml="Concurrent Async Extender" DataContext="{DataSource}">
+    <Group CaptionHtml="Extender 1" DataContext="{new ConcurrentAsyncExtender1}">
+      <Include Source="AsyncExtender.form.xml"/>
+    </Group>
+    <Group CaptionHtml="Extender 2" DataContext="{new ConcurrentAsyncExtender2}">
+      <Include Source="AsyncExtender.form.xml"/>
+    </Group>
+    <Group CaptionHtml="Extender 3" DataContext="{new ConcurrentAsyncExtender3}">
+      <Include Source="AsyncExtender.form.xml"/>
+    </Group>
+    <Group CaptionHtml="Extender 4" DataContext="{new ConcurrentAsyncExtender4}">
+      <Include Source="AsyncExtender.form.xml"/>
+    </Group>
+    <Group CaptionHtml="Extender 5" DataContext="{new ConcurrentAsyncExtender5}">
+      <Include Source="AsyncExtender.form.xml"/>
+    </Group>
+  </Page>
+</DataForm>

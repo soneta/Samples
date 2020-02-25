@@ -1,0 +1,11 @@
+﻿<?xml version="1.0"?>
+
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          RightName="Page:KontrahentAsyncExtenderPage" xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.CRM.Kontrahent,Soneta.CRM" Priority="900001">
+  <Page Name="KontrahentAsyncExtenderPage" CaptionHtml="Async Extender" DataContext="{DataSource}">
+    <Group CaptionHtml="Async Extender" DataContext="{new AsyncExtender}">
+      <Include Source="AsyncExtender.form.xml"/>
+    </Group>
+  </Page>
+</DataForm>

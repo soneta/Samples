@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          RightName="Page:TablesExtenderPage" xmlns="http://www.enova.pl/schema/form.xsd"
+          DataType="Soneta.CRM.Kontrahent,Soneta.CRM" Priority="900004">
+  <Page Name="TablesExtenderPage" CaptionHtml="Tables Extender" DataContext="{DataSource}">
+    <Group CaptionHtml="Tables Extender" DataContext="{new TablesExtender}">
+      <Label CaptionHtml="Ładowanie danych ..." Class="LargeFont" Visibility="{IsNotLoaded()}"/>
+      <Chart EditValue="{Value}" Type="Bar" CaptionHtml="Top 5 liczby rekordów w tabelach" Height="20" Width="*"
+             Visibility="{IsLoaded()}">
+        <Axis EditValue="{TableName}" />
+        <Field EditValue="{Count}" />
+      </Chart>
+
+    </Group>
+  </Page>
+</DataForm>
