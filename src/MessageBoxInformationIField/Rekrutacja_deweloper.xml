@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<session xmlns="http://www.soneta.pl/schema/business">
+  <DbTupleDefinition id="DbTupleDefinition_17" guid="b18e8d13-3440-4bfa-a69e-13e398a10431">
+    <NazwaTabeli>KontaktyOsoby</NazwaTabeli>
+    <Nazwa>Rekrutacja deweloper</Nazwa>
+    <Symbol>RKD</Symbol>
+    <Seria>False</Seria>
+    <Numeracja>
+      <Wzor>Definicja.Symbol/Data.Year:4/Data.Month:2/*</Wzor>
+      <PodczasEdycji>False</PodczasEdycji>
+    </Numeracja>
+    <Domyslna>False</Domyslna>
+    <Blokada>False</Blokada>
+    <FolderPath>Domyślny</FolderPath>
+    <Ukryty>False</Ukryty>
+    <Xml>&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;ArrayOfPropertyItem xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;PropertyItem&gt;
+    &lt;Index&gt;-1&lt;/Index&gt;
+    &lt;Title&gt;Język&lt;/Title&gt;
+    &lt;Name&gt;Język&lt;/Name&gt;
+    &lt;PromptWidth&gt;0&lt;/PromptWidth&gt;
+    &lt;ControlWidth&gt;0&lt;/ControlWidth&gt;
+    &lt;ControlSource /&gt;
+    &lt;ReadOnly&gt;false&lt;/ReadOnly&gt;
+    &lt;ControlHeight&gt;0&lt;/ControlHeight&gt;
+    &lt;WithPrev&gt;false&lt;/WithPrev&gt;
+    &lt;PostBack&gt;false&lt;/PostBack&gt;
+    &lt;TextDivider /&gt;
+    &lt;ControlVisibility /&gt;
+  &lt;/PropertyItem&gt;
+  &lt;PropertyItem&gt;
+    &lt;Index&gt;0&lt;/Index&gt;
+    &lt;Title&gt;Poziom&lt;/Title&gt;
+    &lt;Name&gt;Poziom&lt;/Name&gt;
+    &lt;PromptWidth&gt;0&lt;/PromptWidth&gt;
+    &lt;ControlWidth&gt;0&lt;/ControlWidth&gt;
+    &lt;ControlSource /&gt;
+    &lt;ReadOnly&gt;false&lt;/ReadOnly&gt;
+    &lt;ControlHeight&gt;0&lt;/ControlHeight&gt;
+    &lt;WithPrev&gt;false&lt;/WithPrev&gt;
+    &lt;PostBack&gt;false&lt;/PostBack&gt;
+    &lt;TextDivider /&gt;
+    &lt;ControlVisibility /&gt;
+  &lt;/PropertyItem&gt;
+  &lt;PropertyItem&gt;
+    &lt;Index&gt;1&lt;/Index&gt;
+    &lt;Title&gt;Stawka&lt;/Title&gt;
+    &lt;Name&gt;StawkaWynagrodzenia.Stawka&lt;/Name&gt;
+    &lt;PromptWidth&gt;0&lt;/PromptWidth&gt;
+    &lt;ControlWidth&gt;0&lt;/ControlWidth&gt;
+    &lt;ControlSource /&gt;
+    &lt;ReadOnly&gt;false&lt;/ReadOnly&gt;
+    &lt;ControlHeight&gt;0&lt;/ControlHeight&gt;
+    &lt;WithPrev&gt;false&lt;/WithPrev&gt;
+    &lt;PostBack&gt;false&lt;/PostBack&gt;
+    &lt;TextDivider /&gt;
+    &lt;ControlVisibility /&gt;
+  &lt;/PropertyItem&gt;
+&lt;/ArrayOfPropertyItem&gt;</Xml>
+    <Tools>
+      <Code>//** Begin: Class **
+private Rekrutacja_deweloper_Calc.SalaryChecker _stawkaWynagrodzenia;
+
+public Rekrutacja_deweloper_Calc.SalaryChecker StawkaWynagrodzenia {
+	get {
+		return _stawkaWynagrodzenia ??
+					(_stawkaWynagrodzenia = new Rekrutacja_deweloper_Calc.SalaryChecker {
+							Rekrutacja = this
+					  });
+	}
+}//** End: Class **
+//** Begin: Calc **
+public enum Level {
+	[Caption("Junior")] Junior,
+	[Caption("Regular")] Regular,
+	[Caption("Senior")] Senior,
+	[Caption("Lider zespołu")] TeamLeader
+}
+
+public enum Lang {
+	[Caption("C#")] CS,
+	[Caption("JavaScript")] JS,
+	[Caption("Java")] Java,
+	[Caption("Cobol")] Cobol
+}
+
+public class SalaryChecker : Soneta.Business.UI.IFieldExtender {
+	
+	public Rekrutacja_deweloper Rekrutacja { get;set; }
+	
+	public Currency Stawka {
+		get { return Rekrutacja.Stawka; }	
+		set { Rekrutacja.Stawka = value; }
+	}
+	
+	object Soneta.Business.UI.IFieldExtender.FieldUpdated(string fieldName, object value, Context context, Exception exception) {
+		if (fieldName != "Stawka") return null;
+		if (exception != null) return null;
+		if (Stawka &lt;= CalculateMaxSalary(Rekrutacja.Poziom, Rekrutacja.Język)) return null;
+		
+		return new Soneta.Business.UI.MessageBoxInformation {
+			Caption = "Za duża stawka",
+			Text = string.Format("Stawka dla poziomu {0} i języka {1} jest zbyt wysoka!{2}{2}Czy wprowadzić maksymalną?",
+				CaptionAttribute.EnumToString(Rekrutacja.Poziom),
+				CaptionAttribute.EnumToString(Rekrutacja.Język),
+				Environment.NewLine),
+			Type = Soneta.Business.UI.MessageBoxInformationType.Warning,
+			IsSecondDefault = false,
+			IsYesNoVisible = true,
+			YesHandler = UpdateSalary
+		};
+	}
+	
+	private object UpdateSalary() {
+		using (var tran = Rekrutacja.Session.Logout(true)) {
+			Rekrutacja.Stawka = CalculateMaxSalary(Rekrutacja.Poziom, Rekrutacja.Język);
+			
+			tran.Commit();
+		}
+		
+		return DBNull.Value;
+	}
+	
+	private static Currency CalculateMaxSalary(Level level, Lang lang) {
+		switch (level) {
+			case Level.Junior:
+				switch (lang) {
+					case Lang.CS: return new Currency(2000m);
+					case Lang.JS: return new Currency(2500m);
+					case Lang.Java: return new Currency(3000m);
+					case Lang.Cobol: return new Currency(10000m);
+				}
+				break;
+			case Level.Regular:
+				switch (lang) {
+					case Lang.CS: return new Currency(3000m);
+					case Lang.JS: return new Currency(4000m);
+					case Lang.Java: return new Currency(3800m);
+					case Lang.Cobol: return new Currency(15000m);
+				}
+				break;
+			case Level.Senior:
+				switch (lang) {
+					case Lang.CS: return new Currency(5000m);
+					case Lang.JS: return new Currency(7000m);
+					case Lang.Java: return new Currency(8000m);
+					case Lang.Cobol: return new Currency(18300m);
+				}
+				break;
+			case Level.TeamLeader:
+				switch (lang) {
+					case Lang.CS: return new Currency(7800m);
+					case Lang.JS: return new Currency(9200m);
+					case Lang.Java: return new Currency(10200m);
+					case Lang.Cobol: return new Currency(25000m);
+				}
+				break;
+		}
+		
+		throw new ArgumentOutOfRangeException();
+	}
+	
+}//** End: Calc **
+</Code>
+    </Tools>
+    <AttachToBasicDocument>None</AttachToBasicDocument>
+    <CreateProcess>Default</CreateProcess>
+    <PracownicyExt />
+    <Fields>
+      <RuntimeFieldDefinition id="RuntimeFieldDefinition_265" class="Soneta.Core.DbTuples.DbTupleFieldDefinition,Soneta.Core">
+        <Type>DbTuple</Type>
+        <Definition>DbTupleDefinition_17</Definition>
+        <Lp>1</Lp>
+        <Name>KontaktOsoba</Name>
+        <FieldType>Reference</FieldType>
+        <TypeInformation>KontaktyOsoby</TypeInformation>
+        <FldCaption />
+        <FldDescription />
+        <IsFieldIndexed>False</IsFieldIndexed>
+        <FldRequired>False</FldRequired>
+        <FldReadOnly>False</FldReadOnly>
+        <FldMaxLen>0</FldMaxLen>
+        <FldSetOnlyNull>False</FldSetOnlyNull>
+      </RuntimeFieldDefinition>
+      <RuntimeFieldDefinition id="RuntimeFieldDefinition_266" class="Soneta.Core.DbTuples.DbTupleFieldDefinition,Soneta.Core">
+        <Type>DbTuple</Type>
+        <Definition>DbTupleDefinition_17</Definition>
+        <Lp>2</Lp>
+        <Name>Poziom</Name>
+        <FieldType>Int</FieldType>
+        <TypeInformation>Rekrutacja_deweloper_Calc.Level</TypeInformation>
+        <FldCaption />
+        <FldDescription />
+        <IsFieldIndexed>False</IsFieldIndexed>
+        <FldRequired>False</FldRequired>
+        <FldReadOnly>False</FldReadOnly>
+        <FldMaxLen>0</FldMaxLen>
+        <FldSetOnlyNull>False</FldSetOnlyNull>
+      </RuntimeFieldDefinition>
+      <RuntimeFieldDefinition id="RuntimeFieldDefinition_267" class="Soneta.Core.DbTuples.DbTupleFieldDefinition,Soneta.Core">
+        <Type>DbTuple</Type>
+        <Definition>DbTupleDefinition_17</Definition>
+        <Lp>3</Lp>
+        <Name>Stawka</Name>
+        <FieldType>Currency</FieldType>
+        <TypeInformation />
+        <FldCaption />
+        <FldDescription />
+        <IsFieldIndexed>False</IsFieldIndexed>
+        <FldRequired>False</FldRequired>
+        <FldReadOnly>False</FldReadOnly>
+        <FldMaxLen>0</FldMaxLen>
+        <FldSetOnlyNull>False</FldSetOnlyNull>
+      </RuntimeFieldDefinition>
+      <RuntimeFieldDefinition id="RuntimeFieldDefinition_268" class="Soneta.Core.DbTuples.DbTupleFieldDefinition,Soneta.Core">
+        <Type>DbTuple</Type>
+        <Definition>DbTupleDefinition_17</Definition>
+        <Lp>4</Lp>
+        <Name>Język</Name>
+        <FieldType>Int</FieldType>
+        <TypeInformation>Rekrutacja_deweloper_Calc.Lang</TypeInformation>
+        <FldCaption />
+        <FldDescription />
+        <IsFieldIndexed>False</IsFieldIndexed>
+        <FldRequired>False</FldRequired>
+        <FldReadOnly>False</FldReadOnly>
+        <FldMaxLen>0</FldMaxLen>
+        <FldSetOnlyNull>False</FldSetOnlyNull>
+      </RuntimeFieldDefinition>
+    </Fields>
+  </DbTupleDefinition>
+</session>
