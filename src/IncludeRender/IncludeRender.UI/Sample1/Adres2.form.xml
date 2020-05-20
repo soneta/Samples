@@ -1,0 +1,33 @@
+﻿<?xml version="1.0"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Priority="1" RightName="Page:PracownikOgolnePage" xmlns="http://www.enova.pl/schema/form.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd">
+  <Stack LabelWidth="20">
+    <Row Visibility="{New AdresExtender.ShowStreetRowAsFirst}">
+      <Field CaptionHtml="Ulica" EditValue="{Ulica}" OuterWidth="60" />
+      <Field CaptionHtml="Nr domu" OuterWidth="26" LabelWidth="11" EditValue="{NrDomu}" />
+      <Field CaptionHtml="Nr lokalu" OuterWidth="24" LabelWidth="8" EditValue="{NrLokalu}" />
+    </Row>
+    <Row>
+      <Field CaptionHtml="Kod pocztowy" OuterWidth="60" Width="10" EditValue="{KodPocztowyS}" Class="LeftAlign"/>
+      <Field CaptionHtml="Miejscowość" LabelWidth="11" OuterWidth="50" EditValue="{Miejscowosc}" />
+    </Row>
+    <Row Visibility="{New AdresExtender.ShowStreetRowAsSecond}">
+      <Field CaptionHtml="Ulica" EditValue="{Ulica}" OuterWidth="60" />
+      <Field CaptionHtml="Nr domu" OuterWidth="26" LabelWidth="11" EditValue="{NrDomu}" />
+      <Field CaptionHtml="Nr lokalu" OuterWidth="24" LabelWidth="8" EditValue="{NrLokalu}" />
+    </Row>
+    <Field CaptionHtml="Poczta" Width="30" EditValue="{Poczta}" />
+    <Row>
+      <Field CaptionHtml="Gmina" EditValue="{Gmina}" OuterWidth="60" Width="30" Class="LeftAlign"/>
+      <Field CaptionHtml="Powiat" OuterWidth="50" LabelWidth="11" EditValue="{Powiat}" />
+    </Row>
+    <Row>
+      <Field CaptionHtml="Województwo" EditValue="{Wojewodztwo}" OuterWidth="60" Width="30" Class="LeftAlign"/>
+      <Field CaptionHtml="Kraj" EditValue="{KodKraju}" LabelWidth="11" OuterWidth="23" />
+      <Field CaptionHtml="" EditValue="{Kraj}" OuterWidth="27"/>
+    </Row>
+    <Row Name="DaneKontaktowe">
+      <Field CaptionHtml="Nr telefonu" EditValue="{Telefon}" OuterWidth="60" Width="30" Class="LeftAlign"/>
+      <Field CaptionHtml="Nr faksu" LabelWidth="11" EditValue="{Faks}" OuterWidth="50" />
+    </Row>
+  </Stack>
+</DataForm>

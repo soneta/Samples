@@ -1,0 +1,8 @@
+﻿<?xml version="1.0"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+          xmlns="http://www.enova.pl/schema/form.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd" Contexts="[Pracownik+UI]=Kadry"
+          DataType="Soneta.Kadry.PracHistoria,Soneta.KadryPlace">
+  <Page Name="Adresy2" CaptionHtml="Kadry/Sample2"  DataContext="{DataSource}">
+    <Include Source="{new Sample2.GetElement()}"/>
+  </Page>
+</DataForm>

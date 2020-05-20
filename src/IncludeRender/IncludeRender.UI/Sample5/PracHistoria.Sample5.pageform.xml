@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+          xmlns="http://www.enova.pl/schema/form.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd" Contexts="[Pracownik+UI]=Kadry"
+          DataType="Soneta.Kadry.PracHistoria,Soneta.KadryPlace">
+  <Page Name="Adresy2" CaptionHtml="Kadry/Sample5"  DataContext="{new Sample5}">
+    <Stack RenderKey="{RenderKey}" >
+      <Field CaptionHtml="Kliknij mnie" Width="8" EditValue="{IsTest}" />
+      <Label CaptionHtml="Label" Width="2" Renderable="{VisibleLabel}" />
+      <Stack RenderMethodName="RenderLabel" >
+        <Template Name="ON">
+          <Label CaptionHtml="Włączone" />
+        </Template>
+        <Template Name="OFF">
+          <Label CaptionHtml="Wyłączone" />
+        </Template>
+      </Stack>
+    </Stack>>
+  </Page>
+</DataForm>
