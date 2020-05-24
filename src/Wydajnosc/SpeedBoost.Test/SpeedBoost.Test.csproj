@@ -1,0 +1,17 @@
+<Project Sdk="Soneta.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net46</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <PackageReference Include="Soneta.Kasa" Version="2002.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\SpeedBoost\SpeedBoost.csproj" />
+	</ItemGroup>
+</Project>

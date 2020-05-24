@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+ <PropertyGroup>
+   <SonetaPackageVersion>2002.0.0</SonetaPackageVersion>
+   <SonetaTargetFramework>net46</SonetaTargetFramework>
+   <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+   <AggregateOutput>true</AggregateOutput>
+   <AssemblyVersion>2.0.0.0</AssemblyVersion>
+ </PropertyGroup>
+ <PropertyGroup>
+   <Version>2002.0.2.115</Version>
+   <Authors>Soneta sp. z o.o.</Authors>
+   <Title>Element systemu firmy Soneta</Title>
+   <Description>Składnik systemu firmy Soneta. Program obsługi firmy: kadry-płace, księgowość, handel, magazyn, CRM, BI ...</Description>
+   <Company>Soneta</Company>
+   <Product>Soneta.WyciagiBankowe</Product>
+   <Copyright>Copyright (C) Soneta sp z o.o. 2002-2020.</Copyright>
+ </PropertyGroup>
+</Project>
