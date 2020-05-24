@@ -1,5 +1,5 @@
 # Warsztaty SpeedBoost
 
-**Przyk?ady optymalizacji za pomoc? SubTable i Query
+**Przykłady optymalizacji za pomocą SubTable i Query
 
-Przyk?ady zosta?y om�wione na konferecji GeekOut 2020.
+Przykłady zostały omówione na konferecji GeekOut 2020.
