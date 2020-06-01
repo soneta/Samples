@@ -42,6 +42,7 @@ namespace SpeedBoost
                 session.Save();
             }
 
+            //Tylko do celów warsztatów, wg zasady SRP poniższy kod powinien znaleźć się w oddzielnej klasie
             File.AppendAllText(_nazwapliku, sb.ToString());
             return File.ReadAllText(_nazwapliku);
         }
