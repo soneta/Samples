@@ -18,6 +18,8 @@ namespace SpeedBoost
 
         public List<FeatureResult> Cecha()
         {
+            //Pobranie cechy przelewu o nazwie "Cecha"
+
             var przelewy = new Query.Table(nameof(Przelewy));
 
             przelewy += new Query.Field(nameof(Przelew.ID))

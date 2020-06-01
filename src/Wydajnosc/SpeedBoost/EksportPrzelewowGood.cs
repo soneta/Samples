@@ -7,6 +7,9 @@ using Soneta.Types;
 
 namespace SpeedBoost
 {
+    //****************************************************************
+    //   EksportPrzelewowBad po refaktoryzacji
+    //****************************************************************
     public class EksportPrzelewowGood
     {
         private readonly int _rok = 2020;

@@ -7,6 +7,11 @@ using Soneta.Tools;
 
 namespace SpeedBoost
 {
+    //****************************************************************
+    //   UWAGA!!! To jest przykład niewłaściwego kodu!!!
+    //   Poniższa klasa po refaktoryzacji znajduje się
+    //   w pliku EksportPrzelewowGood.cs
+    //****************************************************************
     public class EksportPrzelewowBad
     {
         private readonly string _rok = "2020";
