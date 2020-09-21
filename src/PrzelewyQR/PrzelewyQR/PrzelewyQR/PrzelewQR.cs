@@ -21,6 +21,11 @@ using System.Text.RegularExpressions;
 
 namespace PrzelewyQR
 {
+    //Klasa PrzelewQR implementuje interfejs INewBarCode. 
+    //Dzięki temu na formularzu obiektu tej klasy zostanie zrealizowana 
+    //dedykowana obsługa odczytu kodu ze skanera. 
+    //Po wykonaniu skanowania zostanie wywołana metoda Enter, 
+    //do której jako parametr będzie przekazany odczytany kod QR
     public class PrzelewQR : INewBarCode 
     {   
         private Dictionary<string, string> _qr;
@@ -59,7 +64,7 @@ namespace PrzelewyQR
             }
         }
 
-        //W tym miejscu wykonujemy operacje odczytania danych z kodu, a następnie dodania nowej pozycji przelewowej
+        //W tym miejscu wykonujemy operacje odczytania danych z kodu QR, a następnie dodania nowej pozycji przelewowej
         public object Enter(Context cx, string code, double quantity)
         {
             PrzelewQRParams prms = (PrzelewQRParams)Context[typeof(PrzelewQRParams), false];
