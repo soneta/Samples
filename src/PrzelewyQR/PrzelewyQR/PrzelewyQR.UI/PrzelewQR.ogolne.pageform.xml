@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://www.enova.pl/schema/form.xsd"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd"
+        Priority="100000">
+  <Page CaptionHtml="Skaner" DataContext="{DataSource}">
+    <Group CaptionHtml="Przelewy" Class="Expanded">  
+      <Flow Name="QRFiltry" DataContext="{Context}">
+        <Field CaptionHtml="Z Rachunku" Width="25" EditValue="{PrzelewQR+PrzelewQRParams.Rachunek}" />
+        <!--<Field CaptionHtml="Podmiot" Width="25" EditValue="{PrzelewQR+PrzelewQRParams.Podmiot}" />-->
+      </Flow>
+      <Grid Width="*" Height="*" EditValue="{PrzelewyViewInfo}" IsToolbarVisible="true" EditButton="Visible" NewButton="None" RemoveButton="None">
+        <Field CaptionHtml="Data" Width="9" EditValue="{Data}" Footer="None" />
+        <Field CaptionHtml="Numer" Width="23" EditValue="{Numer}" Footer="None" />
+        <Field CaptionHtml="Z rachunku" Width="17" EditValue="{EwidencjaSP}" Footer="None" />
+        <Field CaptionHtml="Podmiot" Width="21" EditValue="{Podmiot}" Footer="None" />
+        <Field CaptionHtml="Rachunek odbiorcy" Width="24" EditValue="{RachunekOdbiorcy}" Footer="None" />
+        <Field CaptionHtml="Kwota" Width="13" EditValue="{Kwota}" Footer="Sum" />
+        <Field CaptionHtml="Opis" Width="61" EditValue="{Opis}" Footer="None" />
+      </Grid>
+    </Group>
+  </Page>
+</DataForm>
