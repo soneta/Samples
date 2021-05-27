@@ -13,9 +13,15 @@ namespace WebApiService
 {
     public class TowarWebApi : ITowarAPI
     {
-        public string NazwaTowaru(string EAN)
+        GetTowarInfo getTowar;
+
+        public TowarWebApi(Session session)
         {
-            return $"Pewna nazwa towaru EAN: {EAN}";
+            getTowar = new GetTowarInfo(session);
         }
+
+        public string NazwaTowaru(string EAN) => 
+            getTowar.GetTowar(EAN).Nazwa;
+
     }
 }
