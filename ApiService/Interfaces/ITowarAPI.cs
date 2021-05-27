@@ -8,6 +8,6 @@ namespace WebApiService.Interfaces
 {
     public interface ITowarAPI
     {
-        string NazwaTowaru();
+        string NazwaTowaru(string EAN);
     }
 }

@@ -13,9 +13,9 @@ namespace WebApiService
 {
     public class TowarWebApi : ITowarAPI
     {
-        public string NazwaTowaru()
+        public string NazwaTowaru(string EAN)
         {
-            return "Pewna nazwa towaru";
+            return $"Pewna nazwa towaru EAN: {EAN}";
         }
     }
 }
