@@ -11,5 +11,6 @@ namespace WebApiService.Interfaces
     {
         string NazwaTowaru(string EAN);
         TowarModel TowarInfo(string EAN, string NazwaMagazynu);
+        bool UtworzTowar(TowarModel towarModel);
     }
 }
