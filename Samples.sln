@@ -64,7 +64,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrzykladHandel", "src\Przyk
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebApiService", "WebApiService", "{B5AFFC05-0D26-45F4-9B0D-8EA71188BFAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiService", "ApiService\WebApiService.csproj", "{D42BDCB8-F381-49D4-B305-783A2D4D2404}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiService", "ApiService\WebApiService.csproj", "{D42BDCB8-F381-49D4-B305-783A2D4D2404}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

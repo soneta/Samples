@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ApiService
+namespace WebApiService.Interfaces
 {
-    public class Class1
+    public interface ITowarAPI
     {
+        string NazwaTowaru();
     }
 }
