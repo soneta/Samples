@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns="http://www.enova.pl/schema/form.xsd" Priority="0" RightName="Page:ReadPhotoOfGoodsParamsPage" >
+    <Page Name="ReadPhotoOfGoodsParamsPage" CaptionHtml="Wybierz plik" DataContext="{DataSource}">
+        <Field CaptionHtml ="Pliki" EditValue="{ChosenFiles}" Width="70" />
+    </Page>
+</DataForm>
