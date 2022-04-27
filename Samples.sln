@@ -78,7 +78,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SaveDiplomaOnDisc", "src\Na
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkerSamples", "WorkerSamples", "{B74B9AF1-C506-40F1-A311-624165F6583F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperacjeNaKontrahentach.UI", "src\OperacjeNaKontrahentach\OperacjeNaKontrahentach\OperacjeNaKontrahentach.UI.csproj", "{D597D644-978F-4D93-830E-46A445207753}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperacjeNaKontrahentach.UI", "src\WorkerSamples\OperacjeNaKontrahentach\OperacjeNaKontrahentach.UI.csproj", "{D597D644-978F-4D93-830E-46A445207753}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
