@@ -68,7 +68,7 @@ namespace OperacjeNaKontrahentach.UI
 
     public abstract class OperacjaNaKontrahencieBase
     {
-        public void WykonajNaKontrahencie(Kontrahent kth)
+        internal void WykonajNaKontrahencie(Kontrahent kth)
         {
             // Jakieś tam operacje na kontrahencie. Potrzebną ewentualnie sesję można wziąć z samego kontrahenta: kth.Session.
         }
