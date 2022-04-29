@@ -4,5 +4,7 @@
     <SonetaPackageVersion>2204.0.0</SonetaPackageVersion>
     <SonetaTargetFramework>net472</SonetaTargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <SonetaAddonStartProgram>C:\Source\Repos\soneta.git\bin\Debug\SonetaExplorer.exe</SonetaAddonStartProgram>
+    <StartArguments>/extpath=.</StartArguments>
   </PropertyGroup>
 </Project>
