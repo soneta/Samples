@@ -1,7 +1,6 @@
 ## Przykłady workerów opartych na Soneta.MSBuild.SDK.
 
 W zależności od potrzeby i sposobu rejestracji workery mogą operować na pojedynczych wierszach lub na zakresie zaznaczonych na liście wierszy.  
-Worker operujący  na zakresie zaznaczonych 
 
 ### Worker na liście: 
 
