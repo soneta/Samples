@@ -8,7 +8,7 @@
 
 Worker `OperacjeNaTowarzeWorker` jest zarejestrowany na na typie wiersza (typ `Towar`), co powoduje że jego metoda oznaczona atrybutem `Action`:
 1. pojawi się na liście towarów (np. Towary i usługi), ale także na formularzu towaru
-2. na liście będzie widoczny tylko jeśli lista nie będzie pusta
+2. na liście będzie widoczna tylko jeśli lista nie będzie pusta
 3. uruchomiona z formularza wykona się oczywiście tylko raz - dla otwartego formularza
 4. uruchomiona z listy wywoła się oddzielnie dla każdego zaznaczonego wiersza oddzielnie
 
