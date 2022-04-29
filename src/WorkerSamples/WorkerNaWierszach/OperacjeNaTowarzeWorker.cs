@@ -30,9 +30,9 @@ namespace OperacjeNaTowarach.UI
             if ((towary?.Length ?? 0) == 0)
                 return "Brak zaznaczonych towarów";
 
-            var wieleZaznaczonych = towary.Length > 1;
+            var jedenZaznaczony = towary.Length == 1;
 
-            if (wieleZaznaczonych) Trace.Write("SHOWOUTPUT", LogMessagesCategory);
+            if (!jedenZaznaczony) Trace.Write("SHOWOUTPUT", LogMessagesCategory);
 
             //// w tym miejscu przykład uzyskania elementów potrzebnych do operacji
             //// na przykład dostępu do modułu CRM, potrzebnego serwisu itp.
@@ -41,14 +41,16 @@ namespace OperacjeNaTowarach.UI
 
             WykonajNaTowarze(towar);
 
-            if (!wieleZaznaczonych)
-                return "Otwarty towar: " + towar.Nazwa; // string zwracany przez metodę Action workera zostanie wyświetlony jako MessageBox
-            else if (towar == towary[towary.Length - 1])
-                return "Lista zaznaczonych towarów znajduje się w logu '" + LogMessagesCategory + "'.";
+            if (!jedenZaznaczony)
+                return "Obsłużony towar: " + towar.Nazwa; // string zwracany przez metodę Action workera zostanie wyświetlony jako MessageBox
             else
             {
-                Trace.WriteLine(towar.Nazwa, LogMessagesCategory);
-                return null;
+                Trace.WriteLine(towar.Nazwa, LogMessagesCategory); // zapis do loga
+
+                if (towar == towary[towary.Length - 1]) 
+                    return "Lista zaznaczonych towarów znajduje się w logu '" + LogMessagesCategory + "'."; // przy ostatnim z zanaczonych wyświetlamy MsgBox z informacją
+                else
+                    return null; // w przeciwnym przypadku zwracamy null, czyli żadne okno nie zostanie otwarte
             }
         }
 
