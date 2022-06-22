@@ -3,7 +3,4 @@
   <PropertyGroup>
     <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>C:\Program Files\Common Files\Soneta\Assemblies\</OutputPath>
-  </PropertyGroup>
 </Project>
