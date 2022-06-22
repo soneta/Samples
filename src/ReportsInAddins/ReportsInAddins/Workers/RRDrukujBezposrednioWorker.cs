@@ -1,6 +1,5 @@
 ﻿using System.Drawing.Printing;
 using System.IO;
-using PdfiumViewer;
 using Soneta.Business;
 using Soneta.Business.UI;
 using Soneta.Handel;
@@ -71,7 +70,7 @@ namespace ReportsInAddins.Workers
                     break;
                 }
             }
-
+/**
             using (var document = PdfDocument.Load(path))
             {
                 using (var printDocument = document.CreatePrintDocument())
@@ -82,7 +81,7 @@ namespace ReportsInAddins.Workers
                     printDocument.Print();
                 }
             }
-
+**/
             File.Delete(path);
 
             return $"Raport został wysłany na drukarkę: {printerSettings.PrinterName}";
