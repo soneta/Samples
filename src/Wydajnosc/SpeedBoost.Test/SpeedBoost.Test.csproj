@@ -1,6 +1,6 @@
 <Project Sdk="Soneta.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net46</TargetFramework>
+		<TargetFramework>$(SonetaTargetFramework)</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
