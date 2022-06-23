@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Soneta.Sdk">
+  <PropertyGroup>
+    <TargetFramework>$(SonetaTargetFramework)</TargetFramework>
+    <EnableDefaultSonetaPackageReferences>false</EnableDefaultSonetaPackageReferences>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Soneta.Business" Version="$(SonetaPackageVersion)" IncludeAssets="compile" /> 
+    <PackageReference Include="Soneta.Types" Version="$(SonetaPackageVersion)" IncludeAssets="compile" /> 
+    <PackageReference Include="Soneta.Core" Version="$(SonetaPackageVersion)" IncludeAssets="compile" /> 
+  </ItemGroup>
+</Project>
