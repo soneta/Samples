@@ -11,7 +11,7 @@ using Soneta.Handel;
 using Soneta.Towary;
 using Soneta.Magazyny;
 
-[assembly: Service(typeof(ITowarAPI), typeof(TowarWebApi), Published = true)]
+[assembly: Service(typeof(ITowarAPI), typeof(TowarWebApi),ServiceScope.Session, Published = true)]
 
 namespace WebApiService
 {
