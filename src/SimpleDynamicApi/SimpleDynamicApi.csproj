@@ -7,6 +7,6 @@
   <ItemGroup>
     <PackageReference Include="Soneta.Business" Version="$(SonetaPackageVersion)" IncludeAssets="compile" /> 
     <PackageReference Include="Soneta.Types" Version="$(SonetaPackageVersion)" IncludeAssets="compile" /> 
-    <PackageReference Include="Soneta.Core" Version="$(SonetaPackageVersion)" IncludeAssets="compile" /> 
+    <PackageReference Include="Soneta.Core" Version="$(SonetaPackageVersion)" IncludeAssets="compile" />
   </ItemGroup>
 </Project>

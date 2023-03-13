@@ -14,7 +14,9 @@ using Soneta.Types.DynamicApi;
 
 [assembly: DynamicApiController(
     typeof(ISimpleDataApi),
-    typeof(SimpleDataApi))]
+    typeof(SimpleDataApi),
+    Summary = "Przykładowy kontroler pokazujący możliwości związane z wymianą danych."
+)]
 
 namespace SimpleDynamicApi
 {
@@ -140,5 +142,7 @@ namespace SimpleDynamicApi
         public Time PostTimeData(Time timeValue) => timeValue;
 
         public YearMonth PostYearMonthData(YearMonth yearMonthValue) => yearMonthValue;
+
+        public string MethodWithException() => throw new Exception($"Wyjątek wywołany w metodzie testowej: {nameof(MethodWithException)}");
     }
 }
