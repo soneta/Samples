@@ -1,0 +1,1298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XtraReportsLayoutSerializer SerializerVersion="20.2.7.0" Ref="1" ControlType="DevExpress.XtraReports.UI.XtraReport, DevExpress.XtraReports.v20.2" Name="Sprzedaz" SnapGridSize="25" ReportUnit="TenthsOfAMillimeter" Margins="198, 198, 200, 200" PaperKind="A4" PageWidth="2100" PageHeight="2970" Version="20.2" DataSource="#Ref-0" Dpi="254" Font="Calibri, 9pt">
+  <CalculatedFields>
+    <Item1 Ref="2" Name="fdSposobZaplaty" DataMember="Wydruk.Niezapłacone" />
+    <Item2 Ref="3" Name="fdPlatnik" DataMember="Wydruk.Niezapłacone" />
+    <Item3 Ref="4" Name="fdZaliczka" DataMember="Wydruk.DokumentyZaliczkowe" />
+    <Item4 Ref="6" Name="fdSekcjaDokumentu1" DataSource="#Ref-5" DataMember="SprzedazSnippet+MyParametryWydruku.PozycjeRazemWgTowaruICenyZKorektami" />
+    <Item5 Ref="7" Name="fdPrzyczynaZmiany1" DataSource="#Ref-5" DataMember="SprzedazSnippet+MyParametryWydruku.PozycjeRazemWgTowaruICenyZKorektami" />
+    <Item6 Ref="8" Name="fdZaliczkaSposobZaplaty" DataMember="Zaliczki" />
+    <Item7 Ref="9" Name="CustomCalc" FieldType="String" />
+  </CalculatedFields>
+  <Bands>
+    <Item1 Ref="10" ControlType="TopMarginBand" Name="topMarginBand1" HeightF="200" Dpi="254" />
+    <Item2 Ref="11" ControlType="DetailBand" Name="Raport" KeepTogetherWithDetailReports="true" HeightF="0" KeepTogether="true" Dpi="254" Visible="false" />
+    <Item3 Ref="12" ControlType="BottomMarginBand" Name="bottomMarginBand1" HeightF="200" Dpi="254" />
+    <Item4 Ref="13" ControlType="DetailReportBand" Name="Dokument" Level="0" DataMember="This" DataSource="#Ref-0" Dpi="254">
+      <Bands>
+        <Item1 Ref="14" ControlType="DetailBand" Name="DokumentTreść" HeightF="0" Dpi="254" />
+        <Item2 Ref="15" ControlType="GroupFooterBand" Name="StopkaDokumentu" RepeatEveryPage="true" PageBreak="AfterBand" HeightF="50" Dpi="254">
+          <Controls>
+            <Item1 Ref="16" ControlType="Soneta.Business.UI.DxReports.Controls.Footer, Soneta.Business.UI.DxReports" Name="Stopka" ReportSourceName="stopka" RunningBand="Dokument" SizeF="1701.8,50" LocationFloat="0,0" Dpi="254" />
+          </Controls>
+        </Item2>
+        <Item3 Ref="17" ControlType="DetailReportBand" Name="Grid1Lista" Level="1" DataMember="Wydruk.PozycjeRazem" DataSource="#Ref-0" Dpi="254">
+          <Bands>
+            <Item1 Ref="18" ControlType="DetailBand" Name="Grid1ListaWiersz" HeightF="76.19998" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="255,219,229,241">
+              <SortFields>
+                <Item1 Ref="19" FieldName="Dokument" />
+                <Item2 Ref="20" FieldName="Lp" />
+              </SortFields>
+              <Controls>
+                <Item1 Ref="21" ControlType="XRTable" Name="table36" SizeF="1701.8,38.1" LocationFloat="0,38.09998" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="22" ControlType="XRTableRow" Name="tableRow2" Weight="0.59999925508363372" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="23" ControlType="XRTableCell" Name="tableCell3" Weight="1" CanShrink="true" Multiline="true" Text="[NazwaResztaLinii]" Dpi="254" />
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+                <Item2 Ref="24" ControlType="XRTable" Name="table1" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1704,38.1" LocationFloat="0,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="25" ControlType="XRTableRow" Name="tableRow1" Weight="0.92" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="26" ControlType="XRTableCell" Name="tableCell1" Weight="0.036506201888314938" Text="Lp." TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="27" EventName="BeforePrint" PropertyName="Text" Expression="[Lp]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="28" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="29" ControlType="XRTableCell" Name="tableCell2" Weight="0.0024233618911435641" Text="Nazwa towaru/usługi" TextAlignment="MiddleLeft" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="30" EventName="BeforePrint" PropertyName="Text" Expression="[NazwaPierwszaLinia]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="31" UseTextAlignment="false" />
+                        </Item2>
+                        <Item3 Ref="32" ControlType="XRTableCell" Name="_pozycjeIlosc" Weight="0.054238151877452852" Text="Ilość" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="33" EventName="BeforePrint" PropertyName="Text" Expression="[Ilosc].[Value]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="34" UseTextAlignment="false" />
+                        </Item3>
+                        <Item4 Ref="35" ControlType="XRTableCell" Name="_pozycjeIloscSym" Weight="0.03703528357432298" Text="jm." TextAlignment="MiddleCenter" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="36" EventName="BeforePrint" PropertyName="Text" Expression="[Symbol]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="37" UseTextAlignment="false" />
+                        </Item4>
+                        <Item5 Ref="38" ControlType="XRTableCell" Name="_grid1CenaPrzedRabatem" Weight="0.087188291323034448" Text="Cena przed rabatem" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="39" EventName="BeforePrint" PropertyName="Text" Expression="[Cena]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="40" UseTextAlignment="false" />
+                        </Item5>
+                        <Item6 Ref="41" ControlType="XRTableCell" Name="_grid1RabatP" Weight="0.06479576541777271" Text="Rabat %" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="42" EventName="BeforePrint" PropertyName="Text" Expression="[Rabat]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="43" UseTextAlignment="false" />
+                        </Item6>
+                        <Item7 Ref="44" ControlType="XRTableCell" Name="_grid1CenaNettoPoRabacie" Weight="0.087791528524635121" Text="Cena netto" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="45" EventName="BeforePrint" PropertyName="Text" Expression="[CenaNettoPoRabacie]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="46" UseTextAlignment="false" />
+                        </Item7>
+                        <Item8 Ref="47" ControlType="XRTableCell" Name="_grid1CenaBruttoPoRabacie" Weight="0.089648855044328457" Text="Cena brutto" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="48" EventName="BeforePrint" PropertyName="Text" Expression="[CenaBruttoPoRabacie]" />
+                          </ExpressionBindings>
+                        </Item8>
+                        <Item9 Ref="49" ControlType="XRTableCell" Name="wartosc" Weight="0.0931675639277809" Text="Wartość netto" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="50" EventName="BeforePrint" PropertyName="Text" Expression="[WartoscCy]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="51" UseTextAlignment="false" />
+                        </Item9>
+                        <Item10 Ref="52" ControlType="XRTableCell" Name="vat" Weight="0.056632977739182265" Multiline="true" Text="Stawka&#xD;&#xA;VAT" TextAlignment="MiddleCenter" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="53" EventName="BeforePrint" PropertyName="Text" Expression="[DefinicjaStawki]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="54" UseTextAlignment="false" />
+                        </Item10>
+                        <Item11 Ref="55" ControlType="XRTableCell" Name="_sww" Weight="0.067820953124931319" Text="PKWiU" TextAlignment="MiddleLeft" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="56" EventName="BeforePrint" PropertyName="Text" Expression="[SWW]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="57" UseTextAlignment="false" />
+                        </Item11>
+                        <Item12 Ref="58" ControlType="XRTableCell" Name="_rodzajKorektyCol" Weight="0.092937401070827125" Multiline="true" TextAlignment="MiddleLeft" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="59" EventName="BeforePrint" PropertyName="Text" Expression="[RodzajKorektyOpis]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="60" UseTextAlignment="false" />
+                        </Item12>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item2>
+              </Controls>
+              <StylePriority Ref="61" UseBackColor="false" />
+            </Item1>
+            <Item2 Ref="62" ControlType="GroupHeaderBand" Name="Grid1ListaNagłówek" RepeatEveryPage="true" Level="1" HeightF="76.2" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="255,79,129,189">
+              <Controls>
+                <Item1 Ref="63" ControlType="XRTable" Name="table3" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1704,76.2" LocationFloat="0,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="64" ControlType="XRTableRow" Name="tableRow4" Weight="0.92" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="65" ControlType="XRTableCell" Name="tableCell17" Weight="0.036158975541071947" RowSpan="2" Text="Lp." TextAlignment="MiddleCenter" Dpi="254" BackColor="255,79,129,189">
+                          <StylePriority Ref="66" UseBackColor="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="67" ControlType="XRTableCell" Name="tableCell18" Weight="0.0027705943897647668" RowSpan="2" Text="Nazwa towaru lub usługi" Dpi="254" />
+                        <Item3 Ref="68" ControlType="XRTableCell" Name="_tableCell19" Weight="0.054238131932517315" RowSpan="2" Text="Ilość" Dpi="254" />
+                        <Item4 Ref="69" ControlType="XRTableCell" Name="_tableCell20" Weight="0.03703529736788029" RowSpan="2" Text="jm." Dpi="254" />
+                        <Item5 Ref="70" ControlType="XRTableCell" Name="_tableCell21" Weight="0.087188305116591758" RowSpan="2" Text="Cena przed rabatem" Dpi="254" />
+                        <Item6 Ref="71" ControlType="XRTableCell" Name="_tableCell22" Weight="0.064795758520994062" RowSpan="2" Text="Rabat %" Dpi="254" />
+                        <Item7 Ref="72" ControlType="XRTableCell" Name="tableCell23" Weight="0.087791494040741852" RowSpan="2" Text="Cena netto" Dpi="254" />
+                        <Item8 Ref="73" ControlType="XRTableCell" Name="_tableCell24" Weight="0.0896487722829846" RowSpan="2" Text="Cena brutto" Dpi="254" />
+                        <Item9 Ref="74" ControlType="XRTableCell" Name="_tableCell25" Weight="0.093167701863354033" RowSpan="2" Text="Wartość" Dpi="254" />
+                        <Item10 Ref="75" ControlType="XRTableCell" Name="_tableCell26" Weight="0.056632979920859229" RowSpan="2" Multiline="true" Text="Stawka VAT" Dpi="254" />
+                        <Item11 Ref="76" ControlType="XRTableCell" Name="_tableCell28" Weight="0.067820978530368975" RowSpan="2" Text="PKWiU" Dpi="254" />
+                        <Item12 Ref="77" ControlType="XRTableCell" Name="_tableCell29" Weight="0.092937345896597884" RowSpan="2" Multiline="true" Text="Zmiana&#xD;&#xD;&#xA;(Przyczyna korekty)" Dpi="254" />
+                      </Cells>
+                    </Item1>
+                    <Item2 Ref="78" ControlType="XRTableRow" Name="tableRow5" Weight="0.92" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="79" ControlType="XRTableCell" Name="tableCell30" Weight="0.036158975541071947" TextAlignment="MiddleCenter" Dpi="254">
+                          <StylePriority Ref="80" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="81" ControlType="XRTableCell" Name="tableCell31" Weight="0.0027705943897647668" Text=" " Dpi="254" />
+                        <Item3 Ref="82" ControlType="XRTableCell" Name="tableCell32" Weight="0.054238131932517315" Dpi="254" />
+                        <Item4 Ref="83" ControlType="XRTableCell" Name="tableCell33" Weight="0.03703529736788029" Dpi="254" />
+                        <Item5 Ref="84" ControlType="XRTableCell" Name="tableCell34" Weight="0.087188305116591758" Dpi="254" />
+                        <Item6 Ref="85" ControlType="XRTableCell" Name="tableCell35" Weight="0.064795758520994062" Dpi="254" />
+                        <Item7 Ref="86" ControlType="XRTableCell" Name="tableCell36" Weight="0.087791494040741852" Dpi="254" />
+                        <Item8 Ref="87" ControlType="XRTableCell" Name="tableCell37" Weight="0.0896487722829846" Dpi="254" />
+                        <Item9 Ref="88" ControlType="XRTableCell" Name="tableCell38" Weight="0.093167701863354033" Dpi="254" />
+                        <Item10 Ref="89" ControlType="XRTableCell" Name="tableCell39" Weight="0.056632979920859229" Dpi="254" />
+                        <Item11 Ref="90" ControlType="XRTableCell" Name="tableCell41" Weight="0.067820978530368975" Dpi="254" />
+                        <Item12 Ref="91" ControlType="XRTableCell" Name="tableCell42" Weight="0.092937345896597884" Dpi="254" />
+                      </Cells>
+                    </Item2>
+                  </Rows>
+                </Item1>
+              </Controls>
+              <StylePriority Ref="92" UseBackColor="false" />
+            </Item2>
+            <Item3 Ref="93" ControlType="GroupHeaderBand" Name="GroupHeader1" HeightF="63.50002" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl">
+              <GroupFields>
+                <Item1 Ref="94" FieldName="Workers.WydrukPozycji.SekcjaDokumentu" SortOrder="Descending" />
+              </GroupFields>
+              <Controls>
+                <Item1 Ref="95" ControlType="XRTable" Name="table32" SizeF="1704,40" LocationFloat="0,23.50002" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="96" ControlType="XRTableRow" Name="tableRow33" Weight="1" Dpi="254" Borders="Bottom">
+                      <Cells>
+                        <Item1 Ref="97" ControlType="XRTableCell" Name="tableCell145" Weight="3" Text="[Workers.WydrukPozycji.SekcjaDokumentu.Format]" TextAlignment="MiddleLeft" Dpi="254" BorderColor="LightGray">
+                          <StylePriority Ref="98" UseBorderColor="false" UseTextAlignment="false" />
+                        </Item1>
+                      </Cells>
+                      <StylePriority Ref="99" UseBorders="false" />
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item3>
+          </Bands>
+        </Item3>
+        <Item4 Ref="100" ControlType="DetailReportBand" Name="SectionVATZamowienia" Level="2" DataMember="Workers.DokumentZaliczkowy.TabelaVAT" DataSource="#Ref-0" Dpi="254">
+          <Bands>
+            <Item1 Ref="101" ControlType="DetailBand" Name="DetailBand10" HeightF="38.1" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="255,219,229,241">
+              <SortFields>
+                <Item1 Ref="102" FieldName="DefinicjaStawki.WgWielkosci" />
+              </SortFields>
+              <Controls>
+                <Item1 Ref="103" ControlType="XRTable" Name="table4" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0005,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="104" ControlType="XRTableRow" Name="tableRow6" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="105" ControlType="XRTableCell" Name="tableCell43" Weight="0.049873066801290007" Text="Stawka VAT" TextAlignment="MiddleCenter" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="106" EventName="BeforePrint" PropertyName="Text" Expression="[DefinicjaStawki]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="107" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="108" ControlType="XRTableCell" Name="Grid_VATZamowienia_NettoCy" Weight="0.049873124457489752" Text="Netto" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="109" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[NettoCy]" />
+                          </ExpressionBindings>
+                        </Item2>
+                        <Item3 Ref="110" ControlType="XRTableCell" Name="tableCell44" Weight="0.049873051538201908" Text="Kwota VAT" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="111" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:n}', [Suma].[VATCy])" />
+                          </ExpressionBindings>
+                        </Item3>
+                        <Item4 Ref="112" ControlType="XRTableCell" Name="tableCell45" Weight="0.049873074020766406" Text="Brutto" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="113" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[BruttoCy]" />
+                          </ExpressionBindings>
+                        </Item4>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+              <StylePriority Ref="114" UseBackColor="false" />
+            </Item1>
+            <Item2 Ref="115" ControlType="GroupFooterBand" Name="GroupFooter10" HeightF="148.8126" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="255,219,229,241">
+              <Controls>
+                <Item1 Ref="116" ControlType="XRTable" Name="table6" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920.0001,38.1" LocationFloat="784.0004,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="117" ControlType="XRTableRow" Name="tableRow8" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="118" ControlType="XRTableCell" Name="tableCell50" Weight="0.070410073711549614" Text="Razem:" TextAlignment="MiddleRight" Dpi="254" Padding="0,20,0,0,254">
+                          <StylePriority Ref="119" UsePadding="false" />
+                        </Item1>
+                        <Item2 Ref="120" ControlType="XRTableCell" Name="tableCell51" Weight="0.070410093819517058" Text="Netto" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="121" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="122" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[NettoCy])" />
+                          </ExpressionBindings>
+                        </Item2>
+                        <Item3 Ref="123" ControlType="XRTableCell" Name="tableCell52" Weight="0.0704100879033775" Text="Kwota VAT" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="124" FormatString="{0:n}" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="125" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[VATCy])" />
+                          </ExpressionBindings>
+                        </Item3>
+                        <Item4 Ref="126" ControlType="XRTableCell" Name="tableCell53" Weight="0.07041008465701816" Text="Brutto" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="127" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="128" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[BruttoCy])" />
+                          </ExpressionBindings>
+                        </Item4>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+                <Item2 Ref="129" ControlType="XRLabel" Name="label13" Text="Wartość zamówienia" TextAlignment="MiddleRight" SizeF="767.4033,38.10002" LocationFloat="0.06011422,0" Dpi="254" StyleName="TekstPodstawowyWyroznienieStyl" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="None">
+                  <StylePriority Ref="130" UseFont="false" UseTextAlignment="false" />
+                </Item2>
+                <Item3 Ref="131" ControlType="XRTable" Name="table25" SizeF="1319.166,100" LocationFloat="0.06011422,48.81259" Dpi="254" StyleName="TekstPomocniczyStyl" Borders="None">
+                  <Rows>
+                    <Item1 Ref="132" ControlType="XRTableRow" Name="tableRow27" Weight="0.78740157480314954" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="133" ControlType="XRTableCell" Name="tableCell127" Weight="0.69661116830260106" Text="Podlega opodatkowaniu" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="Bottom">
+                          <StylePriority Ref="134" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="135" ControlType="XRTableCell" Name="tableCell128" Weight="1.0622764456296907" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="Bottom">
+                          <ExpressionBindings>
+                            <Item1 Ref="136" EventName="BeforePrint" PropertyName="Text" Expression="[BruttoCy]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="137" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item1>
+                    <Item2 Ref="138" ControlType="XRTableRow" Name="tableRow28" Weight="0.78740157480314965" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="139" ControlType="XRTableCell" Name="tableCell16" Weight="0.69661116830260106" Text="Słownie:" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, charSet=238">
+                          <StylePriority Ref="140" UseFont="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="141" ControlType="XRTableCell" Name="tableCell40" Weight="1.0622764456296907" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, charSet=238">
+                          <ExpressionBindings>
+                            <Item1 Ref="142" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:+t2}', [BruttoCy])" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="143" UseFont="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item2>
+                  </Rows>
+                  <StylePriority Ref="144" UseBorders="false" />
+                </Item3>
+              </Controls>
+              <StylePriority Ref="145" UseBackColor="false" />
+            </Item2>
+            <Item3 Ref="146" ControlType="GroupHeaderBand" Name="GroupHeader10" HeightF="38.1" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="255,79,129,189">
+              <Controls>
+                <Item1 Ref="147" ControlType="XRTable" Name="table5" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0004,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="148" ControlType="XRTableRow" Name="tableRow7" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="149" ControlType="XRTableCell" Name="tableCell46" Weight="0.069426384478707789" Text="Stawka VAT" Dpi="254" />
+                        <Item2 Ref="150" ControlType="XRTableCell" Name="tableCell47" Weight="0.069426389076530676" Text="Netto" Dpi="254" />
+                        <Item3 Ref="151" ControlType="XRTableCell" Name="tableCell48" Weight="0.069426388773566591" Text="Kwota VAT" Dpi="254" />
+                        <Item4 Ref="152" ControlType="XRTableCell" Name="tableCell49" Weight="0.0694263838768032" Text="Brutto" Dpi="254" />
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+              <StylePriority Ref="153" UseBackColor="false" />
+            </Item3>
+          </Bands>
+        </Item4>
+        <Item5 Ref="154" ControlType="DetailReportBand" Name="SectionVATZaliczkowego" Level="3" DataMember="Workers.DokumentZaliczkowy.TabelaVAT" DataSource="#Ref-0" Dpi="254" BackColor="255,219,229,241">
+          <Bands>
+            <Item1 Ref="155" ControlType="DetailBand" Name="DetailBand15" HeightF="38.1" Dpi="254" StyleName="ListaStylAutomatyczny">
+              <SortFields>
+                <Item1 Ref="156" FieldName="DefinicjaStawki.WgWielkosci" />
+              </SortFields>
+              <Controls>
+                <Item1 Ref="157" ControlType="XRTable" Name="table7" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0004,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="158" ControlType="XRTableRow" Name="tableRow9" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="159" ControlType="XRTableCell" Name="tableCell54" Weight="0.069426384604492963" Text="Stawka VAT" TextAlignment="MiddleCenter" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="160" EventName="BeforePrint" PropertyName="Text" Expression="[DefinicjaStawki]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="161" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="162" ControlType="XRTableCell" Name="Grid_VATZaliczkowego_NettoCy" Weight="0.069426375259052472" Text="Netto" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="163" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[NettoCy]" />
+                          </ExpressionBindings>
+                        </Item2>
+                        <Item3 Ref="164" ControlType="XRTableCell" Name="tableCell55" Weight="0.069426374784970074" Text="Kwota VAT" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="165" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:n}', [Suma].[VATCy])" />
+                          </ExpressionBindings>
+                        </Item3>
+                        <Item4 Ref="166" ControlType="XRTableCell" Name="tableCell56" Weight="0.069426383871839026" Text="Brutto" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="167" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[BruttoCy]" />
+                          </ExpressionBindings>
+                        </Item4>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item1>
+            <Item2 Ref="168" ControlType="GroupHeaderBand" Name="GroupHeader15" HeightF="63.10001" Dpi="254" StyleName="ListaStylAutomatyczny">
+              <Controls>
+                <Item1 Ref="169" ControlType="XRTable" Name="table8" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0005,25.00001" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="170" ControlType="XRTableRow" Name="tableRow10" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="171" ControlType="XRTableCell" Name="tableCell57" Weight="0.069426381696368056" Text="Stawka VAT" Dpi="254" />
+                        <Item2 Ref="172" ControlType="XRTableCell" Name="tableCell58" Weight="0.069426375271503443" Text="Netto" Dpi="254" />
+                        <Item3 Ref="173" ControlType="XRTableCell" Name="tableCell59" Weight="0.069426374679763148" Text="Kwota VAT" Dpi="254" />
+                        <Item4 Ref="174" ControlType="XRTableCell" Name="tableCell60" Weight="0.069426365465980244" Text="Brutto" Dpi="254" />
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item2>
+            <Item3 Ref="175" ControlType="GroupFooterBand" Name="GroupFooter15" HeightF="167.3334" Dpi="254" StyleName="ListaStylAutomatyczny">
+              <Controls>
+                <Item1 Ref="176" ControlType="XRTable" Name="table9" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0005,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="177" ControlType="XRTableRow" Name="tableRow11" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="178" ControlType="XRTableCell" Name="tableCell61" Weight="0.069426375598880138" Text="Razem:" TextAlignment="MiddleRight" Dpi="254" Padding="0,20,0,0,254">
+                          <StylePriority Ref="179" UsePadding="false" />
+                        </Item1>
+                        <Item2 Ref="180" ControlType="XRTableCell" Name="tableCell62" Weight="0.069426375257297654" Text="Netto" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="181" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="182" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[NettoCy])" />
+                          </ExpressionBindings>
+                        </Item2>
+                        <Item3 Ref="183" ControlType="XRTableCell" Name="tableCell63" Weight="0.069426374630868426" Text="Kwota VAT" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="184" FormatString="{0:n}" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="185" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[VATCy])" />
+                          </ExpressionBindings>
+                        </Item3>
+                        <Item4 Ref="186" ControlType="XRTableCell" Name="tableCell64" Weight="0.069426365450993968" Text="Brutto" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="187" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="188" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[BruttoCy])" />
+                          </ExpressionBindings>
+                        </Item4>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+                <Item2 Ref="189" ControlType="XRLabel" Name="label15" Multiline="true" Text="Wartość zamówienia" TextAlignment="MiddleRight" SizeF="754.7034,38.10002" LocationFloat="0,0" Dpi="254" StyleName="TekstPodstawowyWyroznienieStyl" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="None">
+                  <StylePriority Ref="190" UseFont="false" UseTextAlignment="false" />
+                </Item2>
+                <Item3 Ref="191" ControlType="XRTable" Name="table26" SizeF="1319.166,100" LocationFloat="0.06007385,67.33342" Dpi="254" StyleName="TekstPomocniczyStyl" Borders="None">
+                  <Rows>
+                    <Item1 Ref="192" ControlType="XRTableRow" Name="tableRow29" Weight="1" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="193" ControlType="XRTableCell" Name="tableCell129" Weight="0.51179870701486874" Text="Kwota zaliczki" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="Bottom">
+                          <StylePriority Ref="194" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="195" ControlType="XRTableCell" Name="tableCell130" Weight="1.247089151058048" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="Bottom">
+                          <ExpressionBindings>
+                            <Item1 Ref="196" EventName="BeforePrint" PropertyName="Text" Expression="[BruttoCy]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="197" UseFont="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item1>
+                    <Item2 Ref="198" ControlType="XRTableRow" Name="tableRow30" Weight="1" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="199" ControlType="XRTableCell" Name="tableCell131" Weight="0.51179870701486874" Text="Słownie:" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, charSet=238" BackColor="255,79,129,189">
+                          <StylePriority Ref="200" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="201" ControlType="XRTableCell" Name="tableCell132" Weight="1.247089151058048" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, charSet=238" BackColor="255,79,129,189">
+                          <ExpressionBindings>
+                            <Item1 Ref="202" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:+t2}', [BruttoCy])" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="203" UseFont="false" UseBackColor="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item2>
+                  </Rows>
+                  <StylePriority Ref="204" UseBorders="false" />
+                </Item3>
+              </Controls>
+            </Item3>
+          </Bands>
+        </Item5>
+        <Item6 Ref="205" ControlType="DetailReportBand" Name="SectionVAT" Level="4" Dpi="254">
+          <Bands>
+            <Item1 Ref="206" ControlType="DetailBand" Name="detailBand9" HeightF="0" Dpi="254" StyleName="ListaNaglowekStyl" Borders="None">
+              <StylePriority Ref="207" UseBorders="false" />
+            </Item1>
+            <Item2 Ref="208" ControlType="DetailReportBand" Name="Grid_SumyVatLista" Level="1" DataMember="This.SumyVAT" DataSource="#Ref-0" Dpi="254" BackColor="255,219,229,241">
+              <Bands>
+                <Item1 Ref="209" ControlType="DetailBand" Name="Grid_SumyVatListaWiersz" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <SortFields>
+                    <Item1 Ref="210" />
+                  </SortFields>
+                  <Controls>
+                    <Item1 Ref="211" ControlType="XRTable" Name="table10" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0005,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="212" ControlType="XRTableRow" Name="tableRow12" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="213" ControlType="XRTableCell" Name="tableCell65" Weight="0.086782901615048841" Text="Stawka VAT" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="214" EventName="BeforePrint" PropertyName="Text" Expression="[DefinicjaStawki].[Kod]" />
+                              </ExpressionBindings>
+                              <StylePriority Ref="215" UseTextAlignment="false" />
+                            </Item1>
+                            <Item2 Ref="216" ControlType="XRTableCell" Name="Grid_SumyVat_NettoCy" Weight="0.086783129438591927" TextAlignment="MiddleRight" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="217" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[NettoCy]" />
+                              </ExpressionBindings>
+                            </Item2>
+                            <Item3 Ref="218" ControlType="XRTableCell" Name="tableCell66" Weight="0.034713096069058966" TextAlignment="MiddleRight" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="219" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[VATCy]" />
+                              </ExpressionBindings>
+                            </Item3>
+                            <Item4 Ref="220" ControlType="XRTableCell" Name="tableCell5" Weight="0.052069781570493412" Multiline="true" TextAlignment="MiddleRight" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="221" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[VATCy]" />
+                              </ExpressionBindings>
+                              <StylePriority Ref="222" UseTextAlignment="false" />
+                            </Item4>
+                            <Item5 Ref="223" ControlType="XRTableCell" Name="tableCell67" Weight="0.086782958966123452" Text="Brutto" TextAlignment="MiddleRight" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="224" EventName="BeforePrint" PropertyName="Text" Expression="[Suma].[BruttoCy]" />
+                              </ExpressionBindings>
+                            </Item5>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item1>
+                <Item2 Ref="225" ControlType="GroupHeaderBand" Name="Grid_SumyVatListaNagłówek" RepeatEveryPage="true" HeightF="64.55832" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <Controls>
+                    <Item1 Ref="226" ControlType="XRTable" Name="table11" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0005,25.00001" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="227" ControlType="XRTableRow" Name="tableRow13" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="228" ControlType="XRTableCell" Name="tableCell68" Weight="0.086782765769912451" Text="Stawka VAT" Dpi="254" />
+                            <Item2 Ref="229" ControlType="XRTableCell" Name="tableCell69" Weight="0.086783278626014454" Text="Netto" Dpi="254" />
+                            <Item3 Ref="230" ControlType="XRTableCell" Name="tableCell70" Weight="0.034713042131200023" Text="Kwota VAT" Dpi="254" />
+                            <Item4 Ref="231" ControlType="XRTableCell" Name="tableCell19" Weight="0.052069770325358658" Multiline="true" Text="Kwota VAT" Dpi="254" />
+                            <Item5 Ref="232" ControlType="XRTableCell" Name="tableCell71" Weight="0.0867829434771648" Text="Brutto" Dpi="254" />
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item2>
+                <Item3 Ref="233" ControlType="GroupFooterBand" Name="Grid_SumyVatListaStopka" HeightF="38.10002" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <Controls>
+                    <Item1 Ref="234" ControlType="XRLabel" Name="TabelaVatZaliczkiNapis" Multiline="true" Text="Tabela VAT zaliczki" TextAlignment="MiddleRight" SizeF="767.3433,38.10002" LocationFloat="0.06007385,0" Dpi="254" StyleName="TekstPodstawowyWyroznienieStyl" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="None">
+                      <StylePriority Ref="235" UseFont="false" UseTextAlignment="false" />
+                    </Item1>
+                    <Item2 Ref="236" ControlType="XRTable" Name="table12" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="920,38.1" LocationFloat="784.0005,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="237" ControlType="XRTableRow" Name="tableRow14" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="238" ControlType="XRTableCell" Name="tableCell72" Weight="0.086782835692784221" Text="Razem:" TextAlignment="MiddleRight" Dpi="254" Padding="0,20,0,0,254">
+                              <StylePriority Ref="239" UsePadding="false" />
+                            </Item1>
+                            <Item2 Ref="240" ControlType="XRTableCell" Name="tableCell73" Weight="0.086783108760261712" Text="Netto" TextAlignment="MiddleRight" Dpi="254">
+                              <Summary Ref="241" Running="Report" IgnoreNullValues="true" />
+                              <ExpressionBindings>
+                                <Item1 Ref="242" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[NettoCy])" />
+                              </ExpressionBindings>
+                            </Item2>
+                            <Item3 Ref="243" ControlType="XRTableCell" Name="tableCell74" Weight="0.0347131313817383" TextAlignment="MiddleRight" Dpi="254">
+                              <Summary Ref="244" Running="Report" IgnoreNullValues="true" />
+                              <ExpressionBindings>
+                                <Item1 Ref="245" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[VATCy])" />
+                              </ExpressionBindings>
+                            </Item3>
+                            <Item4 Ref="246" ControlType="XRTableCell" Name="tableCell15" Weight="0.052069767449352891" TextFormatString="{0:n2}" Multiline="true" TextAlignment="MiddleRight" Dpi="254">
+                              <Summary Ref="247" Running="Report" />
+                              <ExpressionBindings>
+                                <Item1 Ref="248" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[VATCy])" />
+                              </ExpressionBindings>
+                              <StylePriority Ref="249" UseTextAlignment="false" />
+                            </Item4>
+                            <Item5 Ref="250" ControlType="XRTableCell" Name="tableCell75" Weight="0.086782956883647441" Text="Brutto" TextAlignment="MiddleRight" Dpi="254">
+                              <Summary Ref="251" Running="Report" IgnoreNullValues="true" />
+                              <ExpressionBindings>
+                                <Item1 Ref="252" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([Suma].[BruttoCy])" />
+                              </ExpressionBindings>
+                            </Item5>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item2>
+                  </Controls>
+                </Item3>
+              </Bands>
+              <ReportPrintOptions Ref="253" DetailCountOnEmptyDataSource="0" />
+            </Item2>
+            <Item3 Ref="254" ControlType="DetailReportBand" Name="SectionKorektaZaliczki" Level="0" Dpi="254">
+              <Bands>
+                <Item1 Ref="255" ControlType="DetailBand" Name="Detail" HeightF="63.50002" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl">
+                  <Controls>
+                    <Item1 Ref="256" ControlType="XRTable" Name="table2" SizeF="1703.94,40" LocationFloat="0.06007385,23.50002" Dpi="254" Borders="None">
+                      <Rows>
+                        <Item1 Ref="257" ControlType="XRTableRow" Name="tableRow3" Weight="0.62992125984251968" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="258" ControlType="XRTableCell" Name="tableCell13" Weight="0.92130726402219132" Dpi="254" />
+                            <Item2 Ref="259" ControlType="XRTableCell" Name="tableCell27" Weight="1.0812074503348639" Text="Korekta zaliczki:" TextAlignment="MiddleLeft" Dpi="254">
+                              <StylePriority Ref="260" UseTextAlignment="false" />
+                            </Item2>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                      <StylePriority Ref="261" UseBorders="false" />
+                    </Item1>
+                  </Controls>
+                </Item1>
+              </Bands>
+            </Item3>
+          </Bands>
+        </Item6>
+        <Item7 Ref="262" ControlType="DetailReportBand" Name="sectionZaliczki" Level="5" DataMember="Wydruk.DokumentyZaliczkowe" DataSource="#Ref-0" Dpi="254" BackColor="255,219,229,241">
+          <Bands>
+            <Item1 Ref="263" ControlType="DetailBand" Name="DetailBand20" HeightF="38.1" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="Transparent">
+              <Controls>
+                <Item1 Ref="264" ControlType="XRTable" Name="table13" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1121.851,38.1" LocationFloat="0.06007385,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="265" ControlType="XRTableRow" Name="tableRow15" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="266" ControlType="XRTableCell" Name="tableCell76" Weight="0.023417930667325285" Text="Lp." TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="267" Running="Report" Func="RecordNumber" />
+                        </Item1>
+                        <Item2 Ref="268" ControlType="XRTableCell" Name="tableCell77" Weight="0.13472160421639565" Text="Numer" TextAlignment="MiddleCenter" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="269" EventName="BeforePrint" PropertyName="Text" Expression="[Numer]" />
+                          </ExpressionBindings>
+                        </Item2>
+                        <Item3 Ref="270" ControlType="XRTableCell" Name="tableCell78" Weight="0.079069652123118436" Text="Data" TextAlignment="MiddleCenter" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="271" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:d}', [Data])" />
+                          </ExpressionBindings>
+                        </Item3>
+                        <Item4 Ref="272" ControlType="XRTableCell" Name="tableCell79" Weight="0.10086020439867781" Text="Wartość" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="273" EventName="BeforePrint" PropertyName="Text" Expression="[BruttoCy]" />
+                          </ExpressionBindings>
+                        </Item4>
+                        <Item5 Ref="274" ControlType="XRTableCell" Name="colZaliczka" Weight="0.10189789821527616" Text="Rozliczona zaliczka" TextAlignment="MiddleRight" Dpi="254">
+                          <ExpressionBindings>
+                            <Item1 Ref="275" EventName="BeforePrint" PropertyName="Text" Expression="[fdZaliczka]" />
+                          </ExpressionBindings>
+                        </Item5>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+              <StylePriority Ref="276" UseBackColor="false" />
+            </Item1>
+            <Item2 Ref="277" ControlType="GroupHeaderBand" Name="GroupHeader20" HeightF="103.1" Dpi="254" StyleName="ListaStylAutomatyczny">
+              <Controls>
+                <Item1 Ref="278" ControlType="XRTable" Name="table14" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1121.852,38.1" LocationFloat="0.06011422,64.99999" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="279" ControlType="XRTableRow" Name="tableRow16" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="280" ControlType="XRTableCell" Name="_tableCell80" Weight="0.023417930667325285" Text="Lp." Dpi="254" />
+                        <Item2 Ref="281" ControlType="XRTableCell" Name="tableCell81" Weight="0.13472160421639565" Dpi="254" />
+                        <Item3 Ref="282" ControlType="XRTableCell" Name="tableCell82" Weight="0.079069652123118436" Text="Data" Dpi="254" />
+                        <Item4 Ref="283" ControlType="XRTableCell" Name="tableCell83" Weight="0.10086020439867781" Text="Wartość" Dpi="254" />
+                        <Item5 Ref="284" ControlType="XRTableCell" Name="tableCell84" Weight="0.10189804183574834" Text="Rozliczona zaliczka" Dpi="254" />
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+                <Item2 Ref="285" ControlType="XRLabel" Name="label20" Multiline="true" Text="Faktury zaliczkowe" TextAlignment="MiddleLeft" SizeF="1701.74,40" LocationFloat="0,25.00001" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl" Borders="None">
+                  <StylePriority Ref="286" UseBorders="false" UseTextAlignment="false" />
+                </Item2>
+              </Controls>
+            </Item2>
+            <Item3 Ref="287" ControlType="GroupFooterBand" Name="GroupFooter20" HeightF="38.1" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="Transparent">
+              <Controls>
+                <Item1 Ref="288" ControlType="XRTable" Name="table15" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1121.851,38.1" LocationFloat="0.06007385,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="289" ControlType="XRTableRow" Name="tableRow17" Weight="11.5" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="290" ControlType="XRTableCell" Name="tableCell85" Weight="0.023417930667325285" TextAlignment="MiddleRight" Dpi="254" />
+                        <Item2 Ref="291" ControlType="XRTableCell" Name="tableCell86" Weight="0.13472160421639565" TextAlignment="MiddleCenter" Dpi="254" />
+                        <Item3 Ref="292" ControlType="XRTableCell" Name="tableCell87" Weight="0.079069652123118436" Text="Razem:" TextAlignment="MiddleCenter" Dpi="254" />
+                        <Item4 Ref="293" ControlType="XRTableCell" Name="tableCell88" Weight="0.10086020439868795" Text="Wartość" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="294" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="295" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([BruttoCy])" />
+                          </ExpressionBindings>
+                        </Item4>
+                        <Item5 Ref="296" ControlType="XRTableCell" Name="tableCell89" Weight="0.10189785034177527" Text="Rozliczona zaliczka" TextAlignment="MiddleRight" Dpi="254">
+                          <Summary Ref="297" Running="Report" IgnoreNullValues="true" />
+                          <ExpressionBindings>
+                            <Item1 Ref="298" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([fdZaliczka])" />
+                          </ExpressionBindings>
+                        </Item5>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+              <StylePriority Ref="299" UseBackColor="false" />
+            </Item3>
+          </Bands>
+        </Item7>
+        <Item8 Ref="300" ControlType="DetailReportBand" Name="sectionDoZaplaty" Level="6" Dpi="254" BackColor="255,219,229,241" BorderColor="Gray">
+          <Bands>
+            <Item1 Ref="301" ControlType="DetailBand" Name="detailBand13" HeightF="125" Dpi="254">
+              <Controls>
+                <Item1 Ref="302" ControlType="XRTable" Name="table29" SizeF="1319.226,100" LocationFloat="0,25.00001" Dpi="254" StyleName="TekstPomocniczyStyl" Borders="None">
+                  <Rows>
+                    <Item1 Ref="303" ControlType="XRTableRow" Name="tableRow35" Weight="1" Dpi="254" Font="Calibri, 9pt, style=Bold, charSet=238">
+                      <Cells>
+                        <Item1 Ref="304" ControlType="XRTableCell" Name="tableCell136" Weight="0.62309265261626323" Text="[Wydruk.KierunekZapłaty.Format]" TextAlignment="MiddleCenter" Dpi="254" BackColor="255,79,129,189" Borders="Bottom">
+                          <StylePriority Ref="305" UseBackColor="false" UseBorders="false" UseBorderDashStyle="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="306" ControlType="XRTableCell" Name="tableCell137" Weight="1.3769073473837368" TextAlignment="MiddleCenter" Dpi="254" BackColor="255,79,129,189" Borders="Bottom">
+                          <ExpressionBindings>
+                            <Item1 Ref="307" EventName="BeforePrint" PropertyName="Text" Expression="[Wydruk].[BruttoCyPlus]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="308" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                      <StylePriority Ref="309" UseFont="false" />
+                    </Item1>
+                    <Item2 Ref="310" ControlType="XRTableRow" Name="tableRow36" Weight="1" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="311" ControlType="XRTableCell" Name="tableCell139" Weight="0.62309269888214824" Text="Słownie:" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, charSet=238" BackColor="255,219,229,241" Borders="All">
+                          <StylePriority Ref="312" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="313" ControlType="XRTableCell" Name="tableCell140" Weight="1.3769073011178519" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt, charSet=238" BackColor="255,219,229,241" Borders="All">
+                          <ExpressionBindings>
+                            <Item1 Ref="314" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:+t2}', [BruttoCy])" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="315" UseFont="false" UseBackColor="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item2>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item1>
+          </Bands>
+        </Item8>
+        <Item9 Ref="316" ControlType="DetailReportBand" Name="sectionWplaty" Level="16" DataMember="This" DataSource="#Ref-5" Dpi="254">
+          <Bands>
+            <Item1 Ref="317" ControlType="DetailBand" Name="detailBand14" HeightF="66.87495" Dpi="254" StyleName="TekstPodstawowyStyl">
+              <Controls>
+                <Item1 Ref="318" ControlType="XRLabel" Name="label21" Multiline="true" TextAlignment="MiddleLeft" SizeF="1701.8,40" LocationFloat="0,25.00001" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl">
+                  <ExpressionBindings>
+                    <Item1 Ref="319" EventName="BeforePrint" PropertyName="Text" Expression="[DokumentHandlowy].[Wydruk].[NazwaTabelkiDlaZaliczkowego]" />
+                  </ExpressionBindings>
+                </Item1>
+              </Controls>
+            </Item1>
+            <Item2 Ref="320" ControlType="DetailReportBand" Name="Grid2Lista" Level="0" DataMember="Zaliczki" DataSource="#Ref-0" Dpi="254">
+              <Bands>
+                <Item1 Ref="321" ControlType="DetailBand" Name="Grid2ListaWiersz" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <SortFields>
+                    <Item1 Ref="322" />
+                  </SortFields>
+                  <Controls>
+                    <Item1 Ref="323" ControlType="XRTable" Name="table16" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1319.226,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="324" ControlType="XRTableRow" Name="tableRow18" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="325" ControlType="XRTableCell" Name="tableCell90" Weight="0.018518518518518517" Text="Lp." TextAlignment="MiddleRight" Dpi="254">
+                              <Summary Ref="326" Running="Report" Func="RecordNumber" />
+                            </Item1>
+                            <Item2 Ref="327" ControlType="XRTableCell" Name="tableCell91" Weight="0.079743490334727954" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="328" EventName="BeforePrint" PropertyName="Text" Expression="[fdZaliczkaSposobZaplaty]" />
+                              </ExpressionBindings>
+                            </Item2>
+                            <Item3 Ref="329" ControlType="XRTableCell" Name="tableCell92" Weight="0.036562583886868262" Text="Data" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="330" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:d}', [Zaplata].[DataDokumentu])" />
+                              </ExpressionBindings>
+                            </Item3>
+                            <Item4 Ref="331" ControlType="XRTableCell" Name="tableCell93" Weight="0.06579022014104291" Text="Kwota" TextAlignment="MiddleRight" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="332" EventName="BeforePrint" PropertyName="Text" Expression="[KwotaRozliczonaDokumentu]" />
+                              </ExpressionBindings>
+                            </Item4>
+                            <Item5 Ref="333" ControlType="XRTableCell" Name="tableCell94" Weight="0.10084976580266158" Text="Numer" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="334" EventName="BeforePrint" PropertyName="Text" Expression="[Zaplata].[NumerDokumentu]" />
+                              </ExpressionBindings>
+                            </Item5>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item1>
+                <Item2 Ref="335" ControlType="GroupHeaderBand" Name="Grid2ListaNagłówek" RepeatEveryPage="true" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <Controls>
+                    <Item1 Ref="336" ControlType="XRTable" Name="table17" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1319.226,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="337" ControlType="XRTableRow" Name="tableRow19" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="338" ControlType="XRTableCell" Name="tableCell95" Weight="0.018518518518518517" Text="Lp." Dpi="254" />
+                            <Item2 Ref="339" ControlType="XRTableCell" Name="tableCell96" Weight="0.079743485018291954" Text="Sposób zapłaty" Dpi="254" />
+                            <Item3 Ref="340" ControlType="XRTableCell" Name="tableCell97" Weight="0.036562603150840194" Text="Data" Dpi="254" />
+                            <Item4 Ref="341" ControlType="XRTableCell" Name="tableCell98" Weight="0.065790206193500164" Text="Kwota" Dpi="254" />
+                            <Item5 Ref="342" ControlType="XRTableCell" Name="tableCell99" Weight="0.10084976580266843" Text="Numer" Dpi="254" />
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item2>
+              </Bands>
+              <ReportPrintOptions Ref="343" DetailCountOnEmptyDataSource="0" />
+            </Item2>
+          </Bands>
+        </Item9>
+        <Item10 Ref="344" ControlType="DetailReportBand" Name="sectionNiezaplacone" Level="8" Dpi="254">
+          <Bands>
+            <Item1 Ref="345" ControlType="DetailBand" Name="detailBand16" HeightF="65.00009" Dpi="254" StyleName="TekstPodstawowyStyl">
+              <Controls>
+                <Item1 Ref="346" ControlType="XRLabel" Name="label1" Text="[Wydruk.KierunekZapłaty.Format]" TextAlignment="MiddleLeft" SizeF="1700,40" LocationFloat="0.06007385,25.00009" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl" Padding="5,5,0,0,254" />
+              </Controls>
+            </Item1>
+            <Item2 Ref="347" ControlType="DetailReportBand" Name="niezapłaconeLista" Level="0" DataMember="Wydruk.Niezapłacone" DataSource="#Ref-0" Dpi="254">
+              <Bands>
+                <Item1 Ref="348" ControlType="DetailBand" Name="niezapłaconeListaWiersz" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <SortFields>
+                    <Item1 Ref="349" />
+                  </SortFields>
+                  <Controls>
+                    <Item1 Ref="350" ControlType="XRTable" Name="table18" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1701.8,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="351" ControlType="XRTableRow" Name="tableRow20" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="352" ControlType="XRTableCell" Name="SposobZaplaty" Weight="0.21279650440944531" Text="Sposób zapłaty" TextAlignment="MiddleLeft" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="353" EventName="BeforePrint" PropertyName="Text" Expression="[fdSposobZaplaty]" />
+                              </ExpressionBindings>
+                            </Item1>
+                            <Item2 Ref="354" ControlType="XRTableCell" Name="_tableCell101" Weight="0.097278405285716185" Text="Termin" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="355" EventName="BeforePrint" PropertyName="Text" Expression="FormatString('{0:d}', [Płatność].[Termin])" />
+                              </ExpressionBindings>
+                            </Item2>
+                            <Item3 Ref="356" ControlType="XRTableCell" Name="tableCell102" Weight="0.14930303923904073" Text="Kwota" TextAlignment="MiddleRight" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="357" EventName="BeforePrint" PropertyName="Text" Expression="[Kwota]" />
+                              </ExpressionBindings>
+                            </Item3>
+                            <Item4 Ref="358" ControlType="XRTableCell" Name="platnik" Weight="0.526660292332545" Text="Płatnik" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="359" EventName="BeforePrint" PropertyName="Text" Expression="[fdPlatnik]" />
+                              </ExpressionBindings>
+                            </Item4>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item1>
+                <Item2 Ref="360" ControlType="GroupHeaderBand" Name="niezapłaconeListaNagłówek" RepeatEveryPage="true" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <Controls>
+                    <Item1 Ref="361" ControlType="XRTable" Name="table19" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1701.8,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="362" ControlType="XRTableRow" Name="tableRow21" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="363" ControlType="XRTableCell" Name="_tableCell104" Weight="0.064058692602559184" Text="Sposób zapłaty" Dpi="254" />
+                            <Item2 Ref="364" ControlType="XRTableCell" Name="_tableCell105" Weight="0.029283975758761144" Text="Termin" Dpi="254" />
+                            <Item3 Ref="365" ControlType="XRTableCell" Name="tableCell106" Weight="0.044945089020196352" Text="Kwota" Dpi="254" />
+                            <Item4 Ref="366" ControlType="XRTableCell" Name="_tableCell107" Weight="0.15854193787669948" Text="Płatnik" Dpi="254" />
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item2>
+              </Bands>
+              <ReportPrintOptions Ref="367" DetailCountOnEmptyDataSource="0" />
+            </Item2>
+          </Bands>
+        </Item10>
+        <Item11 Ref="368" ControlType="DetailReportBand" Name="detailReportBand15" Level="10" Dpi="254">
+          <Bands>
+            <Item1 Ref="369" ControlType="DetailBand" Name="detailBand18" HeightF="50.58333" Dpi="254" StyleName="ListaNaglowekStyl">
+              <Controls>
+                <Item1 Ref="370" ControlType="XRLabel" Name="label2" Text="[Wydruk.ZaplaconoInfo]" TextAlignment="MiddleLeft" SizeF="1700,40" LocationFloat="0,10.58333" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl" Padding="5,5,0,0,254" Borders="None">
+                  <StylePriority Ref="371" UseBorders="false" />
+                </Item1>
+              </Controls>
+            </Item1>
+          </Bands>
+        </Item11>
+        <Item12 Ref="372" ControlType="DetailReportBand" Name="sectionPowiazaneDokumentyMagazynowe" Level="11" Dpi="254">
+          <Bands>
+            <Item1 Ref="373" ControlType="DetailBand" Name="detailBand19" HeightF="72.1667" Dpi="254" StyleName="TekstPomocniczyStyl" Font="Calibri, 9pt, style=Bold, charSet=238">
+              <Controls>
+                <Item1 Ref="374" ControlType="XRLabel" Name="label25" Text="Powiązane dokumenty magazynowe" SizeF="1691.3,40.64" LocationFloat="0,25.00001" Dpi="254" StyleName="TekstPomocniczyStyl" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="None">
+                  <StylePriority Ref="375" UseFont="false" />
+                </Item1>
+              </Controls>
+              <StylePriority Ref="376" UseFont="false" />
+            </Item1>
+            <Item2 Ref="377" ControlType="DetailReportBand" Name="Grid_Magazynowe" Level="0" DataSource="#Ref-0" Dpi="254">
+              <Bands>
+                <Item1 Ref="378" ControlType="DetailBand" Name="Grid_MagazynoweListaWiersz" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <SortFields>
+                    <Item1 Ref="379" />
+                  </SortFields>
+                  <Controls>
+                    <Item1 Ref="380" ControlType="XRTable" Name="table20" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1701.8,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="381" ControlType="XRTableRow" Name="tableRow22" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="382" ControlType="XRTableCell" Name="MagNumerCol" Weight="0.090909090909090912" Text="Dokument" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="383" EventName="BeforePrint" PropertyName="Text" Expression="[Numer].[NumerPelny]" />
+                              </ExpressionBindings>
+                            </Item1>
+                            <Item2 Ref="384" ControlType="XRTableCell" Name="MagDataCol" Weight="0.090909090909090912" Text="Data wystawienia" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="385" EventName="BeforePrint" PropertyName="Text" Expression="[Data]" />
+                              </ExpressionBindings>
+                            </Item2>
+                            <Item3 Ref="386" ControlType="XRTableCell" Name="MagDataDostawyCol" Weight="0.090909090909090912" Text="Data dostawy" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="387" EventName="BeforePrint" PropertyName="Text" Expression="[Dostawa].[Termin]" />
+                              </ExpressionBindings>
+                            </Item3>
+                            <Item4 Ref="388" ControlType="XRTableCell" Name="MagWartCol" Weight="0.090909090909090912" Text="Wartość netto" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="389" EventName="BeforePrint" PropertyName="Text" Expression="[Wydruk].[Wartosc]" />
+                              </ExpressionBindings>
+                            </Item4>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item1>
+                <Item2 Ref="390" ControlType="GroupHeaderBand" Name="Grid_MagazynoweListaNagłówek" RepeatEveryPage="true" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <Controls>
+                    <Item1 Ref="391" ControlType="XRTable" Name="table21" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1701.8,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="392" ControlType="XRTableRow" Name="tableRow23" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="393" ControlType="XRTableCell" Name="tableCell108" Weight="0.090909090909090912" Text="Dokument" Dpi="254" />
+                            <Item2 Ref="394" ControlType="XRTableCell" Name="tableCell109" Weight="0.090909090909090912" Text="Data wystawienia" Dpi="254" />
+                            <Item3 Ref="395" ControlType="XRTableCell" Name="tableCell110" Weight="0.090909090909090912" Text="Data dostawy" Dpi="254" />
+                            <Item4 Ref="396" ControlType="XRTableCell" Name="tableCell111" Weight="0.090909090909090912" Text="Wartość netto" Dpi="254" />
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item2>
+              </Bands>
+              <ReportPrintOptions Ref="397" DetailCountOnEmptyDataSource="0" />
+            </Item2>
+          </Bands>
+        </Item12>
+        <Item13 Ref="399" ControlType="DetailReportBand" Name="detailReportWgCen" Level="0" DataSource="#Ref-398" Dpi="254">
+          <Bands>
+            <Item1 Ref="400" ControlType="DetailBand" Name="Detail1" HeightF="76.19998" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="255,219,229,241">
+              <SortFields>
+                <Item1 Ref="401" FieldName="Lp" />
+              </SortFields>
+              <Controls>
+                <Item1 Ref="402" ControlType="XRTable" Name="table27" SizeF="1704,38.1" LocationFloat="0,38.09998" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="403" ControlType="XRTableRow" Name="tableRow32" Weight="0.59999997597041088" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="404" ControlType="XRTableCell" Name="tableCell150" Weight="1" CanShrink="true" Multiline="true" Text="[NazwaResztaLinii]" Dpi="254" />
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item1>
+                <Item2 Ref="405" ControlType="XRTable" Name="table35" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1704,38.1" LocationFloat="0,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="406" ControlType="XRTableRow" Name="tableRow44" Weight="0.92" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="407" ControlType="XRTableCell" Name="tableCell171" Weight="0.031784913081932029" Text="[Lp]" TextAlignment="MiddleRight" Dpi="254">
+                          <StylePriority Ref="408" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="409" ControlType="XRTableCell" Name="tableCell172" Weight="0.060045323256338358" Text="[NazwaPierwszaLinia]" TextAlignment="MiddleLeft" Dpi="254">
+                          <StylePriority Ref="410" UseTextAlignment="false" />
+                        </Item2>
+                        <Item3 Ref="411" ControlType="XRTableCell" Name="tableCell173" Weight="0.060677396390074675" Text="[Ilosc.Value]" TextAlignment="MiddleRight" Dpi="254">
+                          <StylePriority Ref="412" UseTextAlignment="false" />
+                        </Item3>
+                        <Item4 Ref="413" ControlType="XRTableCell" Name="tableCell174" Weight="0.038586323681116294" Text="[Symbol]" TextAlignment="MiddleCenter" Dpi="254">
+                          <StylePriority Ref="414" UseTextAlignment="false" />
+                        </Item4>
+                        <Item5 Ref="415" ControlType="XRTableCell" Name="_tableCell176" Weight="0.056957556340470089" Text="[Rabat]" TextAlignment="MiddleRight" Dpi="254">
+                          <StylePriority Ref="416" UseTextAlignment="false" />
+                        </Item5>
+                        <Item6 Ref="417" ControlType="XRTableCell" Name="_tableCell177" Weight="0.077171558338635038" Text="[CenaNettoPoRabacie]" TextAlignment="MiddleRight" Dpi="254">
+                          <StylePriority Ref="418" UseTextAlignment="false" />
+                        </Item6>
+                        <Item7 Ref="419" ControlType="XRTableCell" Name="_tableCell178" Weight="0.078804284698314547" Text="[CenaBruttoPoRabacie]" TextAlignment="MiddleRight" Dpi="254">
+                          <StylePriority Ref="420" UseTextAlignment="false" />
+                        </Item7>
+                        <Item8 Ref="421" ControlType="XRTableCell" Name="tableCell179" Weight="0.0818972887511892" Text="[WartoscCy]" TextAlignment="MiddleRight" Dpi="254">
+                          <StylePriority Ref="422" UseTextAlignment="false" />
+                        </Item8>
+                        <Item9 Ref="423" ControlType="XRTableCell" Name="tableCell180" Weight="0.0497822177673274" Multiline="true" Text="[DefinicjaStawki]" TextAlignment="MiddleCenter" Dpi="254">
+                          <StylePriority Ref="424" UseTextAlignment="false" />
+                        </Item9>
+                        <Item10 Ref="425" ControlType="XRTableCell" Name="_tableCell181" Weight="0.059616835749382591" Text="[SWW]" TextAlignment="MiddleRight" Dpi="254">
+                          <StylePriority Ref="426" UseTextAlignment="false" />
+                        </Item10>
+                        <Item11 Ref="427" ControlType="XRTableCell" Name="_tableCell182" Weight="0.081694935485592438" Multiline="true" Text="[RodzajKorektyOpis]" TextAlignment="MiddleLeft" Dpi="254">
+                          <StylePriority Ref="428" UseTextAlignment="false" />
+                        </Item11>
+                      </Cells>
+                    </Item1>
+                  </Rows>
+                </Item2>
+              </Controls>
+              <StylePriority Ref="429" UseBackColor="false" />
+            </Item1>
+            <Item2 Ref="430" ControlType="GroupHeaderBand" Name="GroupHeader2" HeightF="63.50002" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl">
+              <GroupFields>
+                <Item1 Ref="431" FieldName="Workers.WydrukPozycji.SekcjaDokumentu" SortOrder="Descending" />
+              </GroupFields>
+              <Controls>
+                <Item1 Ref="432" ControlType="XRTable" Name="table34" SizeF="1704,40" LocationFloat="0,23.50002" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="433" ControlType="XRTableRow" Name="tableRow43" Weight="1" Dpi="254" Borders="Bottom">
+                      <Cells>
+                        <Item1 Ref="434" ControlType="XRTableCell" Name="tableCell170" Weight="3" Text="[Workers.WydrukPozycji.SekcjaDokumentu.Format]" TextAlignment="MiddleLeft" Dpi="254" BorderColor="LightGray">
+                          <StylePriority Ref="435" UseBorderColor="false" UseTextAlignment="false" />
+                        </Item1>
+                      </Cells>
+                      <StylePriority Ref="436" UseBorders="false" />
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+              <StylePriority Ref="437" UseTextAlignment="false" />
+            </Item2>
+            <Item3 Ref="438" ControlType="GroupHeaderBand" Name="GroupHeader4" RepeatEveryPage="true" Level="1" HeightF="76.2" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny" BackColor="255,79,129,189">
+              <Controls>
+                <Item1 Ref="439" ControlType="XRTable" Name="table33" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1704,76.2" LocationFloat="0,0" Dpi="254">
+                  <Rows>
+                    <Item1 Ref="440" ControlType="XRTableRow" Name="tableRow41" Weight="0.92" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="441" ControlType="XRTableCell" Name="tableCell146" Weight="0.031784913081932029" RowSpan="2" Text="Lp." Dpi="254" BackColor="255,79,129,189">
+                          <StylePriority Ref="442" UseBackColor="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="443" ControlType="XRTableCell" Name="tableCell147" Weight="0.060045301658714467" RowSpan="2" Text="Nazwa towaru/usługi" Dpi="254" />
+                        <Item3 Ref="444" ControlType="XRTableCell" Name="tableCell148" Weight="0.06067739676898036" RowSpan="2" Text="Ilość" Dpi="254" />
+                        <Item4 Ref="445" ControlType="XRTableCell" Name="tableCell149" Weight="0.038586347931079956" RowSpan="2" Text="jm." Dpi="254" />
+                        <Item5 Ref="446" ControlType="XRTableCell" Name="_tableCell151" Weight="0.05695755330922464" RowSpan="2" Text="Rabat %" Dpi="254" />
+                        <Item6 Ref="447" ControlType="XRTableCell" Name="_tableCell152" Weight="0.077171582588598686" RowSpan="2" Text="Cena netto" Dpi="254" />
+                        <Item7 Ref="448" ControlType="XRTableCell" Name="_tableCell153" Weight="0.078804211948423575" RowSpan="2" Text="Cena brutto" Dpi="254" />
+                        <Item8 Ref="449" ControlType="XRTableCell" Name="tableCell154" Weight="0.081897385751043855" RowSpan="2" Text="Wartość netto" Dpi="254" />
+                        <Item9 Ref="450" ControlType="XRTableCell" Name="_tableCell155" Weight="0.049782169267400075" RowSpan="2" Multiline="true" Text="Stawka VAT" Dpi="254" />
+                        <Item10 Ref="451" ControlType="XRTableCell" Name="_tableCell156" Weight="0.059616835749382591" RowSpan="2" Text="PKWiU" Dpi="254" />
+                        <Item11 Ref="452" ControlType="XRTableCell" Name="_tableCell157" Weight="0.081694935485592438" RowSpan="2" Multiline="true" Text="Zmiana&#xD;&#xD;&#xA;(Przyczyna korekty)" Dpi="254" />
+                      </Cells>
+                    </Item1>
+                    <Item2 Ref="453" ControlType="XRTableRow" Name="tableRow42" Weight="0.92" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="454" ControlType="XRTableCell" Name="tableCell158" Weight="0.031784913081932029" TextAlignment="MiddleCenter" Dpi="254">
+                          <StylePriority Ref="455" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="456" ControlType="XRTableCell" Name="tableCell159" Weight="0.060045298627469011" Text=" " Dpi="254" />
+                        <Item3 Ref="457" ControlType="XRTableCell" Name="tableCell160" Weight="0.060677399800225809" Dpi="254" />
+                        <Item4 Ref="458" ControlType="XRTableCell" Name="tableCell161" Weight="0.038586347931079956" Dpi="254" />
+                        <Item5 Ref="459" ControlType="XRTableCell" Name="tableCell163" Weight="0.05695755330922464" Dpi="254" />
+                        <Item6 Ref="460" ControlType="XRTableCell" Name="tableCell164" Weight="0.077171582588598686" Dpi="254" />
+                        <Item7 Ref="461" ControlType="XRTableCell" Name="tableCell165" Weight="0.078804211948423575" Dpi="254" />
+                        <Item8 Ref="462" ControlType="XRTableCell" Name="tableCell166" Weight="0.081897385751043855" Dpi="254" />
+                        <Item9 Ref="463" ControlType="XRTableCell" Name="tableCell167" Weight="0.049782169267400075" Dpi="254" />
+                        <Item10 Ref="464" ControlType="XRTableCell" Name="tableCell168" Weight="0.059616835749382591" Dpi="254" />
+                        <Item11 Ref="465" ControlType="XRTableCell" Name="tableCell169" Weight="0.081694935485592438" Dpi="254" />
+                      </Cells>
+                    </Item2>
+                  </Rows>
+                </Item1>
+              </Controls>
+              <StylePriority Ref="466" UseBackColor="false" />
+            </Item3>
+          </Bands>
+        </Item13>
+        <Item14 Ref="467" ControlType="DetailReportBand" Name="DetailReport" Level="13" Dpi="254">
+          <Bands>
+            <Item1 Ref="468" ControlType="DetailBand" Name="Detail4" HeightF="435.375" Dpi="254">
+              <Controls>
+                <Item1 Ref="469" ControlType="XRTable" Name="table37" SizeF="1700,317.5" LocationFloat="0.06007385,25.00001" Dpi="254" BorderWidth="0">
+                  <Rows>
+                    <Item1 Ref="470" ControlType="XRTableRow" Name="tr_DokumentyPowiazane1" Weight="1" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="471" ControlType="XRTableCell" Name="tableCell6" Weight="0.63067914023250249" CanShrink="true" RowSpan="2" Text="Dokumenty powiązane:" TextAlignment="MiddleLeft" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl" Padding="5,0,0,0,254">
+                          <StylePriority Ref="472" UsePadding="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="473" ControlType="XRTableCell" Name="tableCell7" Weight="2.3693208597674973" CanShrink="true" TextAlignment="MiddleLeft" Dpi="254" Padding="5,0,0,0,254">
+                          <ExpressionBindings>
+                            <Item1 Ref="474" EventName="BeforePrint" PropertyName="Text" Expression="[Wydruk].[NumeryNadrzędneZK]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="475" UsePadding="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item1>
+                    <Item2 Ref="476" ControlType="XRTableRow" Name="tr_DokumentyPowiazane2" Weight="1" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="477" ControlType="XRTableCell" Name="tableCell8" Weight="0.63067919396251515" CanShrink="true" Dpi="254" />
+                        <Item2 Ref="478" ControlType="XRTableCell" Name="tableCell9" Weight="2.3693208060374849" CanShrink="true" TextAlignment="MiddleLeft" Dpi="254" Padding="5,0,0,0,254">
+                          <ExpressionBindings>
+                            <Item1 Ref="479" EventName="BeforePrint" PropertyName="Text" Expression="[Wydruk].[NumeryPodrzędneBK]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="480" UsePadding="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item2>
+                    <Item3 Ref="481" ControlType="XRTableRow" Name="tr_PoprzednieKorekty" Weight="1" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="482" ControlType="XRTableCell" Name="tableCell10" Weight="0.63149556777553861" CanShrink="true" Text="Poprzednie korekty:" TextAlignment="MiddleLeft" Dpi="254" StyleName="TekstPomocniczyWyroznienieStyl" Padding="5,0,0,0,254">
+                          <StylePriority Ref="483" UsePadding="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="484" ControlType="XRTableCell" Name="tableCell11" Weight="2.3685044322244613" CanShrink="true" TextAlignment="MiddleLeft" Dpi="254" Padding="5,0,0,0,254">
+                          <ExpressionBindings>
+                            <Item1 Ref="485" EventName="BeforePrint" PropertyName="Text" Expression="[Wydruk].[NumeryPoprzednichKorekt]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="486" UsePadding="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                    </Item3>
+                    <Item4 Ref="487" ControlType="XRTableRow" Name="tr_OpisDok" Weight="1" KeepTogether="false" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="488" ControlType="XRTableCell" Name="tableCell12" Weight="3" CanShrink="true" Multiline="true" TextAlignment="MiddleLeft" Dpi="254" Padding="5,0,0,0,254">
+                          <ExpressionBindings>
+                            <Item1 Ref="489" EventName="BeforePrint" PropertyName="Text" Expression="[Opis]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="490" UsePadding="false" UseTextAlignment="false" />
+                        </Item1>
+                      </Cells>
+                    </Item4>
+                    <Item5 Ref="491" ControlType="XRTableRow" Name="tr_OpisWydr" Weight="1" Dpi="254">
+                      <Cells>
+                        <Item1 Ref="492" ControlType="XRTableCell" Name="tableCell14" Weight="3" CanShrink="true" Multiline="true" TextAlignment="MiddleLeft" Dpi="254" Padding="5,0,0,0,254">
+                          <ExpressionBindings>
+                            <Item1 Ref="493" EventName="BeforePrint" PropertyName="Text" Expression="[Wydruk].[OpisWydruku]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="494" UsePadding="false" UseTextAlignment="false" />
+                        </Item1>
+                      </Cells>
+                    </Item5>
+                  </Rows>
+                  <StylePriority Ref="495" UseBorderWidth="false" />
+                </Item1>
+                <Item2 Ref="496" ControlType="Soneta.Business.UI.DxReports.Controls.DatabaseSubReport, Soneta.Business.UI.DxReports" Name="databaseSubReport2" ReportSourceName="podpisy dokumentu handlowego" SizeF="1701.74,58.41998" LocationFloat="0.06007385,376.955" Dpi="254" />
+              </Controls>
+            </Item1>
+          </Bands>
+        </Item14>
+        <Item15 Ref="497" ControlType="DetailReportBand" Name="SectionRozrachunki" Level="14" Dpi="254">
+          <Bands>
+            <Item1 Ref="498" ControlType="DetailBand" Name="detailBand21" HeightF="102.811394" Dpi="254" StyleName="TekstPomocniczyStyl" Font="Calibri, 9pt, style=Bold, charSet=238">
+              <Controls>
+                <Item1 Ref="499" ControlType="XRLabel" Name="label4" Multiline="true" Text="label4" SizeF="1700.00024,33.41991" LocationFloat="0,60.99983" Dpi="254" Font="Calibri, 7pt, style=Italic, charSet=238" Padding="5,5,0,0,254">
+                  <StylePriority Ref="500" UseFont="false" />
+                </Item1>
+                <Item2 Ref="501" ControlType="XRPageBreak" Name="pageBreak1" LocationFloat="0,5.08" Dpi="254" />
+                <Item3 Ref="502" ControlType="XRLabel" Name="label26" Text="Wykaz nierozliczonych należności" SizeF="1704,40.64" LocationFloat="0,20.35987" Dpi="254" StyleName="TekstPomocniczyStyl" Font="Calibri, 9pt, style=Bold, charSet=238" Borders="None">
+                  <StylePriority Ref="503" UseFont="false" />
+                </Item3>
+              </Controls>
+              <StylePriority Ref="504" UseFont="false" />
+            </Item1>
+            <Item2 Ref="505" ControlType="DetailReportBand" Name="GridRozrachunkiLista" Level="0" DataMember="Wydruk.RozrachunkiKontrahenta" DataSource="#Ref-0" Dpi="254">
+              <Bands>
+                <Item1 Ref="506" ControlType="DetailBand" Name="GridRozrachunkiListaWiersz" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <SortFields>
+                    <Item1 Ref="507" />
+                  </SortFields>
+                  <Controls>
+                    <Item1 Ref="508" ControlType="XRTable" Name="table22" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1701.8,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="509" ControlType="XRTableRow" Name="tableRow24" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="510" ControlType="XRTableCell" Name="tableCell112" Weight="0.017094017094017096" Text="Lp." TextAlignment="MiddleCenter" Dpi="254">
+                              <Summary Ref="511" Running="Report" Func="RecordNumber" />
+                            </Item1>
+                            <Item2 Ref="512" ControlType="XRTableCell" Name="tableCell113" Weight="0.085470085470085472" Text="Numer" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="513" EventName="BeforePrint" PropertyName="Text" Expression="[NumerDokumentu]" />
+                              </ExpressionBindings>
+                            </Item2>
+                            <Item3 Ref="514" ControlType="XRTableCell" Name="tableCell114" Weight="0.0641025641025641" Text="Forma płatności" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="515" EventName="BeforePrint" PropertyName="Text" Expression="[SposobZaplaty].[Nazwa]" />
+                              </ExpressionBindings>
+                            </Item3>
+                            <Item4 Ref="516" ControlType="XRTableCell" Name="tableCell115" Weight="0.05128205128205128" TextFormatString="{0:dd.MM.yyyy}" Text="Termin" TextAlignment="MiddleCenter" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="517" EventName="BeforePrint" PropertyName="Text" Expression="[Termin]" />
+                              </ExpressionBindings>
+                            </Item4>
+                            <Item5 Ref="518" ControlType="XRTableCell" Name="tableCell116" Weight="0.0641025641025641" Text="Pozostaje" TextAlignment="MiddleRight" Dpi="254">
+                              <ExpressionBindings>
+                                <Item1 Ref="519" EventName="BeforePrint" PropertyName="Text" Expression="[DoRozliczenia]" />
+                              </ExpressionBindings>
+                            </Item5>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item1>
+                <Item2 Ref="520" ControlType="GroupHeaderBand" Name="GridRozrachunkiListaNagłówek" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <Controls>
+                    <Item1 Ref="521" ControlType="XRTable" Name="table23" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1701.8,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="522" ControlType="XRTableRow" Name="tableRow25" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="523" ControlType="XRTableCell" Name="tableCell117" Weight="0.017094017094017096" Text="Lp." Dpi="254" />
+                            <Item2 Ref="524" ControlType="XRTableCell" Name="tableCell118" Weight="0.085470085470085472" Text="Numer" Dpi="254" />
+                            <Item3 Ref="525" ControlType="XRTableCell" Name="tableCell119" Weight="0.0641025641025641" Text="Forma płatności" Dpi="254" />
+                            <Item4 Ref="526" ControlType="XRTableCell" Name="tableCell120" Weight="0.05128205128205128" Text="Termin" Dpi="254" />
+                            <Item5 Ref="527" ControlType="XRTableCell" Name="tableCell121" Weight="0.0641025641025641" Text="Pozostaje" Dpi="254" />
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item2>
+                <Item3 Ref="528" ControlType="GroupFooterBand" Name="GridRozrachunkiListaStopka" HeightF="38.1" KeepTogether="true" Dpi="254" StyleName="ListaStylAutomatyczny">
+                  <Controls>
+                    <Item1 Ref="529" ControlType="XRTable" Name="table24" AnchorHorizontal="Both" TextAlignment="MiddleCenter" SizeF="1701.8,38.1" LocationFloat="0,0" Dpi="254">
+                      <Rows>
+                        <Item1 Ref="530" ControlType="XRTableRow" Name="tableRow26" Weight="11.5" Dpi="254">
+                          <Cells>
+                            <Item1 Ref="531" ControlType="XRTableCell" Name="tableCell122" Weight="0.017094017094017096" TextAlignment="MiddleCenter" Dpi="254" />
+                            <Item2 Ref="532" ControlType="XRTableCell" Name="tableCell123" Weight="0.085470085470085472" TextAlignment="MiddleCenter" Dpi="254" />
+                            <Item3 Ref="533" ControlType="XRTableCell" Name="tableCell124" Weight="0.0641025641025641" TextAlignment="MiddleCenter" Dpi="254" />
+                            <Item4 Ref="534" ControlType="XRTableCell" Name="tableCell125" Weight="0.05128205128205128" TextAlignment="MiddleCenter" Dpi="254" />
+                            <Item5 Ref="535" ControlType="XRTableCell" Name="tableCell126" Weight="0.0641025641025641" Text="Pozostaje" TextAlignment="MiddleRight" Dpi="254">
+                              <Summary Ref="536" Running="Report" IgnoreNullValues="true" />
+                              <ExpressionBindings>
+                                <Item1 Ref="537" EventName="BeforePrint" PropertyName="Text" Expression="sumSum([DoRozliczenia])" />
+                              </ExpressionBindings>
+                            </Item5>
+                          </Cells>
+                        </Item1>
+                      </Rows>
+                    </Item1>
+                  </Controls>
+                </Item3>
+              </Bands>
+              <ReportPrintOptions Ref="538" DetailCountOnEmptyDataSource="0" />
+            </Item2>
+          </Bands>
+        </Item15>
+        <Item16 Ref="539" ControlType="GroupHeaderBand" Name="GroupHeader3" RepeatEveryPage="true" HeightF="117.8399" Dpi="254">
+          <Controls>
+            <Item1 Ref="540" ControlType="Soneta.Business.UI.DxReports.Controls.DatabaseSubReport, Soneta.Business.UI.DxReports" Name="databaseSubReport1" ReportSourceName="nagłówek dokumentu handlowego" SizeF="1704,58.42" LocationFloat="0,0" Dpi="254" />
+            <Item2 Ref="541" ControlType="Soneta.Business.UI.DxReports.Controls.Header, Soneta.Business.UI.DxReports" Name="required_invisible_header" ReportSourceName="nagłówek - dokument" DisplayFilters="Never" SizeF="1701.74,59.41998" LocationFloat="0.06007385,58.41996" Dpi="254" Visible="false" />
+          </Controls>
+        </Item16>
+        <Item17 Ref="542" ControlType="DetailReportBand" Name="sectionPozostaloDozaplaty" Level="9" DataMember="This.This" DataSource="#Ref-0" Dpi="254">
+          <Bands>
+            <Item1 Ref="543" ControlType="DetailBand" Name="Detail2" HeightF="129.6458" Dpi="254">
+              <Controls>
+                <Item1 Ref="544" ControlType="XRLabel" Name="label3" Multiline="true" SizeF="505.3542,58.20834" LocationFloat="5.72914,29.10417" Dpi="254" Font="Calibri, 12pt, style=Italic" Padding="5,5,0,0,254">
+                  <StylePriority Ref="545" UseFont="false" />
+                </Item1>
+              </Controls>
+            </Item1>
+          </Bands>
+        </Item17>
+        <Item18 Ref="546" ControlType="DetailReportBand" Name="SectionRozrachunkiNapis" Level="15" Dpi="254">
+          <Bands>
+            <Item1 Ref="547" ControlType="DetailBand" Name="Detail5" HeightF="60.85417" Dpi="254">
+              <Controls>
+                <Item1 Ref="548" ControlType="XRPageBreak" Name="pageBreak2" LocationFloat="0,5.08" Dpi="254" />
+                <Item2 Ref="549" ControlType="XRLabel" Name="WykazNierozliczonychNależności" Multiline="true" Text="Wykaz nierozliczonych należności: brak." TextAlignment="MiddleCenter" SizeF="814.9167,52.91667" LocationFloat="0,0" Dpi="254" Font="Calibri, 9pt, style=Bold" Padding="5,5,0,0,254" BorderColor="Transparent">
+                  <StylePriority Ref="550" UseFont="false" UseBorderColor="false" UseTextAlignment="false" />
+                </Item2>
+              </Controls>
+            </Item1>
+          </Bands>
+        </Item18>
+        <Item19 Ref="551" ControlType="DetailReportBand" Name="Zaplacone" Level="7" DataMember="Wydruk.ZaplaconoInfo2" DataSource="#Ref-0" Dpi="254" BackColor="255,219,229,241" BorderColor="DimGray">
+          <Bands>
+            <Item1 Ref="552" ControlType="DetailBand" Name="Detail3" HeightF="84.39585" Dpi="254">
+              <Controls>
+                <Item1 Ref="553" ControlType="XRTable" Name="table28" SizeF="1319.226,50" LocationFloat="0,34.39583" Dpi="254" StyleName="TekstPomocniczyStyl" Borders="None">
+                  <Rows>
+                    <Item1 Ref="554" ControlType="XRTableRow" Name="tableRow38" Weight="1" Dpi="254" Font="Calibri, 9pt, style=Bold, charSet=238">
+                      <Cells>
+                        <Item1 Ref="555" ControlType="XRTableCell" Name="tableCell4" Weight="0.63268264779275829" Multiline="true" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt" BackColor="255,79,129,189" BorderColor="LightGray" Borders="All">
+                          <ExpressionBindings>
+                            <Item1 Ref="556" EventName="BeforePrint" PropertyName="Text" Expression="[opis]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="557" UseFont="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item1>
+                        <Item2 Ref="558" ControlType="XRTableCell" Name="tableCell26" Weight="1.3980990572763892" TextAlignment="MiddleCenter" Dpi="254" Font="Calibri, 9pt" BackColor="255,79,129,189" BorderColor="LightGray" Borders="All">
+                          <ExpressionBindings>
+                            <Item1 Ref="559" EventName="BeforePrint" PropertyName="Text" Expression="[kwota]" />
+                          </ExpressionBindings>
+                          <StylePriority Ref="560" UseFont="false" UseBackColor="false" UseBorderColor="false" UseBorders="false" UseTextAlignment="false" />
+                        </Item2>
+                      </Cells>
+                      <StylePriority Ref="561" UseFont="false" />
+                    </Item1>
+                  </Rows>
+                </Item1>
+              </Controls>
+            </Item1>
+          </Bands>
+        </Item19>
+        <Item20 Ref="562" ControlType="DetailReportBand" Name="CustomNoteSection" Level="12" Dpi="254" Padding="0,0,0,0,254">
+          <Bands>
+            <Item1 Ref="563" ControlType="DetailBand" Name="CustomNoteDetail" HeightF="140.229141" Dpi="254" Padding="0,0,0,0,254">
+              <HierarchyPrintOptions Ref="564" Indent="50.8" />
+              <Controls>
+                <Item1 Ref="565" ControlType="XRLabel" Name="NoteCell" Multiline="true" Text="NoteCell" TextAlignment="MiddleCenter" SizeF="1701.67993,140.229141" LocationFloat="0.0600738525,0" Dpi="254" Font="Calibri, 11pt, style=Bold" Padding="100,100,100,100,254">
+                  <ExpressionBindings>
+                    <Item1 Ref="566" EventName="BeforePrint" PropertyName="Text" Expression="[CustomCalc]" />
+                  </ExpressionBindings>
+                  <StylePriority Ref="567" UseFont="false" UsePadding="false" UseTextAlignment="false" />
+                </Item1>
+              </Controls>
+              <StylePriority Ref="568" UsePadding="false" />
+            </Item1>
+          </Bands>
+        </Item20>
+      </Bands>
+    </Item4>
+  </Bands>
+  <DesignerOptions Ref="569" ShowExportWarnings="false" />
+  <Watermark Ref="570" ShowBehind="false" />
+  <ComponentStorage>
+    <Item1 Ref="571" ObjectType="Soneta.Business.UI.DxReports.Components.BusinessContext,Soneta.Business.UI.DxReports" Name="BusinessContext" StylesSource="standardowy" TreatStringAsValueInExport="false" />
+    <Item2 Ref="0" ObjectType="Soneta.Business.UI.DxReports.BusinessDataSource,Soneta.Business.UI.DxReports" Name="BusinessSource" DataKind="CurrentList" ShowValueProperties="true" ChildrenPaths="~Xtra#Array22, String,, Dostawa, String,, Numer, String,, This, String,, This.SumyVAT, String,, This.SumyVAT.DefinicjaStawki, String,, This.SumyVAT.Suma, String,, Workers, String,, Workers.DokumentZaliczkowy, String,, Workers.DokumentZaliczkowy.TabelaVAT, String,, Workers.DokumentZaliczkowy.TabelaVAT.Suma, String,, Wydruk, String,, Wydruk.DokumentyZaliczkowe, String,, Wydruk.Niezapłacone, String,, Wydruk.Niezapłacone.Płatność, String,, Wydruk.PozycjeRazem, String,, Wydruk.PozycjeRazem.Ilosc, String,, Wydruk.RozrachunkiKontrahenta, String,, Wydruk.RozrachunkiKontrahenta.SposobZaplaty, String,, Wydruk.ZaplaconoInfo2, String,, Zaliczki, String,, Zaliczki.Zaplata, String,, Zaliczki.Zaplata.SposobZaplaty, " />
+    <Item3 Ref="5" ObjectType="Soneta.Business.UI.DxReports.BusinessDataSource,Soneta.Business.UI.DxReports" Name="BusinessSourceContext" DataKind="Context" ShowValueProperties="true" />
+    <Item4 Ref="398" ObjectType="Soneta.Business.UI.DxReports.BusinessDataSource,Soneta.Business.UI.DxReports" Name="WgCenDataSource" />
+    <Item5 Ref="572" ObjectType="Soneta.Business.UI.DxReports.ReportSnippetComponent,Soneta.Business.UI.DxReports" Name="Snippet" SnippetTypeName="Soneta.Handel.Reports.SprzedazSnippet,Soneta.Handel.Reports" />
+    <Item6 Ref="573" ObjectType="Soneta.Business.UI.DxReports.ReportSnippetComponent,Soneta.Business.UI.DxReports" Name="Snippet2" SnippetFile="ExtraSnippet" />
+  </ComponentStorage>
+</XtraReportsLayoutSerializer>

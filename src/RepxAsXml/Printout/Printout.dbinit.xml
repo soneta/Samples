@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<session fromto="(wszystko)" priority="10" versionName="soneta">
+	<SystemFile id="SystemFile_7" guid="116cfb5c-e507-4d62-a930-7995e8c46971" class="Soneta.Business.Db.DxSnippetFile,Soneta.Business">
+    <FileType>DxSnippet</FileType>
+    <Name>CustomReportSnippet</Name>
+    <BaseFile />
+    <RuntimeInfo>
+      <Project />
+      <Identifier>Geeks.CustomReportSnippet</Identifier>
+      <FileName />
+    </RuntimeInfo>
+    <Code>using Soneta.Types;
+using Soneta.Business;
+using Soneta.Business.UI.DxReports;
+
+namespace Geeks {
+
+	public class CustomReportSnippet : ReportSnippet {
+	
+		public class CustomParams : ContextBase {
+			
+			public CustomParams(Context context) : base(context) {}
+			
+			[Caption("Dodatkowy parametr")]
+			public string CustomProperty { get; set; }
+		
+		}
+		
+	}
+	
+}</Code>
+    <Locked>False</Locked>
+  </SystemFile>
+
+	<SystemFile id="SystemFile_6" guid="36e7fde0-a26e-4d5b-8392-b71b1f63ae39" class="Soneta.Business.Db.DxSnippetFile,Soneta.Business">
+		<FileType>DxSnippet</FileType>
+		<BaseFile />
+		<Name>ExtraSnippet</Name>
+		<RuntimeInfo>
+			<Project />
+			<Identifier>Geeks.ExtraSnippet</Identifier>
+			<FileName />
+		</RuntimeInfo>
+		<Code>
+			using Soneta.Types;
+			using Soneta.Business;
+			using Soneta.Business.UI.DxReports;
+
+			using DevExpress.XtraReports.UI;
+
+			namespace Geeks {
+
+			public class ExtraSnippet : CustomReportSnippet {
+
+			[Context]
+			public CustomParams Parameters { get; set; }
+
+			[DxBind]
+			public void CustomCalc_GetValue(object sender, GetValueEventArgs e)
+			=&gt; e.Value = string.IsNullOrEmpty(Parameters.CustomProperty) ? null : $"Notatka: {Parameters.CustomProperty}";
+
+			}
+
+			}
+		</Code>
+		<Locked>False</Locked>
+	</SystemFile>
+</session>
