@@ -1,1 +1,460 @@
-{"client":"Thunder Client","collectionName":"SimpleDataApi","dateExported":"2022-05-18T06:20:12.487Z","version":"1.1","folders":[{"_id":"0cfd32a9-7fe2-4e0a-94a0-44438afa53bd","name":"Typy proste","containerId":"","created":"2022-05-13T10:27:45.733Z","sortNum":10000},{"_id":"7885a4cb-518d-43cd-9a02-35a063707897","name":"Typy biznesowe (Soneta)","containerId":"","created":"2022-05-13T10:45:14.891Z","sortNum":20000},{"_id":"494bc0be-0e6b-42b3-9dd3-79db81f881e9","name":"Typy obiektowe","containerId":"","created":"2022-05-13T10:43:59.005Z","sortNum":30000}],"requests":[{"_id":"84b82924-9133-42e1-962d-ed3f05d547cb","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"494bc0be-0e6b-42b3-9dd3-79db81f881e9","name":"SimpleDataApi.GetObjectData","url":"{{webApiUrl}}/api/SimpleDataApi/GetObjectData","method":"GET","sortNum":10000,"created":"2022-02-15T09:42:18.580Z","modified":"2022-05-13T10:44:14.193Z","headers":[],"params":[],"tests":[]},{"_id":"7d35330b-c9f3-412f-b043-d31478a90dc8","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"0cfd32a9-7fe2-4e0a-94a0-44438afa53bd","name":"SimpleDataApi.PostStringData","url":"{{webApiUrl}}/api/SimpleDataApi/PostStringData?args=aąbcćdeęfghijklłmnoópqrstuvwxyzźż","method":"POST","sortNum":10000,"created":"2022-05-02T07:26:51.420Z","modified":"2022-05-13T10:28:07.595Z","headers":[{"name":"Content-Type","value":"text/json"}],"params":[{"name":"args","value":"aąbcćdeęfghijklłmnoópqrstuvwxyzźż","isPath":false}],"tests":[]},{"_id":"f21676ff-c3ec-46e0-ace6-7f658976b9be","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostAmountData","url":"{{webApiUrl}}/api/SimpleDataApi/PostAmountData","method":"POST","sortNum":10000,"created":"2022-05-13T10:24:08.916Z","modified":"2022-05-13T10:45:17.860Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"Value\": \"26\",\n    \"Symbol\": \"MB\"\n}","form":[]},"tests":[]},{"_id":"92d2baa9-d0f1-4e4b-ae3b-03934bff502d","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"0cfd32a9-7fe2-4e0a-94a0-44438afa53bd","name":"SimpleDataApi.PostBoolData","url":"{{webApiUrl}}/api/SimpleDataApi/PostBoolData?args=true","method":"POST","sortNum":15000,"created":"2022-05-02T13:36:17.446Z","modified":"2022-05-13T10:28:16.393Z","headers":[],"params":[{"name":"args","value":"true","isPath":false}],"tests":[]},{"_id":"9e121d79-1206-4d36-9f3f-75bb15ede0cb","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"0cfd32a9-7fe2-4e0a-94a0-44438afa53bd","name":"SimpleDataApi.PostDecimalData","url":"{{webApiUrl}}/api/SimpleDataApi/PostDecimalData?args=1.2","method":"POST","sortNum":17500,"created":"2022-05-10T07:22:29.882Z","modified":"2022-05-13T10:28:20.413Z","headers":[],"params":[{"name":"args","value":"1.2","isPath":false}],"tests":[]},{"_id":"8a7dad23-a12a-4f62-a0dd-00b845eff556","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"0cfd32a9-7fe2-4e0a-94a0-44438afa53bd","name":"SimpleDataApi.PostIntData","url":"{{webApiUrl}}/api/SimpleDataApi/PostIntData?args=123456789","method":"POST","sortNum":20000,"created":"2022-05-02T13:05:14.095Z","modified":"2022-05-13T10:28:11.005Z","headers":[],"params":[{"name":"args","value":"123456789","isPath":false}],"tests":[]},{"_id":"af321e20-5428-48c8-a21c-c8b80a10d3cd","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"494bc0be-0e6b-42b3-9dd3-79db81f881e9","name":"SimpleDataApi.GetListData","url":"{{webApiUrl}}/api/SimpleDataApi/GetListData","method":"GET","sortNum":20000,"created":"2022-05-10T07:12:15.464Z","modified":"2022-05-13T10:44:15.591Z","headers":[],"params":[],"tests":[]},{"_id":"9eea9970-69d3-43c1-84ea-9c39aef676f9","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostCurrencyData","url":"{{webApiUrl}}/api/SimpleDataApi/PostCurrencyData","method":"POST","sortNum":20000,"created":"2022-05-11T12:10:42.538Z","modified":"2022-05-13T10:45:19.343Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"Value\": \"5\",\n    \"Symbol\": \"PLN\"\n}","form":[]},"tests":[]},{"_id":"b7252019-ae7b-4968-a39f-b21e6909a4ba","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"494bc0be-0e6b-42b3-9dd3-79db81f881e9","name":"SimpleDataApi.PostObjectData","url":"{{webApiUrl}}/api/SimpleDataApi/PostObjectData","method":"POST","sortNum":30000,"created":"2022-04-13T14:07:27.577Z","modified":"2022-05-13T10:44:53.875Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n  \"boolValue\": true,\n  \"intValue\": 0,\n  \"floatValue\": 0,\n  \"stringValue\": \"string\",\n  \"decimalValue\": 0,\n  \"amountValue\": {\n    \"Value\": \"10\",\n    \"Symbol\": \"MB\"\n  },\n  \"currencyValue\": {\n    \"Value\": \"0\",\n    \"Symbol\": \"PLN\"\n  },\n  \"dateTimeValue\": \"2022-05-10T12:35:07.415Z\",\n  \"dateValue\": \"2022-05-10\",\n  \"doubleCyValue\": {\n    \"Value\": \"0\",\n    \"Symbol\": \"PLN\"\n  },\n  \"fractionValue\": {\n    \"Num\": 1,\n    \"Den\": 2\n  },\n  \"fromToValue\": {\n    \"From\": \"2022-05-09\",\n    \"To\": \"2022-05-15\"\n  },\n  \"percentValue\": \"50,00%\",\n  \"timeValue\": \"14:33\",\n  \"yearMonthValue\": {\n    \"Year\": 2022,\n    \"Month\": 5\n  },\n  \"enumValue\": 0,\n  \"wojewodztwo\": 0,\n  \"intervalValue\": {\n    \"Start\": \"2022-05-10\",\n    \"End\": \"2022-05-11\"\n  },\n  \"periodsValue\": [\n    {\n      \"From\": \"2022-05-09\",\n      \"To\": \"2022-05-15\"\n    }\n  ]\n}","form":[]},"tests":[]},{"_id":"7b946839-e3e1-4472-830b-5233243b4a8c","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"0cfd32a9-7fe2-4e0a-94a0-44438afa53bd","name":"SimpleDataApi.PostFloatData","url":"{{webApiUrl}}/api/SimpleDataApi/PostFloatData?args=2.54","method":"POST","sortNum":30000,"created":"2022-05-10T07:23:22.989Z","modified":"2022-05-13T10:28:35.380Z","headers":[],"params":[{"name":"args","value":"2.54","isPath":false}],"tests":[]},{"_id":"07b850c8-2c17-444b-be44-2cb00428ea5d","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostDateData","url":"{{webApiUrl}}/api/SimpleDataApi/PostDateData","method":"POST","sortNum":30000,"created":"2022-05-18T06:09:18.193Z","modified":"2022-05-18T06:10:44.608Z","headers":[],"params":[],"body":{"type":"json","raw":"\"2022-05-18\"","form":[]},"tests":[]},{"_id":"fa7061ee-3836-4d28-8642-39890c2ede47","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"0cfd32a9-7fe2-4e0a-94a0-44438afa53bd","name":"SimpleDataApi.PostEnumData","url":"{{webApiUrl}}/api/SimpleDataApi/PostEnumData?args=0","method":"POST","sortNum":40000,"created":"2022-05-10T11:17:35.956Z","modified":"2022-05-13T10:44:09.612Z","headers":[],"params":[{"name":"args","value":"0","isPath":false}],"tests":[]},{"_id":"c727698e-87fb-4a39-837d-e0385f2f7dd3","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostDoubleCyData","url":"{{webApiUrl}}/api/SimpleDataApi/PostDoubleCyData","method":"POST","sortNum":40000,"created":"2022-05-18T06:11:12.123Z","modified":"2022-05-18T06:12:23.881Z","headers":[],"params":[],"body":{"type":"json","raw":"{\r\n  \"Value\": \"240\",\r\n  \"Symbol\": \"PLN\"\r\n}","form":[]},"tests":[]},{"_id":"11e6ca21-e3ef-46db-9bd2-0175c35218f7","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostFractionData","url":"{{webApiUrl}}/api/SimpleDataApi/PostFractionData","method":"POST","sortNum":50000,"created":"2022-05-18T06:12:46.229Z","modified":"2022-05-18T06:12:59.387Z","headers":[],"params":[],"body":{"type":"json","raw":"{\r\n  \"Num\": 1,\r\n  \"Den\": 2\r\n}","form":[]},"tests":[]},{"_id":"97a0cd94-0380-43cf-bd21-b37d6bf9a0d3","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostFromToData","url":"{{webApiUrl}}/api/SimpleDataApi/PostFromToData","method":"POST","sortNum":60000,"created":"2022-05-18T06:13:33.320Z","modified":"2022-05-18T06:14:11.357Z","headers":[],"params":[],"body":{"type":"json","raw":"{\r\n  \"From\": \"2022-05-16\",\r\n  \"To\": \"2022-05-22\"\r\n}","form":[]},"tests":[]},{"_id":"05ed5d09-8815-4944-ba56-0600d887db14","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostPercentData","url":"{{webApiUrl}}/api/SimpleDataApi/PostPercentData","method":"POST","sortNum":70000,"created":"2022-05-18T06:14:39.453Z","modified":"2022-05-18T06:15:38.146Z","headers":[],"params":[],"body":{"type":"json","raw":"\"50,00%\"","form":[]},"tests":[]},{"_id":"cd7a2a48-63e4-4c10-8ff8-b46302751f0b","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostTimeData","url":"{{webApiUrl}}/api/SimpleDataApi/PostTimeData","method":"POST","sortNum":80000,"created":"2022-05-18T06:16:41.972Z","modified":"2022-05-18T06:18:21.882Z","headers":[],"params":[],"body":{"type":"json","raw":"\"8:05\"","form":[]},"tests":[]},{"_id":"338b0b86-c97e-4c8f-9fad-048fcdb4cbc3","colId":"9c6519bb-b81c-4860-8827-59c1da1b1f2f","containerId":"7885a4cb-518d-43cd-9a02-35a063707897","name":"SimpleDataApi.PostYearMonthData","url":"{{webApiUrl}}/api/SimpleDataApi/PostYearMonthData","method":"POST","sortNum":90000,"created":"2022-05-18T06:18:32.068Z","modified":"2022-05-18T06:19:28.236Z","headers":[],"params":[],"body":{"type":"json","raw":"{\r\n  \"Year\": 2022,\r\n  \"Month\": 6\r\n}","form":[]},"tests":[]}]}
+{
+    "client": "Thunder Client",
+    "collectionName": "DynamicWebApi",
+    "dateExported": "2023-06-23T09:15:56.492Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "Typy proste",
+            "containerId": "",
+            "created": "2023-06-23T09:14:32.280Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "Typy proste (Soneta)",
+            "containerId": "",
+            "created": "2023-06-23T09:14:32.282Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "3dbef1dc-4950-4dbf-aae5-e0ccf8a6a059",
+            "name": "Typy obiektowe",
+            "containerId": "",
+            "created": "2023-06-23T09:14:32.284Z",
+            "sortNum": 35000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "13839515-6519-45fa-9a0e-96dd314d2612",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "3dbef1dc-4950-4dbf-aae5-e0ccf8a6a059",
+            "name": "SimpleDataApi.GetObjectData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/GetObjectData",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-23T09:14:32.280Z",
+            "modified": "2023-06-23T09:14:32.280Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1f778347-e258-450e-ba57-cbcb5372a992",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "SimpleDataApi.PostStringData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostStringData?strValue=aąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźż",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-06-23T09:14:32.281Z",
+            "modified": "2023-06-23T09:14:32.281Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "text/json"
+                }
+            ],
+            "params": [
+                {
+                    "name": "strValue",
+                    "value": "aąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźżaąbcćdeęfghijklłmnoópqrstuvwxyzźż",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "0ebe6686-d145-4029-becd-66c339924af2",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostAmountData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostAmountData",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2023-06-23T09:14:32.282Z",
+            "modified": "2023-06-23T09:14:32.282Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"Value\": \"26\",\n    \"Symbol\": \"MB\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "a2a1bfff-32fa-4a30-8c2f-f870c17aa79c",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "SimpleDataApi.PostBoolData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostBoolData?boolValue=true",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-06-23T09:14:32.285Z",
+            "modified": "2023-06-23T09:14:32.285Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "boolValue",
+                    "value": "true",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "9bc425a9-a116-4568-a3ff-e424a68e935d",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "SimpleDataApi.PostDecimalData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostDecimalData?decimalValue=1.2",
+            "method": "POST",
+            "sortNum": 17500,
+            "created": "2023-06-23T09:14:32.286Z",
+            "modified": "2023-06-23T09:14:32.286Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "decimalValue",
+                    "value": "1.2",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "7c65ce84-1da3-4960-bbfd-082e5853629e",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "SimpleDataApi.PostIntData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostIntData?intValue=123456789",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-23T09:14:32.287Z",
+            "modified": "2023-06-23T09:14:32.287Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "intValue",
+                    "value": "123456789",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "301ea3c2-7515-431f-a045-42e2bfddb034",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "3dbef1dc-4950-4dbf-aae5-e0ccf8a6a059",
+            "name": "SimpleDataApi.GetListData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/GetListData",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-06-23T09:14:32.288Z",
+            "modified": "2023-06-23T09:14:32.288Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "6bf60b71-ef77-464a-9c63-5a32e5888f7a",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostCurrencyData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostCurrencyData",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-06-23T09:14:32.289Z",
+            "modified": "2023-06-23T09:14:32.289Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"Value\": \"5\",\n    \"Symbol\": \"PLN\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f0bca021-c1a3-4374-a646-aea9e25a7b43",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "3dbef1dc-4950-4dbf-aae5-e0ccf8a6a059",
+            "name": "SimpleDataApi.PostObjectData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostObjectData",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-23T09:14:32.290Z",
+            "modified": "2023-06-23T09:14:32.290Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"boolValue\": true,\n  \"intValue\": 0,\n  \"floatValue\": 0,\n  \"stringValue\": \"string\",\n  \"decimalValue\": 0,\n  \"amountValue\": {\n    \"Value\": \"10\",\n    \"Symbol\": \"MB\"\n  },\n  \"currencyValue\": {\n    \"Value\": \"0\",\n    \"Symbol\": \"PLN\"\n  },\n  \"dateTimeValue\": \"2022-05-10T12:35:07.415Z\",\n  \"dateValue\": \"2022-05-10\",\n  \"doubleCyValue\": {\n    \"Value\": \"0\",\n    \"Symbol\": \"PLN\"\n  },\n  \"fractionValue\": {\n    \"Num\": 1,\n    \"Den\": 2\n  },\n  \"fromToValue\": {\n    \"From\": \"2022-05-09\",\n    \"To\": \"2022-05-15\"\n  },\n  \"percentValue\": \"50,00%\",\n  \"timeValue\": \"14:33\",\n  \"yearMonthValue\": {\n    \"Year\": 2022,\n    \"Month\": 5\n  },\n  \"enumValue\": 0,\n  \"wojewodztwo\": 0,\n  \"intervalValue\": {\n    \"Start\": \"2022-05-10\",\n    \"End\": \"2022-05-11\"\n  },\n  \"periodsValue\": [\n    {\n      \"From\": \"2022-05-09\",\n      \"To\": \"2022-05-15\"\n    }\n  ]\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "46035528-bec4-4d97-b16b-aef4a5ed42a4",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "SimpleDataApi.PostFloatData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostFloatData?floatValue=2.54",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-23T09:14:32.291Z",
+            "modified": "2023-06-23T09:14:32.291Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "floatValue",
+                    "value": "2.54",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "60b8281a-afc0-44fb-a9db-32f56b3e4082",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostDateData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostDateData",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-06-23T09:14:32.292Z",
+            "modified": "2023-06-23T09:14:32.292Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "\"2022-05-18\"",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "ec058525-8370-4c26-9985-2277a766c386",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "SimpleDataApi.PostEnumData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostEnumData?enumValue=1",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-23T09:14:32.293Z",
+            "modified": "2023-06-23T09:14:32.293Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "enumValue",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "d0ce4d4d-7d01-4107-8f24-ecddfa34c57a",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostDoubleCyData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostDoubleCyData",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-23T09:14:32.294Z",
+            "modified": "2023-06-23T09:14:32.294Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Value\": \"240\",\n  \"Symbol\": \"PLN\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "339f2554-72e3-4797-871f-051a250da579",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostFractionData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostFractionData",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-23T09:14:32.295Z",
+            "modified": "2023-06-23T09:14:32.295Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Num\": 1,\n  \"Den\": 2\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "17cb1715-c8b5-4abc-b97a-518ddaca444b",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "53aa75d9-8424-4eb1-bcbc-4d0d42d730f4",
+            "name": "MethodWithException",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/MethodWithException",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2023-06-23T09:14:32.296Z",
+            "modified": "2023-06-23T09:14:32.296Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2369245f-df44-4ece-8ee2-19571352d5ab",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostFromToData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostFromToData",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2023-06-23T09:14:32.297Z",
+            "modified": "2023-06-23T09:14:32.297Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"From\": \"2022-05-16\",\n  \"To\": \"2022-05-22\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "16ca12dc-6f65-4a4d-8730-0208cae4c04c",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostPercentData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostPercentData",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-06-23T09:14:32.298Z",
+            "modified": "2023-06-23T09:14:32.298Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "\"50,00%\"",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "f5b3b800-1d48-4d8d-9d73-973fc6d533e5",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostTimeData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostTimeData",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-06-23T09:14:32.299Z",
+            "modified": "2023-06-23T09:14:32.299Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "\"8:05\"",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "129b82f4-eec7-4dfb-8f36-8d2910534980",
+            "colId": "717a0944-cba2-4c50-9e90-d2ac5a150829",
+            "containerId": "b42af568-b08c-4875-9c45-58baf1cca344",
+            "name": "SimpleDataApi.PostYearMonthData",
+            "url": "{{webApiUrl}}/api/SimpleDataApi/PostYearMonthData",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-06-23T09:14:32.300Z",
+            "modified": "2023-06-23T09:14:32.300Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"Year\": 2022,\n  \"Month\": 6\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{sessionToken}}"
+            },
+            "tests": []
+        }
+    ]
+}

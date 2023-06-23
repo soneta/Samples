@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <SonetaPackageVersion>2212.4.12-netalfa.90920</SonetaPackageVersion>
-    <SonetaTargetFramework>netstandard2.0</SonetaTargetFramework>
+    <SonetaPackageVersion>2306.0.0-netbeta.98215</SonetaPackageVersion>
+    <SonetaTargetFramework>net6.0</SonetaTargetFramework>
   </PropertyGroup>
 </Project>
