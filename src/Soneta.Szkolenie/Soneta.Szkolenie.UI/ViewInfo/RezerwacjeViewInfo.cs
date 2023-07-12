@@ -20,54 +20,35 @@ namespace Soneta.Szkolenie.UI
 
         public class RezerwacjeParams : ContextBase // Klasa parametrów używanych w filtrze. Musi dziedziczyć z klasy ContextBase
         {
-            private readonly string key = "Szkolenie.RezerwacjeViewFilter"; // klucz używany do ujednoznacznienia zapisu parametrów
-
-            private RezerwacjeParams _pars; // zmienna do przechowywania i dostępuj do parametrów filtra
-
-            private RezerwacjeParams Pars {
-                get => _pars != null ? _pars : _pars = new RezerwacjeParams(Context);
-                set => _pars = value;
-            }
+            private const string paramsKey = "Szkolenie.RezerwacjeViewParams"; // klucz używany do ujednoznacznienia zapisu parametrów
 
             public RezerwacjeParams(Context context) : base(context) {
-                Load();  // w konstruktorze wywołujemy metodę ładującą parametry filtra
+                // pobieramy z kontekstu sesji logowania ewentualne zapisane parametry dla tego filtra
+                _maszyna = LoadProperty<Maszyna>(nameof(Maszyna), paramsKey, null);
+                _klient = LoadProperty<Kontrahent>(nameof(Klient), paramsKey, null);
             }
 
-            private void Load()
-            {
-                var p = LoadProperty(nameof(Pars), key) as RezerwacjeParams;   // pobieramy z kontekstu sesji logowania 
-                                                                               // ewentualne zapisane parametry dla tego filtra
-                if (p != null)
-                    Pars = p;
-                //else { // próbujemy pobrać parametry bezpośrednio z kontekstu
-                //    Kontrahent klient;
-                //    Maszyna maszyna;
-                //    if (Context.Get(out klient))  // kontrahenta
-                //        _pars.Klient = klient;
-                //    if (Context.Get(out maszyna)) // maszynę
-                //        _pars.Maszyna = maszyna;
-                //}
-            }
-
+            private Maszyna _maszyna;
             public Maszyna Maszyna
             {
-                get { return Pars.Maszyna; }
+                get { return _maszyna; }
                 set
                 {
-                    Pars.Maszyna = value; 
-                    OnChanged(new System.EventArgs()); // odświeżenie listy
-                    SaveProperty(nameof(Pars), key); // zapis parametrów do kontekstu sesji logowania
+                    _maszyna = value; 
+                    OnChanged(); // odświeżenie listy
+                    SaveProperty(nameof(Maszyna), paramsKey); // zapis parametru do kontekstu sesji logowania
                 }
             }
 
+            private Kontrahent _klient;
             public Kontrahent Klient
             {
-                get { return Pars.Klient; }
+                get { return _klient; }
                 set
                 {
-                    Pars.Klient = value;
-                    OnChanged(System.EventArgs.Empty); // odświeżenie listy
-                    SaveProperty(nameof(Pars), key); // zapis parametrów do kontekstu sesji logowania
+                    _klient = value;
+                    OnChanged(); // odświeżenie listy
+                    SaveProperty(nameof(Klient), paramsKey); // zapis parametru do kontekstu sesji logowania
                 }
             }
         }
