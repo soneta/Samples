@@ -26,14 +26,18 @@ namespace ReadFileFromList
 
             public object GetListPlik()
             {
-                return new FileDialogInfo
+                FileDialogInfo fileDialogInfo = new FileDialogInfo
                 {
                     Title = "Wybierz plik",
                     DefaultExt = ".xml",
                     ForbidMultiSelection = true,
-                    InitialDirectory = @"C:\"
+                    InitialDirectory = @"C:\",
+
                 };
+                
+                return fileDialogInfo.AddXmlFilter();
             }
+
         }
 
         [Context]
