@@ -31,6 +31,10 @@ namespace SimpleDynamicApi
         )]
         List<SimpleData> GetListData();
 
+        [DynamicApiMethod(HttpMethods.POST, nameof(PostListData),
+            Summary = "Przykładowa metoda przesyłająca listę obiektów typu PostListData"
+        )]
+        List<SimpleData> PostListData(List<SimpleData> list);
 
         [DynamicApiMethod(HttpMethods.POST, nameof(PostStringData), 
             MediaType = "text/json",

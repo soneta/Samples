@@ -23,6 +23,30 @@ namespace SimpleDynamicApi
     public class SimpleDataApi: ISimpleDataApi
     {
         private readonly SimpleData DefaultData = new SimpleData();
+        private List<SimpleData> list;
+
+        public SimpleDataApi() {
+          var rnd = new Random();
+          var maxVal = rnd.Next(1, 20);
+          list = new List<SimpleData>();
+          for(var i=0; i<maxVal; i++) {
+            list.Add(new SimpleData() {
+              AmountValue = new Amount(i, "MB"),
+              CurrencyValue = new Currency(i*100.00, "PLN"),
+              DoubleCyValue = new DoubleCy(i*100.00, "PLN"),
+              Wojewodztwo = (Wojewodztwa) new Random().Next(17),
+              EnumValue = (SimpleDataEnum) new Random().Next(3),
+              YearMonthValue = new YearMonth(Date.Today.Year, new Random().Next(1, 12)),
+              DateValue = new Date(Date.Today).AddDays(i),
+              IntervalValue = new Interval(new Date(Date.Today).AddDays(i)),
+              DateTimeValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(i),
+              FromToValue = FromTo.Day(new Date(Date.Today).AddDays(i)),
+              DecimalValue = (decimal)i,
+              IntValue = i+1,
+              StringValue = $"dataItem{i+1}",
+            });
+          }
+        }
 
         public SimpleData GetObjectData() => DefaultData;
 
@@ -87,29 +111,10 @@ namespace SimpleDynamicApi
             return modifiedData;
         }
 
-        public List<SimpleData> GetListData() {
-          var rnd = new Random();
-          var maxVal = rnd.Next(1, 20);
-          var list = new List<SimpleData>();
-          for(var i=0; i<maxVal; i++) {
-            list.Add(new SimpleData() {
-              AmountValue = new Amount(i, "MB"),
-              CurrencyValue = new Currency(i*100.00, "PLN"),
-              DoubleCyValue = new DoubleCy(i*100.00, "PLN"),
-              Wojewodztwo = (Wojewodztwa) new Random().Next(17),
-              EnumValue = (SimpleDataEnum) new Random().Next(3),
-              YearMonthValue = new YearMonth(Date.Today.Year, new Random().Next(1, 12)),
-              DateValue = new Date(Date.Today).AddDays(i),
-              IntervalValue = new Interval(new Date(Date.Today).AddDays(i)),
-              DateTimeValue = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(i),
-              FromToValue = FromTo.Day(new Date(Date.Today).AddDays(i)),
-              DecimalValue = (decimal)i,
-              IntValue = i+1,
-              StringValue = $"dataItem{i+1}",
-            });
-          }
-          return list;
-      }
+        public List<SimpleData> GetListData() => list;
+
+        public List<SimpleData> PostListData(List<SimpleData> list)
+          => this.list = list;
 
         public string PostStringData(string strValue) => strValue;
 
