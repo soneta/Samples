@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- Zawiera informację nagłówkową pliku XML oraz informację o użytym kodowaniu znaków. -->
+<module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.enova.pl/schema/business_struct.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/business_struct.xsd"
+ name="DodatekDoSzkolenia" namespace="DodatekDoSzkolenia" versionName="DodatekDoSzkolenia" versionNumber="1">
+
+  <!-- 
+  Główny element deklarujący nagłówek modułu. 
+  
+  xmlns - wszystkie elementy i atrybuty zostały zadeklarowane w xml-namespace http://www.enova.pl/schema/business_struct.xsd, dlatego konieczne jest użycie atrybutu xmlns, który określa ten właśnie namespace.
+  
+  name - każdy moduł musi posiadać nazwę, która znajduje się w wymaganym atrybucie name. Nazwa ta wykorzystywana jest między innymi do utworzenia odpowiednich nazw dla generowanych klas C#.
+  
+  versionName - kolejnym wymaganym atrybutem jest versionName. Określa nazwę numerów wersji (wersjonowania) pozwalających na automatyczne generowanie konwersji bazy danych z baz utworzonych starszymi wersjami bibliotek. Nazwane numery wersji pozwalają na niezależne prowadzenie projektów i wersjonowanie poszczególnych modułów. Standardowo nazwy wersji to system oraz enova użyte są przez program. Nazwa punktacja pozwala na wersjonowanie modułu niezależnie od wersji głównego programu.
+  
+  versionNumber - atrybut versionNumber określa numer wersji o danej nazwie. Liczba ta powinna być zwiększana zawsze, gdy dokonujemy zmian w module, który został opublikowany publicznie i konieczna będzie konwersja. Taka sama wartość atrybutu versionName może być przypisany wielu modułom. Ale wystarczy, że tylko jeden z nich będzie określał numer wersji atrybutem versionNumber. 
+  -->
+
+  <import>../../..</import>
+  <!-- 
+  Ten atrybut deklaruje folder, w którym będą poszukiwane pozostałe pliki business.xml.
+  Wczytywane są wszystkie pliki ze wskazanego foldera oraz folderów podrzędnych.
+  W tym przypadku uwzględnione zostaną wszystkie deklaracje business.xml w folderze nadrzędnym i jego podrzędnych.
+  -->
+
+  <using>Soneta.CRM</using>
+  <using>Soneta.Szkolenie</using>
+
+  <table name="Bagaz" tablename="Bagaze" guided="Root" tablecaption="Bagaze">
+    <col name="Nr" type="string" length="20" required="true" category="Ogólne" />
+   
+    <col name="Lot" type="Lot"
+         required="true" caption="Lot widokowy"
+         relname="Rezerwacja_Lot" children ="Fields"
+         delete="cascade"/> <!-- Relacja do tabeli Loty z dodatku Soneta.Szkolenie -->
+
+    <col name="Maszyna" type="Maszyna" required="true"
+         caption="Maszyna" relname="Rezerwacja_Maszyna"
+         children="Fields" delete="cascade"/> <!-- Relacja do tabeli Maszyny z dodatku Soneta.Szkolenie -->
+
+    <col name="Klient" type="Kontrahent" required="true"
+          caption="Klient" relname="Rezerwacja_Klient"
+         children="Fields" delete="cascade"/> <!-- Relacja do tabeli Kontrahenci z modułu Soneta.CRM programu -->
+  </table>
+  
+  <!-- 
+  Określa namespaces Microsoft.NET Framework, których identyfikatory są używane przez ten moduł. W tym przypadku pole Dokument odnosi się do obiektu modułu handel DokumentHandlowy. Możliwe jest użycie wielu elementów using.
+  -->
+</module>
