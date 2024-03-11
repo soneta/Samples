@@ -149,10 +149,32 @@ namespace SimpleDynamicApi
         )]
         YearMonth PostYearMonthData(YearMonth yearMonthValue);
 
+        [DynamicApiMethod(HttpMethods.POST, nameof(PostArrayOfInt),
+            Summary = "Przykładowa metoda przesyłająca parametry typu tablicy integer",
+            ImplementationNotes = "Należy zwrócić uwagę jak budowane są parametry kontrolera."
+        )]
+        int[] PostArrayOfInt(int[] arrayOfInt);
+        
+        [DynamicApiMethod(HttpMethods.POST, nameof(PostArrayOfPercent),
+            Summary = "Przykładowa metoda przesyłająca parametry jako tablica obiektów typu Percent",
+            ImplementationNotes = "Należy zwrócić uwagę jak budowane są parametry kontrolera."
+        )]
+        Percent[] PostArrayOfPercent(Percent[] array);
+
+
         [DynamicApiMethod(HttpMethods.PUT, nameof(MethodWithException),
             Summary = "Przykładowa metoda rzucająca wyjątek, dla testu zwracanego wyjątku"
         )]
         string MethodWithException();
 
+        [DynamicApiMethod(HttpMethods.POST, nameof(GetObjectWithSameClassRef),
+            Summary = "Przykładowa metoda zwracająca dane typu RefDocument, który posiada property tego samego typu co klasa zwracanego obiektu. "
+        )]
+        RefDocument GetObjectWithSameClassRef(RefDocument refDoc);
+        
+        [DynamicApiMethod(HttpMethods.POST, nameof(GetListOfObjectWithSameClassRef),
+            Summary = "Przykładowa metoda zwracająca dane typu List<RefDocument>, który posiada property tego samego typu co klasa zwracanego obiektu. "
+        )]
+        List<RefDocument> GetListOfObjectWithSameClassRef();
     }
 }

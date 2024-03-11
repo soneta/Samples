@@ -47,5 +47,6 @@ namespace SimpleDynamicApi.Models
         public Wojewodztwa Wojewodztwo { get; set; }
         public Interval IntervalValue { get; set; }
         public Periods PeriodsValue { get; set; }
+        public PłećOsoby Płeć { get; set; }
     }
 }

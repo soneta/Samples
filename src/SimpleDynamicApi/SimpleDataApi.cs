@@ -2,15 +2,9 @@
 using System.Collections.Generic;
 using SimpleDynamicApi;
 using SimpleDynamicApi.Models;
-using Soneta.Business;
 using Soneta.Core;
 using Soneta.Types;
 using Soneta.Types.DynamicApi;
-
-[assembly: Service(
-    typeof(ISimpleDataApi),
-    typeof(SimpleDataApi), 
-    ServiceScope.Session)]
 
 [assembly: DynamicApiController(
     typeof(ISimpleDataApi),
@@ -105,6 +99,9 @@ namespace SimpleDynamicApi
             if(data.Wojewodztwo != DefaultData.Wojewodztwo)
               modifiedData.Wojewodztwo = data.Wojewodztwo;
 
+            if(data.Płeć != DefaultData.Płeć)
+              modifiedData.Płeć = data.Płeć;
+
             modifiedData.IntervalValue = new Interval(data.DateValue, data.DateValue.AddMonths(1));
             modifiedData.PeriodsValue = Periods.New(data.FromToValue).Add(data.DateValue).Add(data.DateValue.AddMonths(1));
 
@@ -148,6 +145,41 @@ namespace SimpleDynamicApi
 
         public YearMonth PostYearMonthData(YearMonth yearMonthValue) => yearMonthValue;
 
+        public int[] PostArrayOfInt(int[] arrayOfInt) => arrayOfInt;
+
+        public Percent[] PostArrayOfPercent(Percent[] array) => array;
+
         public string MethodWithException() => throw new Exception($"Wyjątek wywołany w metodzie testowej: {nameof(MethodWithException)}");
+        
+        public RefDocument GetObjectWithSameClassRef(RefDocument refDoc)
+        {
+          var newDoc = new RefDocument {
+            Symbol = "A1",
+            Parent = new RefDocument {
+              Symbol = "A2"
+            }
+          };
+          return refDoc == null ? newDoc : refDoc.Parent = newDoc; 
+        }
+
+        public List<RefDocument> GetListOfObjectWithSameClassRef()
+        {
+          return new List<RefDocument>()
+          {
+            new() {
+              Symbol = "A1",
+              Parent = new RefDocument {
+                Symbol = "A2"
+              }
+            },
+            new() {
+              Symbol = "A3",
+              Parent = new RefDocument {
+                Symbol = "A4"
+              }
+            }
+          };
+        }
+        
     }
 }
