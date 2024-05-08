@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using SimpleDynamicApi;
 using SimpleDynamicApi.Models;
+using Soneta.Business;
 using Soneta.Core;
 using Soneta.Types;
 using Soneta.Types.DynamicApi;
+
+// [assembly: Service(
+//   typeof(ISimpleDataApi),
+//   typeof(SimpleDataApi), 
+//   ServiceScope.Session)]
 
 [assembly: DynamicApiController(
     typeof(ISimpleDataApi),
