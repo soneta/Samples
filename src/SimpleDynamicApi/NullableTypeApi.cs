@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using SimpleDynamicApi.Models;
-using Soneta.Types;
 
 namespace SimpleDynamicApi
 {
@@ -27,5 +25,9 @@ namespace SimpleDynamicApi
 
         public NullableDto GetDataByNullableObject(NullableDto nullableDto = null)
             => !nullableDto?.IntValue.HasValue ?? false ? nullableDto : new NullableDto();
+
+        public int?[] GetDataByNullableIntArray(int?[] intArrayValue)
+            => intArrayValue ?? new NullableDto().IntArrayValue;
+
     }
 }

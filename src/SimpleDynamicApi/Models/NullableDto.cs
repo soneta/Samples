@@ -11,5 +11,6 @@ namespace SimpleDynamicApi.Models
         public decimal? DecimalValue { get; set; }
         public float? FloatValue{ get; set; }
         public int? IntValue{ get; set; }
+        public int?[] IntArrayValue{ get; set; }
     }
 }
