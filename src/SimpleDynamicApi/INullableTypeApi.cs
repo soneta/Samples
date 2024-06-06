@@ -25,7 +25,7 @@ namespace SimpleDynamicApi
         )]
         NullableDto GetDataByNullableByte(byte? byteValue);
 
-        [DynamicApiMethod(HttpMethods.GET, nameof(GetDataByNullableByte),
+        [DynamicApiMethod(HttpMethods.GET, nameof(GetDataByNullableIntArray),
             Summary = "Przykładowa metoda zwracająca dane typu int?[], dla której parametr typu int?[] może być nullable. "
         )]
         int?[] GetDataByNullableIntArray(int?[] intArrayValue);
