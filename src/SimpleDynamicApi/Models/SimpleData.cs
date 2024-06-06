@@ -48,5 +48,8 @@ namespace SimpleDynamicApi.Models
         public Interval IntervalValue { get; set; }
         public Periods PeriodsValue { get; set; }
         public PłećOsoby Płeć { get; set; }
+        public PłećOsoby? PłećNulowa { get; set; }
+        public PłećOsoby[] Płcie { get; set; }
+
     }
 }

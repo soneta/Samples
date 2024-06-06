@@ -1,22 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using SimpleDynamicApi;
 using SimpleDynamicApi.Models;
 using Soneta.Business;
+using Soneta.Business.Db;
 using Soneta.Core;
 using Soneta.Types;
-using Soneta.Types.DynamicApi;
-
-// [assembly: Service(
-//   typeof(ISimpleDataApi),
-//   typeof(SimpleDataApi), 
-//   ServiceScope.Session)]
-
-[assembly: DynamicApiController(
-    typeof(ISimpleDataApi),
-    typeof(SimpleDataApi),
-    Summary = "Przykładowy kontroler pokazujący możliwości związane z wymianą danych."
-)]
 
 namespace SimpleDynamicApi
 {
@@ -25,7 +13,9 @@ namespace SimpleDynamicApi
         private readonly SimpleData DefaultData = new SimpleData();
         private List<SimpleData> list;
 
-        public SimpleDataApi() {
+        public SimpleDataApi(Session session)
+        {
+          Session = session;
           var rnd = new Random();
           var maxVal = rnd.Next(1, 20);
           list = new List<SimpleData>();
@@ -47,6 +37,8 @@ namespace SimpleDynamicApi
             });
           }
         }
+
+        public Session Session { get; set; }
 
         public SimpleData GetObjectData() => DefaultData;
 
@@ -107,6 +99,12 @@ namespace SimpleDynamicApi
 
             if(data.Płeć != DefaultData.Płeć)
               modifiedData.Płeć = data.Płeć;
+
+            if(data.PłećNulowa != DefaultData.PłećNulowa)
+              modifiedData.PłećNulowa = data.PłećNulowa;
+
+            if(data.Płcie != DefaultData.Płcie)
+              modifiedData.Płcie = data.Płcie;
 
             modifiedData.IntervalValue = new Interval(data.DateValue, data.DateValue.AddMonths(1));
             modifiedData.PeriodsValue = Periods.New(data.FromToValue).Add(data.DateValue).Add(data.DateValue.AddMonths(1));
@@ -186,6 +184,25 @@ namespace SimpleDynamicApi
             }
           };
         }
-        
+
+        public List<PłećOsoby> GetListOfEnum() => new()
+        {
+          PłećOsoby.Kobieta,
+          PłećOsoby.Mężczyzna
+        };
+
+        public object GetOperatorInfoFromSession(string name) {
+          var module = BusinessModule.GetInstance(Session);
+          var @operator = module.Operators.ByName[name];
+          return @operator != null
+            ? new
+            {
+              Name = @operator.Name,
+              FullName = @operator.FullName,
+              Guid = @operator.Guid.ToString(),
+              Email = @operator.Email
+            }
+            : null;
+        }
     }
 }

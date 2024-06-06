@@ -1,7 +1,20 @@
 ﻿using System.Collections.Generic;
+using SimpleDynamicApi;
 using SimpleDynamicApi.Models;
+using Soneta.Business;
 using Soneta.Types;
 using Soneta.Types.DynamicApi;
+
+[assembly: Service(
+    typeof(ISimpleDataApi),
+    typeof(SimpleDataApi), 
+    ServiceScope.Session)]
+
+[assembly: DynamicApiController(
+    typeof(ISimpleDataApi),
+    typeof(SimpleDataApi),
+    Summary = "Przykładowy kontroler pokazujący możliwości związane z wymianą danych."
+)]
 
 namespace SimpleDynamicApi
 {
@@ -176,5 +189,16 @@ namespace SimpleDynamicApi
             Summary = "Przykładowa metoda zwracająca dane typu List<RefDocument>, który posiada property tego samego typu co klasa zwracanego obiektu. "
         )]
         List<RefDocument> GetListOfObjectWithSameClassRef();
+
+        [DynamicApiMethod(HttpMethods.GET, nameof(GetListOfEnum),
+            Summary = "Przykładowa metoda zwracająca dane typu List<RefDocument>, który posiada property tego samego typu co klasa zwracanego obiektu. "
+        )]
+        List<PłećOsoby> GetListOfEnum();
+
+
+        [DynamicApiMethod(HttpMethods.GET, nameof(GetOperatorInfoFromSession),
+            Summary ="Przykładowa metoda zwracająca dane Operatora o wskazanym identyfikatorze"
+        )]
+        object GetOperatorInfoFromSession(string name);
     }
 }

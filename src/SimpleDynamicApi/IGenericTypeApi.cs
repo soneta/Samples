@@ -1,6 +1,13 @@
 using System.Collections.Generic;
+using SimpleDynamicApi;
 using SimpleDynamicApi.Models;
 using Soneta.Types.DynamicApi;
+
+[assembly: DynamicApiController(
+    typeof(IGenericTypeApi),
+    typeof(GenericTypeApi),
+    Summary = "Przykładowy kontroler pokazujący możliwości związane z wymianą danych poprzez użycie typów generycznych."
+)]
 
 namespace SimpleDynamicApi
 {
