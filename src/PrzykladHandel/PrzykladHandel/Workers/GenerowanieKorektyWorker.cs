@@ -1,9 +1,9 @@
-﻿using PrzykladHandel;
+﻿using System.Linq;
+using PrzykladHandel;
 using Soneta.Business;
 using Soneta.Handel;
 using Soneta.Handel.RelacjeDokumentow.Api;
-using System;
-using System.Linq;
+using Microsoft.Extensions.DependencyInjection;
 
 [assembly: Worker(typeof(GenerowanieKorektyWorker), typeof(DokumentHandlowy))]
 
@@ -24,7 +24,7 @@ namespace PrzykladHandel
             using (ITransaction tran = Session.Logout(true))
             {
                 // Pobranie serwisu relacji
-                Session.GetService(out IRelacjeService relacjeService);
+                var relacjeService = Session.GetService<IRelacjeService>();
 
                 // Utworzenie dokumentu korekty
                 DokumentHandlowy korekta = relacjeService.NowaKorekta(new[] { Dokument }).First();
