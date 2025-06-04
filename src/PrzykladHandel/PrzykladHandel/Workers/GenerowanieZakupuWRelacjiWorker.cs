@@ -2,7 +2,7 @@
 using Soneta.Business;
 using Soneta.Handel;
 using Soneta.Handel.RelacjeDokumentow.Api;
-using System;
+using Microsoft.Extensions.DependencyInjection;
 
 [assembly: Worker(typeof(GenerowanieZakupuWRelacjiWorker), typeof(DokumentHandlowy))]
 
@@ -32,7 +32,7 @@ namespace PrzykladHandel
             using (ITransaction tran = Session.Logout(true))
             {
                 // Tworzymy dokument ZK 2 za pomocą relacji PZ 2 -> ZK 2 za pomocą API Relacji
-                Session.GetService(out IRelacjeService service);
+                var service = Session.GetService<IRelacjeService>();
                 service.NowyPodrzednyIndywidualny(new[] { Dokument }, "ZK 2");
 
                 // Wszystkie operacje zostały poprawnie zakończone i zapewne 

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0"?>
+<DataForm Contexts="License.PXN"
+          xmlns="http://www.enova.pl/schema/form.xsd"
+          xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd">
+  <Page CaptionHtml="Sample" DataContext="{DataSource}">
+
+    <Stack>
+      <Row Height="2">
+        <Group Width="*">
+          <Row Height="2">
+            <Stack Width="48">
+              <Label CaptionHtml="{Osoba.Nazwa}" Class="InfoLabel BoldLabel LargeFont"/>
+              <Label CaptionHtml="Materiały planowane" Class="BoldLabel"/>
+            </Stack>
+            <Stack Width="*">
+              <Row>
+                <Label/>
+              </Row>
+            </Stack>
+            <Stack Width="16">
+              <Label CaptionHtml="{Date}" Class="BoldLabel LargeFont CenterLabel" Width="16" Height="*"/>
+            </Stack>
+          </Row>
+        </Group>
+      </Row>
+
+      <Row Height="*">
+        <Group Width="16">
+          <Label/>
+        </Group>
+        
+        <Group Width="*" Height="*">
+          <Gap Height="1"/>
+          <Row Height="1">
+            <Field CaptionHtml="Zlecenie" EditValue="{Zlecenie}" LabelWidth="10" Width="*" Height="3.4" IsReadOnly="true"/>
+          </Row>
+          <Row Height="1">
+            <Field CaptionHtml="Lp" EditValue="{Lp}" LabelWidth="10" Width="10" Height="3.4" IsReadOnly="true"/>
+            <Field CaptionHtml="Operacja" EditValue="{DefinicjaOperacji}" LabelWidth="10" Width="*" Height="3.4" IsReadOnly="true"/>
+          </Row>
+          <Grid EditValue="{Materialy}" Width="*" Height="*" Class="DisableSelection"
+                IsToolbarVisible="false" EditInPlace="false" NewInPlace="false" SumType="None"
+                ResourceName="PanelMeldunkowySampleMaterialyPlanowane">
+            <Field CaptionHtml="Lp" EditValue="{Lp}" Width="10" Footer="None" IsReadOnly="true"/>
+            <Field CaptionHtml="Towar" EditValue="{Towar}" Width="120" Footer="None" IsReadOnly="true"/>
+            <Field CaptionHtml="Magazyn" EditValue="{Magazyn}" Width="32" Footer="None"/>
+            <Field CaptionHtml="Ilość" EditValue="{Ilosc}" Width="20" Footer="None"/>
+            <Field CaptionHtml="Stan magazynu" EditValue="{Towar.Workers.StanMagazynu.StanMagazynu}" Width="20" Footer="None"/>
+          </Grid>
+        </Group>
+
+        <Group Width="16">
+          <Row Height="*">
+            <Label LabelWidth="14"/>
+          </Row>
+          <Row>
+            <Stack Width="16">
+              <Row Height="3.65">
+                <Label/>
+              </Row>
+              <Row Height="3.65">
+                <Command CaptionHtml="Funkcje" MethodName="Navigate" Tag="Panel meldunkowy/Funkcje"
+                         Icon="obiekty" Width="8" Height="3.65" DescriptionHtml="Ekran funkcji."/>
+              </Row>
+              <Row Height="3.65">
+                <Command CaptionHtml="Zmień" MethodName="Navigate" Tag="Panel meldunkowy"
+                         Icon="aktualizuj_osoba" Width="8" Height="3.65" DescriptionHtml="Zmień osobę produkcyjną."/>
+              </Row>
+            </Stack>
+          </Row>
+        </Group>
+      </Row>
+
+      <Row Height="1">
+        <Group Width="*">
+          <Row>
+            <Stack Width="*">
+              <Label CaptionHtml="{Uzytkownik.Kod}" Class="BoldLabel LargeFont" Width="*"/>
+            </Stack>
+            <Stack Width="16">
+              <Label CaptionHtml="{Version}" Class="BoldLabel LargeFont CenterLabel" Width="*"/>
+            </Stack>
+          </Row>
+        </Group>
+      </Row>
+    </Stack>
+    
+  </Page>
+</DataForm>
+
