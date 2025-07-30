@@ -26,7 +26,7 @@ namespace PrzykladHandel
             HandelModule handelModule = HandelModule.GetInstance(Session);
             TowaryModule towaryModule = TowaryModule.GetInstance(Session);
             MagazynyModule magazynyModue = MagazynyModule.GetInstance(Session);
-            CRMModule CRMModule = CRMModule.GetInstance(Session);
+            CRMModule crmModule = CRMModule.GetInstance(Session);
             KasaModule kasaModule = KasaModule.GetInstance(Session);
 
             using (ITransaction tran = Session.Logout(true))
@@ -37,7 +37,7 @@ namespace PrzykladHandel
 
                 handelModule.DokHandlowe.AddRow(dokument);
 
-                Kontrahent kontrahent = CRMModule.Kontrahenci.WgKodu["ABC"];
+                Kontrahent kontrahent = crmModule.Kontrahenci.WgKodu["ABC"];
                 if (kontrahent == null)
                     throw new InvalidOperationException("Nieznaleziony kontrahent o kodzie ABC.");
                 dokument.Kontrahent = kontrahent;
@@ -57,7 +57,6 @@ namespace PrzykladHandel
                     }
                 }
 
-                // Modyfikacja płatności
                 // Standradowo dokument ma wygenerowaną przez system jedną płatność. Zmienimy w niej
                 // sposób zapłaty, domyślną ewidencję oraz termin płatności.
                 // Jeżeli chcemy mieć więcej niż jedną płatność, to zmniejszamy kwotę w instniejącej
@@ -71,8 +70,8 @@ namespace PrzykladHandel
 
                 Naleznosc gotowka = null;
                 Naleznosc przelew = null;
-                // Pobieramy isntniejacą płatność. System zrobił na pewno jedną (o ile wartość
-                // dokumentu jest różna od zera).
+                // Pobieramy isntniejącą płatność. System zrobił na pewno jedną, o ile wartość
+                // dokumentu jest różna od zera.
                 // Możemy też płatność usunąć i odtworzyć dokładnie tak samo jak to jest 
                 // robione z dodatkową płatnością.
                 Naleznosc platnosc = (Naleznosc)dokument.Platnosci.GetNext();
@@ -94,16 +93,16 @@ namespace PrzykladHandel
                     przelew = platnosc;
 
                 // Mamy już potrzebne płatności. Teraz musimy im zmodyfikować sposób zapłaty,
-                // ewidencję SP oraz termin płatności.
+                // ewidencję ŚP oraz termin płatności.
 
                 // Najpier przelew
                 if (przelew != null)
                 {
-                    // Wyszukujemy sposób zapłaty. Na szczęście dla gotówki mamy standardowy.
+                    // Wyszukujemy sposób zapłaty. Dla przelewu mamy standardowy.
                     // Możemy też szukać wg nazwy lub Guid.
                     przelew.SposobZaplaty = kasaModule.SposobyZaplaty.Przelew;
 
-                    // Szukamy ewidencję SP
+                    // Szukamy ewidencję ŚP
                     przelew.EwidencjaSP = kasaModule.EwidencjeSP.WgNazwy["Firmowy rachunek bankowy"];
 
                     // I termin płatności
@@ -112,35 +111,33 @@ namespace PrzykladHandel
 
                 if (gotowka != null)
                 {
-                    // Wyszukujemy sposób zapłaty. Na szczęście dla gotówki mamy standardowy.
-                    // Możemy też szukać wg nazwy lub Guid.
+                    // Wyszukujemy sposób zapłaty. Dla gotówki mamy standardowy.
                     gotowka.SposobZaplaty = kasaModule.SposobyZaplaty.Gotówka;
 
-                    // Szukamy ewidencję SP
+                    // Szukamy ewidencję ŚP
                     gotowka.EwidencjaSP = kasaModule.EwidencjeSP.WgNazwy["Kasa gotówkowa"];
 
                     // I termin płatności
                     gotowka.TerminDni = 0;
 
                     // Pozostaje to teraz zapłacić.
-                    // Szukamy raportu kasowego. Musi być istnieć i być otwarty lub 
+                    // Szukamy raportu kasowego. Musi istnieć i być otwarty lub 
                     // nie istnieć i mieć flagę automatyczny.
-                    // Oczywiście ewidencja SP musi być typu kasa.
+                    // Oczywiście ewidencja ŚP musi być typu kasa.
                     RaportESP raport = ((Kasa)gotowka.EwidencjaSP).NowyRaport(dokument, dokument.Data);
                     // Tworzymy nowy dokument wpłaty
                     Wplata wpłata = new Wplata(dokument, raport);
                     // Dodajemy go do tabeli
                     kasaModule.Zaplaty.AddRow(wpłata);
-                    // Ustawiamy podmiot (taki jak w należności)
+                    // Ustawiamy podmiot (taki jak w należności) oraz sposób zapłaty
                     wpłata.Podmiot = dokument.Kontrahent;
-                    // ... sposób zapłaty
                     wpłata.SposobZaplaty = gotowka.SposobZaplaty;
-                    // ... opis wystawrczy zainicjować, zostanie przeliczony podczas zapisu
+                    // Opis wystawrczy zainicjować, zostanie przeliczony podczas zapisu
                     wpłata.Opis = "?";
                     // Oraz oczywiście kwotę
                     wpłata.Kwota = gotowka.Kwota;
 
-                    // Wpłata z należnością zostaną rozliczone podczas zatwierdzania dokumentu
+                    // Wpłata z należnością zostanie rozliczona podczas zatwierdzania dokumentu
                 }
 
                 dokument.Stan = StanDokumentuHandlowego.Zatwierdzony;

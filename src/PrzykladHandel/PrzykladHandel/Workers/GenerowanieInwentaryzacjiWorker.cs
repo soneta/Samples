@@ -26,9 +26,8 @@ namespace PrzykladHandel
             {
                 DokumentHandlowy dokument = new DokumentHandlowy();
 
-                // Nowy dokument należy związać z definicją dokumentu 
-                // handlowego. W tym przypadku wyszukujemy definicje wyszukujemy
-                // z kolekcji standardowych definicji.
+                // Nowy dokument należy związać z definicją dokumentu handlowego.
+                // W tym przypadku wyszukujemy definicję z kolekcji standardowych definicji.
                 dokument.Definicja = handelModule.DefDokHandlowych.Inwentaryzacja;
 
                 dokument.Magazyn = magazynyModule.Magazyny.Firma;
@@ -51,8 +50,7 @@ namespace PrzykladHandel
             }
 
             // Dokument ten znajduje się w buforze, więc żeby stany magazynowe
-            // mogły być zmodyfikowane należy zatwierdzić ten wygenerowany 
-            // właśnie dokument.
+            // mogły być zmodyfikowane, należy go zatwierdzić.
         }
     }
 }

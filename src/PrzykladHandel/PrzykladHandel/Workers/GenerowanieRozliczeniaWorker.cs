@@ -28,19 +28,19 @@ namespace PrzykladHandel
                 Wplata wpłata = null;
                 Naleznosc należność = null;
 
-                SubTable st = kasaModule.RozrachunkiIdx.WgPodmiot[kontrahent, Date.MaxValue];
-                foreach (RozrachunekIdx idx in st)
+                SubTable rozrachunki = kasaModule.RozrachunkiIdx.WgPodmiot[kontrahent, Date.MaxValue];
+                foreach (RozrachunekIdx rozrachunek in rozrachunki)
                 {
-                    if (idx.Typ == TypRozrachunku.Wpłata && wpłata == null)
-                        wpłata = (Wplata)idx.Dokument;
-                    if (idx.Typ == TypRozrachunku.Należność && należność == null && !idx.Dokument.Bufor)
-                        należność = (Naleznosc)idx.Dokument;
+                    if (rozrachunek.Typ == TypRozrachunku.Wpłata && wpłata == null)
+                        wpłata = (Wplata)rozrachunek.Dokument;
+                    if (rozrachunek.Typ == TypRozrachunku.Należność && należność == null && !rozrachunek.Dokument.Bufor)
+                        należność = (Naleznosc)rozrachunek.Dokument;
                     if (wpłata != null && należność != null)
                         break;
                 }
 
                 if (wpłata == null || należność == null)
-                    throw new InvalidOperationException(string.Format("Nieznalezione wpłata lub należność dla kontrahenta {0}", kontrahent.Nazwa));
+                    throw new InvalidOperationException(string.Format("Nieznaleziona wpłata lub należność dla kontrahenta {0}", kontrahent.Nazwa));
 
                 using (ITransaction t = Session.Logout(true))
                 {

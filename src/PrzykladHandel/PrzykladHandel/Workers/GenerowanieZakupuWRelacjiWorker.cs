@@ -20,29 +20,28 @@ namespace PrzykladHandel
         public void GenerujZakupWRelacji()
         {
             // Do poprawnego działania tej funkcji konieczne jest zdefiniowanie
-            // obiegu dokumentów polegającego na wprowadzaniu dokumentu PZ 2
+            // obiegu dokumentów polegającego na wprowadzaniu dokumentu PZ 2,
             // a potem ręcznym generowaniu faktury zakupu ZK 2.
-            //
             // Metoda demonstruje sposób generowania dokumentu podrzędnego 
             // relacji do innego dokumentu.
 
-            // Operacje wykonujemy w transakcji sesji którą należy
+            // Operacje wykonujemy w transakcji sesji, którą należy
             // na początku otworzyć. W transakcji możemy wskazać czy będą 
             // robione zmiany w danych.
             using (ITransaction tran = Session.Logout(true))
             {
-                // Tworzymy dokument ZK 2 za pomocą relacji PZ 2 -> ZK 2 za pomocą API Relacji
+                // Tworzymy dokument ZK 2 w relacji PZ 2 -> ZK 2 za pomocą API Relacji
                 var service = Session.GetService<IRelacjeService>();
                 service.NowyPodrzednyIndywidualny(new[] { Dokument }, "ZK 2");
 
-                // Wszystkie operacje zostały poprawnie zakończone i zapewne 
-                // chcemy zatwierdzić transakcję sesji
+                // Zatwierdzamy transakcję sesji
                 tran.Commit();
             }
 
             // I to wszystko. Dokument ZK znajduje się w bazie.
         }
 
+        // Metoda sterująca widocznością czynności GenerujZakupWRelacji na UI
         public static bool IsVisibleGenerujZakupWRelacji(DokumentHandlowy dokument)
         {
             // Sprawdzamy czy definicja dokumentu to PZ 2

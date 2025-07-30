@@ -23,7 +23,7 @@ namespace PrzykladHandel
             // Metoda tworzy dokument korygujący do dokumentu wyciągniętego z kontekstu
             using (ITransaction tran = Session.Logout(true))
             {
-                // Pobranie serwisu relacji
+                // Pobranie serwisu API relacji handlowych
                 var relacjeService = Session.GetService<IRelacjeService>();
 
                 // Utworzenie dokumentu korekty
