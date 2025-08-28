@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36109.1 d17.14
+VisualStudioVersion = 17.14.36109.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{9D01FD8B-ECFE-49BE-BA03-9FAA9C61128B}"
 EndProject
@@ -95,6 +95,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelMeldunkowy_Sample_02", "src\ProdukcjaPro\PanelMeldunkowy_Sample_02\PanelMeldunkowy_Sample_02\PanelMeldunkowy_Sample_02.csproj", "{B3AC54E5-D5B2-46F5-969D-82A0C0ABDF23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PanelMeldunkowy_Sample_02.UI", "src\ProdukcjaPro\PanelMeldunkowy_Sample_02\PanelMeldunkowy_Sample_02.UI\PanelMeldunkowy_Sample_02.UI.csproj", "{6EEA6D06-50F1-4578-8C84-2ACAAB8E6D44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DodatekTreningowySortowanie", "DodatekTreningowySortowanie", "{65994F2F-4146-41E0-9184-4866F533E207}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodatekTreningowySortowanie", "src\DodatekTreningowySortowanie\DodatekTreningowySortowanie\DodatekTreningowySortowanie.csproj", "{21214114-BDD4-6B1B-8701-9E38BDEFBF03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DodatekTreningowySortowanie.UI", "src\DodatekTreningowySortowanie\DodatekTreningowySortowanie.UI\DodatekTreningowySortowanie.UI.csproj", "{8701428D-4081-ADD7-0462-FB6FC6ACB0D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -206,6 +212,14 @@ Global
 		{6EEA6D06-50F1-4578-8C84-2ACAAB8E6D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EEA6D06-50F1-4578-8C84-2ACAAB8E6D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EEA6D06-50F1-4578-8C84-2ACAAB8E6D44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21214114-BDD4-6B1B-8701-9E38BDEFBF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21214114-BDD4-6B1B-8701-9E38BDEFBF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21214114-BDD4-6B1B-8701-9E38BDEFBF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21214114-BDD4-6B1B-8701-9E38BDEFBF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8701428D-4081-ADD7-0462-FB6FC6ACB0D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8701428D-4081-ADD7-0462-FB6FC6ACB0D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8701428D-4081-ADD7-0462-FB6FC6ACB0D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8701428D-4081-ADD7-0462-FB6FC6ACB0D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -237,6 +251,8 @@ Global
 		{9639995D-2C8B-4E18-A7C9-232A427F9F7F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{B3AC54E5-D5B2-46F5-969D-82A0C0ABDF23} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{6EEA6D06-50F1-4578-8C84-2ACAAB8E6D44} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{21214114-BDD4-6B1B-8701-9E38BDEFBF03} = {65994F2F-4146-41E0-9184-4866F533E207}
+		{8701428D-4081-ADD7-0462-FB6FC6ACB0D3} = {65994F2F-4146-41E0-9184-4866F533E207}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAFA3D20-F417-4EDD-88F6-F850D5CF3A51}

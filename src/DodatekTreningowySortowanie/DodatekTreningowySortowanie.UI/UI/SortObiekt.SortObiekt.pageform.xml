@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" RightName="Page:PunktPage" xmlns="http://www.enova.pl/schema/form.xsd">
+
+  <Page Name="SortObiektPage" CaptionHtml="Ogólne" DataContext="{DataSource}">
+    <Group CaptionHtml="Ogólne" LabelWidth="13">
+      <Field CaptionHtml="KodObiektu"  EditValue="{KodObiektu}" />
+      <Field CaptionHtml="NazwaVirtual" EditValue="{NazwaVirtual}" />
+      <Field CaptionHtml="Cena"  EditValue="{Cena}" />
+      <Field CaptionHtml="DataObiektu" EditValue="{DataObiektu}" />
+      <Field CaptionHtml="Opis" EditValue="{Opis}" />
+      <Field CaptionHtml="OkresObiektu" EditValue="{OkresObiektu}" />
+
+      <Field CaptionHtml="KodPocztowy"  EditValue="{SortAdres.KodPocztowy}" />
+      <Field CaptionHtml="Miejscowosc" EditValue="{SortAdres.Miejscowosc}" />
+
+      <Field CaptionHtml="SortPodObiekt KodPodObiektu"  EditValue="{SortPodObiekt.KodPodObiektu}" />
+      <Field CaptionHtml="SortPodObiekt OpisPodObiektu" EditValue="{SortPodObiekt.OpisPodObiektu}" />
+      
+      <Field CaptionHtml="SortRelObiektNext KodSortRelObiekt"  EditValue="{SortRelObiektNext.KodSortRelObiekt}" />
+      <Field CaptionHtml="SortRelObiektNext NazwaSortRelObiektuVirtual" EditValue="{SortRelObiektNext.NazwaSortRelObiektuVirtual}" />
+      
+      <Field CaptionHtml="SortRelObiektTop KodSortRelObiekt"  EditValue="{SortRelObiektTop.KodSortRelObiekt}" />
+      <Field CaptionHtml="SortRelObiektTop NazwaSortRelObiektuVirtual" EditValue="{SortRelObiektTop.NazwaSortRelObiektuVirtual}" />
+
+    </Group>
+  </Page>
+</DataForm>
+
+
