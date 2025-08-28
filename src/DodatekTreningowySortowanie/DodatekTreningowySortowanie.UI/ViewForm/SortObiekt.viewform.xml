@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DataForm xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.enova.pl/schema/form.xsd" xsi:schemaLocation="http://www.enova.pl/schema/ http://www.enova.pl/schema/form.xsd">
+  <Flow Name="FilterPanel">
+  </Flow>
+  <Grid Name="List" OrderBy="KodObiektu" >
+    <Field CaptionHtml="Kod Obiektu "  EditValue="{KodObiektu}" />
+    <Field CaptionHtml="Nazwa Virtual" EditValue="{NazwaVirtual}" />
+    <Field CaptionHtml="Cena"  EditValue="{Cena}" />
+    <Field CaptionHtml="Data Obiektu" EditValue="{DataObiektu}" />
+    <Field CaptionHtml="Opis" EditValue="{Opis}" />
+    <Field CaptionHtml="Okres Obiektu" EditValue="{OkresObiektu}" />
+    <Field CaptionHtml="Obiekt w relacji klucz obcy" EditValue="{SortPodObiekt}" />
+    <Field CaptionHtml="Obiekt w relacji interfejsowej" EditValue="{SortAdres}" />
+      
+
+  </Grid>
+</DataForm>
